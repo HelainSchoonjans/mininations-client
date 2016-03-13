@@ -20,6 +20,10 @@ angular
   .config ($routeProvider) ->
     $routeProvider
       .when '/',
+        templateUrl: 'views/welcome.html'
+        controller: 'WelcomeCtrl'
+        controllerAs: 'welcome'
+      .when '/explain',
         templateUrl: 'views/main.html'
         controller: 'MainCtrl'
         controllerAs: 'main'
@@ -31,5 +35,13 @@ angular
         templateUrl: 'views/contact.html'
         controller: 'ContactCtrl'
         controllerAs: 'contact'
+      .when '/explore',
+        templateUrl: 'views/explore.html'
+        controller: 'ExploreCtrl'
+        controllerAs: 'explore'
+      .when '/found',
+        templateUrl: 'views/foundation.html'
+        controller: 'FoundationCtrl'
+        controllerAs: 'foundation'
       .otherwise
         redirectTo: '/'
