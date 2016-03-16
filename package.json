@@ -38,7 +38,6 @@
     "http-errors": "^1.4.0",
     "iconv-lite": "^0.4.13",
     "jasmine-core": "^2.4.1",
-    "jit-grunt": "^0.9.1",
     "jshint-stylish": "^1.0.0",
     "karma": "^0.13.21",
     "karma-chrome-launcher": "^0.2.2",
@@ -62,13 +61,14 @@
   "scripts": {
     "preinstall": "bower install",
     "prestart": "npm install",
-    "start": "grunt",
+    "start": "grunt serve",
     "pretest": "npm install",
     "test": "grunt test",
     "test-single-run": "grunt test --single-run",
     "preupdate-webdriver": "npm install",
     "update-webdriver": "webdriver-manager update",
     "preprotractor": "npm run update-webdriver",
-    "protractor": "protractor e2e-tests/protractor.conf.js"
+    "protractor": "protractor e2e-tests/protractor.conf.js",
+    "coffee-compile": "coffee --output app/lib --compile app/scripts"
   }
 }
