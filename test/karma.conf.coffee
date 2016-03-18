@@ -44,7 +44,7 @@ module.exports = (config) ->
 
     # level of logging
     # possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-    logLevel: config.LOG_DEBUG
+    #logLevel: config.LOG_DEBUG
 
     # Start these browsers, currently available:
     # - Chrome
@@ -55,23 +55,19 @@ module.exports = (config) ->
     # - PhantomJS
     # - IE (only Windows)
     browsers: [
-      #"PhantomJS"
-	    "Chrome"
+      "PhantomJS"
+	    #"Chrome"
     ]
 
     # Which plugins to enable
     plugins: [
       'karma-phantomjs-launcher',
-      'karma-chrome-launcher',
+      #'karma-chrome-launcher',
       'karma-jasmine',
       #'karma-junit-reporter',
       #'karma-ng-html2js-preprocessor',
       #'karma-browserify',
       #'karma-requirejs',
-
-      #"karma-phantomjs-launcher",
-	    #"karma-chrome-launcher",
-      #"karma-jasmine",
       "karma-coffee-preprocessor"
     ]
 

@@ -1,8 +1,0 @@
-yo angular name --coffee
-all default params
-bower install
-npm install
-install missing modules
-install karma-chrome-launcher
-put the karma-chrome-launcher plugin in the karma config.
-grunt for tests
