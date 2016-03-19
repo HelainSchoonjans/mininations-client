@@ -1,0 +1,45 @@
+language: node_js
+
+node_js:
+    - 4.4
+
+services:
+
+env:
+
+matrix:
+
+build:
+#    pre_ci:
+#    pre_ci_boot:
+#        image_name:
+#        image_tag:
+#        pull:
+#        options:
+    ci:
+      - npm install -g coffee-script grunt-cli
+      - npm install
+      - bower install --allow-root
+      - npm run-script test-single-run
+#    post_ci:
+#    on_success:
+#    on_failure:
+#    push:
+#    cache:
+
+#integrations:
+#    notifications:
+#        - integrationName:
+#          type:
+#          recipients:
+#          branches:
+#          on_start:
+#          on_success:
+#          on_failure:
+#          on_changed:
+
+#    hub:
+#        - integrationName:
+#          type:
+#          agent_only:
+#          branches:
