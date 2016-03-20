@@ -1,8 +1,3 @@
-# Karma configuration
-# http://karma-runner.github.io/0.12/config/configuration-file.html
-# Generated on 2016-03-08 using
-# generator-karma 1.0.1
-
 module.exports = (config) ->
   config.set
     # base path, that will be used to resolve files and exclude
@@ -35,7 +30,6 @@ module.exports = (config) ->
       "test/spec/**/*.coffee"
     ],
 
-    # list of files / patterns to exclude
     exclude: [
     ]
 
