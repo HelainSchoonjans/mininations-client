@@ -18,4 +18,4 @@ RUN \
 
 EXPOSE 9000
 
-CMD ["node", "app/lib/app.js"]
+CMD ["node", "server.js"]

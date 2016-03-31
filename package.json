@@ -2,7 +2,7 @@
   "name": "mininations",
   "private": true,
   "devDependencies": {
-    "autoprefixer": "^6.3.3",
+    "autoprefixer": "^6.3.4",
     "bytes": "^2.3.0",
     "coffee-script": "*",
     "content-type": "^1.0.1",
@@ -18,7 +18,7 @@
     "grunt-contrib-coffee": "^1.0.0",
     "grunt-contrib-compass": "^1.1.1",
     "grunt-contrib-concat": "^1.0.0",
-    "grunt-contrib-connect": "^1.0.0",
+    "grunt-contrib-connect": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "^1.0.1",
     "grunt-contrib-htmlmin": "^1.1.0",

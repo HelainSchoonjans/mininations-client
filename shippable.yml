@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-    - 4.4
+    - 5.9
 
 services:
 
@@ -18,8 +18,8 @@ build:
 #        options:
     ci:
       - npm install -g coffee-script grunt-cli
+      - bower install --config.interactive=false --allow-root
       - npm install
-      - bower install --allow-root
       - npm run-script test-single-run
 #    post_ci:
 #    on_success:
