@@ -17,17 +17,26 @@ build:
 #        pull:
 #        options:
     ci:
+      # it installs compass
+      - apt-get install --yes ruby-dev
+      #- apt-get install --yes rubygems
+      - gem install compass
+      # it installs the dependencies
       - npm install -g coffee-script grunt-cli
       - bower install --config.interactive=false --allow-root
       - npm install
+      # it runs the tests
       - npm run-script test-single-run
-#    post_ci:
-#    on_success:
+    post_ci:
+      - docker build -t heschoon/mininations-client:$BRANCH.$BUILD_NUMBER -f docker/grunt/Dockerfile .
+      - docker push heschoon/mininations-client:$BRANCH.$BUILD_NUMBER
+    on_success:
+      - cp -r reports/. ./shippable
 #    on_failure:
 #    push:
 #    cache:
 
-#integrations:
+integrations:
 #    notifications:
 #        - integrationName:
 #          type:
@@ -38,8 +47,8 @@ build:
 #          on_failure:
 #          on_changed:
 
-#    hub:
-#        - integrationName:
-#          type:
-#          agent_only:
-#          branches:
+   hub:
+       - integrationName: docker-hub
+         type: docker
+         #agent_only:
+         #branches:
