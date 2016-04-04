@@ -1,6 +1,8 @@
 module.exports = (config) ->
   config.set
     # base path, that will be used to resolve files and exclude
+    singleRun: false
+    autoWatch: true
     basePath: '../'
 
     # testing framework to use (jasmine/mocha/qunit/...)
@@ -33,21 +35,10 @@ module.exports = (config) ->
     exclude: [
     ]
 
-    # web server port
-    #port: 8080
-
     # level of logging
     # possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-    #logLevel: config.LOG_DEBUG
+    logLevel: config.LOG_DEBUG
 
-    # Start these browsers, currently available:
-    # - Chrome
-    # - ChromeCanary
-    # - Firefox
-    # - Opera
-    # - Safari (only Mac)
-    # - PhantomJS
-    # - IE (only Windows)
     browsers: [
       "PhantomJS"
 	    #"Chrome"
@@ -58,25 +49,36 @@ module.exports = (config) ->
       'karma-phantomjs-launcher',
       #'karma-chrome-launcher',
       'karma-jasmine',
-      #'karma-junit-reporter',
+      'karma-junit-reporter',
       #'karma-ng-html2js-preprocessor',
       #'karma-browserify',
       #'karma-requirejs',
-      "karma-coffee-preprocessor"
+      "karma-coffee-preprocessor",
+      'karma-coverage'
     ]
 
-    captureTimeout: 3000,
-
-    # enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true
-
-    # Continuous Integration mode
-    # if true, it capture browsers, run tests and exit
-    singleRun: false
+    captureTimeout: 10000
 
     colors: true
 
     preprocessors: '**/*.coffee': ['coffee']
+
+    junitReporter:
+      outputDir: 'reports/testresults/'
+      suite: 'unit'
+
+    reporters: ['coverage', 'junit']
+
+    preprocessors:
+      '**/*.coffee': ['coffee']
+      #'app/lib/**/*.js': 'coverage'
+      'app/scripts/**/*.coffee': 'coverage'
+
+    coverageReporter:
+      type : 'cobertura'
+      dir : 'reports/codecoverage/'
+      file: 'cobertura-coverage.xml'
+
 
     # Uncomment the following lines if you are using grunt's server to run the tests
     # proxies: '/': 'http://localhost:9000/'
