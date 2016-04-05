@@ -9,6 +9,10 @@
 ###
 angular.module 'mininationsApp'
   .controller 'FoundationCtrl', ->
+
+    @isVisible = () ->
+      true
+
     @awesomeThings = [
       'HTML5 Boilerplate'
       'AngularJS'
