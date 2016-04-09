@@ -63,10 +63,10 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "preinstall": "bower install --config.interactive=false --allow-root",
-    "prestart": "npm install",
+    "preinstall": "echo 'not bower install --config.interactive=false --allow-root'",
+    "prestart": "echo 'not npm install'",
     "start": "grunt serve",
-    "pretest": "npm install",
+    "pretest": "echo 'not npm install'",
     "test": "grunt test",
     "test-single-run": "grunt test --single-run",
     "preupdate-webdriver": "npm install",

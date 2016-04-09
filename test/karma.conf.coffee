@@ -28,7 +28,7 @@ module.exports = (config) ->
       # bower:coffee
       # endbower
       "app/scripts/**/*.coffee"
-      "test/mock/**/*.coffee"
+#      "test/mock/**/*.coffee"
       "test/spec/**/*.coffee"
     ],
 
@@ -37,17 +37,17 @@ module.exports = (config) ->
 
     # level of logging
     # possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-    logLevel: config.LOG_DEBUG
+    #logLevel: config.LOG_DEBUG
 
     browsers: [
-      "PhantomJS"
-	    #"Chrome"
+#      "PhantomJS"
+	    "Chrome"
     ]
 
     # Which plugins to enable
     plugins: [
-      'karma-phantomjs-launcher',
-      #'karma-chrome-launcher',
+#      'karma-phantomjs-launcher',
+      'karma-chrome-launcher',
       'karma-jasmine',
       'karma-junit-reporter',
       #'karma-ng-html2js-preprocessor',

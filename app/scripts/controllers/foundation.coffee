@@ -10,12 +10,18 @@
 angular.module 'mininationsApp'
   .controller 'FoundationCtrl', ->
 
-    @isVisible = () ->
-      true
+    @maximumStep = 9
+    @currentStep = 0
 
-    @awesomeThings = [
-      'HTML5 Boilerplate'
-      'AngularJS'
-      'Karma'
-    ]
+    @isStep = (step) ->
+      step == @currentStep
+
+    @next = () ->
+      if @currentStep < @maximumStep
+        @currentStep = @currentStep + 1
+
+    @previous = () ->
+      if @currentStep > 0
+       @currentStep = @currentStep - 1
+
     return

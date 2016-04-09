@@ -1,4 +1,4 @@
-<div ng-hide="foundation.isVisible()">
+<div ng-hide="!foundation.isStep(0)">
   <p>1.se présenter</p>
   <p>2.pour quelle raison</p>
   <p>3.choisir un territoire</p>
@@ -7,5 +7,64 @@
   <p>6.composer sa devise</p>
   <p>7.faire son drapeau</p>
   <p>8.faire son blason</p>
-  <p>commencer</p>
+
 </div>
+
+<div ng-hide="!foundation.isStep(1)">
+  <p>1.se présenter</p>
+  nom -> au choix?
+  prénom -> au choix?
+  surnom -> ?
+  genre -> m, f
+
+</div>
+
+<div ng-hide="!foundation.isStep(2)">
+  <p>2.pour quelle raison</p>
+  économique
+  politique
+  sociale et culturelle
+
+</div>
+
+<div ng-hide="!foundation.isStep(3)">
+  <p>3.choisir un territoire</p>
+  existants
+  personnels
+  filtres
+
+</div>
+
+<div ng-hide="!foundation.isStep(4)">
+  <p>4.titre et régime politique</p>
+  je veux être
+  dans
+
+</div>
+
+<div ng-hide="!foundation.isStep(5)">
+  <p>5.trouver un nom</p>
+  plusieurs techniques
+
+</div>
+
+<div ng-hide="!foundation.isStep(6)">
+  <p>6.composer sa devise</p>
+
+</div>
+
+<div ng-hide="!foundation.isStep(7)">
+  <p>7.faire son drapeau</p>
+
+</div>
+
+<div ng-hide="!foundation.isStep(8)">
+  <p>8.faire son blason</p>
+
+</div>
+
+<div ng-hide="!foundation.isStep(9)">
+  <p>result</p>
+</div>
+
+<p><button type="button" ng-click="foundation.previous()" ng-hide="foundation.currentStep <= 0">précédent</button><button type="button" ng-click="foundation.next()" ng-hide="foundation.currentStep >= 9">suivant</button></p>
