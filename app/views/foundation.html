@@ -1,30 +1,36 @@
 <div ng-hide="!foundation.isStep(0)">
-  <p>1.se présenter</p>
-  <p>2.pour quelle raison</p>
-  <p>3.choisir un territoire</p>
-  <p>4.régime politique</p>
-  <p>5.trouver un nom</p>
-  <p>6.composer sa devise</p>
-  <p>7.faire son drapeau</p>
-  <p>8.faire son blason</p>
-
+  <p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">1.</span><span class="char-style-override-6">se présenter</span></p>
+  <p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">2.</span><span class="char-style-override-6">pour quelle raison</span></p>
+  <p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">3.</span><span class="char-style-override-6">choisir un territoire</span></p>
+	<p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">4.</span><span class="char-style-override-6">régime politique</span></p>
+  <p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">5.</span><span class="char-style-override-6">trouver un nom</span></p>
+  <p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">6.</span><span class="char-style-override-6">composer sa devise</span></p>
+  <p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">7.</span><span class="char-style-override-6">faire son drapeau</span></p>
+  <p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">8.</span><span class="char-style-override-6">faire son blason </span></p>
 </div>
 
 <div ng-hide="!foundation.isStep(1)">
   <p>1.se présenter</p>
-  nom -> au choix?
-  prénom -> au choix?
-  surnom -> ?
-  genre -> m, f
-
+  <form novalidate class="simple-form">
+    Prénom: <input type="text" ng-model="user.firstName" /><br />
+    Nom: <input type="text" ng-model="user.lastName" /><br />
+    Surnom: <input type="text" ng-model="user.nickname" /><br />
+    Gender: <input type="radio" ng-model="user.gender" value="male" />male
+    <input type="radio" ng-model="user.gender" value="female" />female<br />
+  </form>
 </div>
 
 <div ng-hide="!foundation.isStep(2)">
   <p>2.pour quelle raison</p>
-  économique
-  politique
-  sociale et culturelle
-
+  <select name="economicSelect" id="economicSelect" ng-model="data.repeatSelect">
+    <option ng-repeat="option in Object.keys(foundation.reasons.ECONOMIQUES)" value="{{option}}">{{option}}</option>
+  </select>
+  <select name="politicSelect" id="politicSelect" ng-model="data.repeatSelect">
+    <option ng-repeat="option in Object.keys(foundation.reasons.POLITIQUES)" value="{{option}}">{{option}}</option>
+  </select>
+  <select name="culturalSelect" id="culturalSelect" ng-model="data.repeatSelect">
+    <option ng-repeat="option in Object.keys(foundation.reasons.CULTURELLES)" value="{{option}}">{{option}}</option>
+  </select>
 </div>
 
 <div ng-hide="!foundation.isStep(3)">
@@ -32,7 +38,6 @@
   existants
   personnels
   filtres
-
 </div>
 
 <div ng-hide="!foundation.isStep(4)">
@@ -67,4 +72,5 @@
   <p>result</p>
 </div>
 
-<p><button type="button" ng-click="foundation.previous()" ng-hide="foundation.currentStep <= 0">précédent</button><button type="button" ng-click="foundation.next()" ng-hide="foundation.currentStep >= 9">suivant</button></p>
+<p ng-hide="!foundation.isStep(0)"><button type="button" ng-click="foundation.next()" ng-hide="foundation.currentStep >= 9">Commencer</button></p>
+<p ng-hide="foundation.isStep(0)"><button type="button" ng-click="foundation.previous()" ng-hide="foundation.currentStep <= 0">précédent</button><button type="button" ng-click="foundation.next()" ng-hide="foundation.currentStep >= 9">suivant</button></p>

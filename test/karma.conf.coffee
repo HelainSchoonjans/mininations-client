@@ -40,14 +40,14 @@ module.exports = (config) ->
     #logLevel: config.LOG_DEBUG
 
     browsers: [
-#      "PhantomJS"
-	    "Chrome"
+     "PhantomJS"
+	    # "Chrome"
     ]
 
     # Which plugins to enable
     plugins: [
-#      'karma-phantomjs-launcher',
-      'karma-chrome-launcher',
+     'karma-phantomjs-launcher',
+      # 'karma-chrome-launcher',
       'karma-jasmine',
       'karma-junit-reporter',
       #'karma-ng-html2js-preprocessor',
