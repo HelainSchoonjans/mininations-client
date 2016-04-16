@@ -3,6 +3,7 @@ module.exports = (config) ->
     # base path, that will be used to resolve files and exclude
     singleRun: false
     autoWatch: true
+
     basePath: '../'
 
     # testing framework to use (jasmine/mocha/qunit/...)
@@ -46,7 +47,7 @@ module.exports = (config) ->
 
     # Which plugins to enable
     plugins: [
-     'karma-phantomjs-launcher',
+      'karma-phantomjs-launcher',
       # 'karma-chrome-launcher',
       'karma-jasmine',
       'karma-junit-reporter',
@@ -71,7 +72,7 @@ module.exports = (config) ->
 
     preprocessors:
       '**/*.coffee': ['coffee']
-      #'app/lib/**/*.js': 'coverage'
+      # 'app/lib/**/*.js': 'coverage' # do not uncomment
       'app/scripts/**/*.coffee': 'coverage'
 
     coverageReporter:
