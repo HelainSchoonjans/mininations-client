@@ -11,54 +11,65 @@
 </div>
 
 <div ng-hide="!foundation.isStep(1)">
-  <p>1.se présenter {{user}}</p>
-  <form name="form" class="css-form">
+  <p>1.se présenter </p>
+  <form name="userPresentation" class="css-form">
     Prénom: <input type="text" ng-model="user.firstName" name="firstName" required="" /><br />
-    <div ng-show="form.$submitted || form.firstName.$touched">
-      <div ng-show="form.firstName.$error.required">Entre ton prénom.</div>
+    <div ng-show="userPresentation.$submitted || userPresentation.firstName.$touched">
+      <div ng-show="userPresentation.firstName.$error.required">Entre ton prénom.</div>
     </div>
     Nom: <input type="text" ng-model="user.lastName" name="lastName" required="" /><br />
-    <div ng-show="form.$submitted || form.lastName.$touched">
-      <div ng-show="form.lastName.$error.required">Entre ton nom.</div>
+    <div ng-show="userPresentation.$submitted || userPresentation.lastName.$touched">
+      <div ng-show="userPresentation.lastName.$error.required">Entre ton nom.</div>
     </div>
     Genre: <input type="radio" ng-model="user.gender" value="male" />Homme
             <input type="radio" ng-model="user.gender" value="female" />Femme
             <br />
     <input type="button" ng-click="foundation.previous()" value="précédent" />
-    <input type="submit" ng-click="foundation.next(user, $scope.yourformname.$valid)" value="suivant" />
+    <input type="submit" ng-click="foundation.next(user, $scope.userPresentation.$valid)" value="suivant" />
   </form>
 </div>
 
 <div ng-hide="!foundation.isStep(2)">
-  <p>2.pour quelle raison {{user}}</p>
-  <select name="economicSelect" id="economicSelect" ng-model="data.repeatSelect">
-    <option ng-repeat="option in foundation.economicalReasons" value="{{option}}">{{option}}</option>
+  <p>2.pour quelle raison {{reason}} {{user}}</p>
+  <select name="economicSelect" id="economicSelect" ng-model="reason">
+    <option ng-repeat="option in foundation.foundationHelperService.economicalReasons" value="{{option}}">{{option}}</option>
   </select>
-  <select name="politicSelect" id="politicSelect" ng-model="data.repeatSelect">
-    <option ng-repeat="option in foundation.politicalReasons" value="{{option}}">{{option}}</option>
+  <select name="politicSelect" id="politicSelect" ng-model="reason">
+    <option ng-repeat="option in foundation.foundationHelperService.politicalReasons" value="{{option}}">{{option}}</option>
   </select>
-  <select name="culturalSelect" id="culturalSelect" ng-model="data.repeatSelect">
-    <option ng-repeat="option in foundation.culturalReasons" value="{{option}}">{{option}}</option>
+  <select name="culturalSelect" id="culturalSelect" ng-model="reason">
+    <option ng-repeat="option in foundation.foundationHelperService.culturalReasons" value="{{option}}">{{option}}</option>
   </select>
-  <p ng-hide="foundation.isStep(0)"><button type="button" ng-click="foundation.previous()" ng-hide="foundation.currentStep <= 0">précédent</button><button type="button" ng-click="foundation.next()" ng-hide="foundation.currentStep >= 9">suivant</button></p>
+  <p ng-hide="foundation.isStep(0)"><button type="button" ng-click="foundation.previous()" ng-hide="foundation.currentStep <= 0">précédent</button><button type="button" ng-click="foundation.next(reason)" ng-hide="foundation.currentStep >= 9">suivant</button></p>
 </div>
 
 <div ng-hide="!foundation.isStep(3)">
-  <p>3.choisir un territoire</p>
+  <p>3.choisir un territoire {{reason}} {{user}} {{territory}}</p>
   existants
   personnels
   filtres
-  <select name="territorySelect" id="territorySelect" ng-model="data.repeatSelect">
-    <option ng-repeat="option in foundation.territories" value="{{option}}">{{option}}</option>
+  <select name="territorySelect" id="territorySelect" ng-model="territory">
+    <option ng-repeat="option in foundation.foundationHelperService.territories" value="{{option}}">{{option}}</option>
   </select>
-  <p ng-hide="foundation.isStep(0)"><button type="button" ng-click="foundation.previous()" ng-hide="foundation.currentStep <= 0">précédent</button><button type="button" ng-click="foundation.next()" ng-hide="foundation.currentStep >= 9">suivant</button></p>
+  <p ng-hide="foundation.isStep(0)"><button type="button" ng-click="foundation.previous()" ng-hide="foundation.currentStep <= 0">précédent</button><button type="button" ng-click="foundation.next(territory)" ng-hide="foundation.currentStep >= 9">suivant</button></p>
 </div>
 
 <div ng-hide="!foundation.isStep(4)">
-  <p>4.titre et régime politique</p>
+  <p>4.titre et régime politique {{reason}} {{user}} {{territory}} {{system}}</p>
   je veux être
-  dans
-  <p ng-hide="foundation.isStep(0)"><button type="button" ng-click="foundation.previous()" ng-hide="foundation.currentStep <= 0">précédent</button><button type="button" ng-click="foundation.next()" ng-hide="foundation.currentStep >= 9">suivant</button></p>
+  <select name="titleSelect" id="titleSelect" ng-model="system.title">
+    <option ng-repeat="option in foundation.foundationHelperService.titles" value="{{option}}">{{option}}</option>
+  </select>
+  <div ng-show="system.title">
+    dans
+    <select name="systemSelect" id="systemSelect" ng-model="system.type">
+      <option ng-repeat="option in foundation.foundationHelperService.politicalSystems" value="{{option}}">{{option}}</option>
+    </select>
+    <select ng-show="system.type" name="systemQualifierSelect" id="systemQualifierSelect" ng-model="system.qualifier">
+      <option ng-repeat="option in Object.keys(foundation.foundationHelperService.politicalSystem[system.type])" value="{{option}}">{{option}}</option>
+    </select>
+  </div>
+  <p ng-hide="foundation.isStep(0)"><button type="button" ng-click="foundation.previous()" ng-hide="foundation.currentStep <= 0">précédent</button><button type="button" ng-click="foundation.next(system)" ng-hide="foundation.currentStep >= 9">suivant</button></p>
 </div>
 
 <div ng-hide="!foundation.isStep(5)">
