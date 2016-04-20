@@ -28,7 +28,6 @@ angular.module 'mininationsApp'
       step == @currentStep
 
     @next = (data, valid = true) ->
-      console.log valid
       if valid && @currentStep < @maximumStep
         @currentNation[@currentStep] = data
         @currentStep = @currentStep + 1

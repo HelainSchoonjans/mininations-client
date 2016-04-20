@@ -3,7 +3,7 @@ exports.config =
   allScriptsTimeout: 11000
 
   specs: [
-    'e2e/scenarios/*.coffee'
+    'scenarios/**/*.coffee'
   ]
 
   capabilities:
