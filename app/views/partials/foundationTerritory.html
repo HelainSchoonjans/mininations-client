@@ -1,0 +1,13 @@
+<div ng-hide="!foundation.isStep(3)" id="territory">
+  <p>3.choisir un territoire</p>
+  existants
+  personnels
+  filtres
+  <form name="foundationTerritory" class="css-form">
+      <select name="territorySelect" id="territorySelect" ng-model="territory" required="">
+        <option ng-repeat="territory in foundation.foundationHelperService.territories" value="{{territory}}">{{territory}}</option>
+      </select>
+    <input type="button" ng-click="foundation.previous()" value="précédent" />
+    <input type="submit" ng-click="foundation.next(reason, foundationTerritory.$valid)" value="suivant" />
+  </form>
+</div>

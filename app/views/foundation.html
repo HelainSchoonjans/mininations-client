@@ -1,58 +1,8 @@
-<div ng-show="foundation.isStep(0)" id="introduction">
-  <p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">1.</span><span class="char-style-override-6">se présenter</span></p>
-  <p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">2.</span><span class="char-style-override-6">pour quelle raison</span></p>
-  <p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">3.</span><span class="char-style-override-6">choisir un territoire</span></p>
-	<p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">4.</span><span class="char-style-override-6">régime politique</span></p>
-  <p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">5.</span><span class="char-style-override-6">trouver un nom</span></p>
-  <p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">6.</span><span class="char-style-override-6">composer sa devise</span></p>
-  <p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">7.</span><span class="char-style-override-6">faire son drapeau</span></p>
-  <p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">8.</span><span class="char-style-override-6">faire son blason </span></p>
-  <p><button type="button" ng-click="foundation.next()" id="beginFoundationButton">Commencer</button></p>
-</div>
+<div foundation-introduction></div>
+<div foundation-presentation></div>
+<div foundation-reason></div>
+<div foundation-territory></div>
 
-<div ng-hide="!foundation.isStep(1)" id="presentation">
-  <p>1.se présenter </p>
-  <form name="userPresentation" class="css-form">
-    Prénom: <input type="text" ng-model="user.firstName" name="firstName" required="" /><br />
-    <div ng-show="userPresentation.$submitted || userPresentation.firstName.$touched">
-      <div ng-show="userPresentation.firstName.$error.required">Entre ton prénom.</div>
-    </div>
-    Nom: <input type="text" ng-model="user.lastName" name="lastName" required="" /><br />
-    <div ng-show="userPresentation.$submitted || userPresentation.lastName.$touched">
-      <div ng-show="userPresentation.lastName.$error.required">Entre ton nom.</div>
-    </div>
-    Genre: <input type="radio" ng-model="user.gender" value="male" />Homme
-            <input type="radio" ng-model="user.gender" value="female" />Femme
-            <br />
-    <input type="button" ng-click="foundation.previous()" value="précédent" />
-    <input type="submit" ng-click="foundation.next(user, $scope.userPresentation.$valid)" value="suivant" />
-  </form>
-</div>
-
-<div ng-hide="!foundation.isStep(2)">
-  <p>2.pour quelle raison {{reason}} {{user}}</p>
-  <select name="economicSelect" id="economicSelect" ng-model="reason">
-    <option ng-repeat="option in foundation.foundationHelperService.economicalReasons" value="{{option}}">{{option}}</option>
-  </select>
-  <select name="politicSelect" id="politicSelect" ng-model="reason">
-    <option ng-repeat="option in foundation.foundationHelperService.politicalReasons" value="{{option}}">{{option}}</option>
-  </select>
-  <select name="culturalSelect" id="culturalSelect" ng-model="reason">
-    <option ng-repeat="option in foundation.foundationHelperService.culturalReasons" value="{{option}}">{{option}}</option>
-  </select>
-  <p ng-hide="foundation.isStep(0)"><button type="button" ng-click="foundation.previous()" ng-hide="foundation.currentStep <= 0">précédent</button><button type="button" ng-click="foundation.next(reason)" ng-hide="foundation.currentStep >= 9">suivant</button></p>
-</div>
-
-<div ng-hide="!foundation.isStep(3)">
-  <p>3.choisir un territoire {{reason}} {{user}} {{territory}}</p>
-  existants
-  personnels
-  filtres
-  <select name="territorySelect" id="territorySelect" ng-model="territory">
-    <option ng-repeat="option in foundation.foundationHelperService.territories" value="{{option}}">{{option}}</option>
-  </select>
-  <p ng-hide="foundation.isStep(0)"><button type="button" ng-click="foundation.previous()" ng-hide="foundation.currentStep <= 0">précédent</button><button type="button" ng-click="foundation.next(territory)" ng-hide="foundation.currentStep >= 9">suivant</button></p>
-</div>
 
 <div ng-hide="!foundation.isStep(4)">
   <p>4.titre et régime politique {{reason}} {{user}} {{territory}} {{system}}</p>

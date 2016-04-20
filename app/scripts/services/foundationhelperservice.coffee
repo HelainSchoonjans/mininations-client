@@ -32,6 +32,305 @@ angular.module 'mininationsApp'
       "par revendication"
       "pour être seul"
     ]
+    # @territoryFilters = {
+    #   "désert": [
+    #
+    #   ]
+    #   "glace": [
+    #
+    #   ]
+    #   "isolé": [
+    #
+    #   ]
+    #   "chaud": [
+    #
+    #   ]
+    #   "froid": [
+    #
+    #   ]
+    #   "humide": [
+    #
+    #   ]
+    #   "tropical": [
+    #
+    #   ]
+    #   "abandonné": [
+    #
+    #   ]
+    #   "abandonné": [
+    #
+    #   ]
+    #   "disputé/contesté": [
+    #
+    #   ]
+    #   "peuplé": [
+    #
+    #   ]
+    #   "naturel": [
+    #
+    #   ]
+    #   "construit": [
+    #
+    #   ]
+    # }
+    @territoryFilters = [
+        {
+            name: "désert"
+            id: 1
+        }
+        {
+            name: "glace"
+            id: 2
+        }
+        {
+            name: "isolé"
+            id: 3
+        }
+        {
+            name: "chaud"
+            id: 4
+        }
+        {
+            name: "froid"
+            id: 5
+        }
+        {
+            name: "humide"
+            id: 6
+        }
+        {
+            name: "tropical"
+            id: 7
+        }
+        {
+            name: "abandonné"
+            id: 8
+        }
+        {
+            name: "disputé/contesté"
+            id: 9
+        }
+        {
+            name: "peuplé"
+            id: 10
+        }
+        {
+            name: "naturel"
+            id: 11
+        }
+        {
+            name: "construit"
+            id: 12
+        }
+    ]
+    @territoriesDetailed = [
+        {
+          id: 1
+          name: "Antartique 1"
+          continent: "Antartique"
+          ocean: "n/a"
+          superficie: "<500 km^2"
+          population: "0"
+          filters: [
+            1, 2, 3, 11
+          ]
+          coordinates: ""
+          influence:
+            economical: [ 2, 4 ]
+            political: [ 2 ]
+            socioculturel: [ 1, 6, 7, 8 ]
+        }
+        {
+          id: 2
+          name: "Antartique 2"
+          continent: "Antartique"
+          ocean: "n/a"
+          superficie: "<1500 km^2"
+          population: "0"
+          filters: [
+            1, 2, 3, 11
+          ]
+          coordinates: ""
+          influence:
+            economical: [ 2, 4 ]
+            political: [ 2 ]
+            socioculturel: [ 1, 6, 7, 8 ]
+        }
+        {
+          id: 3
+          name: "Antartique 3"
+          continent: "Antartique"
+          ocean: "n/a"
+          superficie: "<100 km^2"
+          population: "0"
+          filters: [
+            1, 2, 3, 11
+          ]
+          coordinates: ""
+          influence:
+            economical: [ 2, 4 ]
+            political: [ 2 ]
+            socioculturel: [ 1, 6, 7, 8 ]
+        }
+        {
+          id: 4
+          name: "Moresnet neutre"
+          continent: "Europe"
+          ocean: "n/a"
+          superficie: "3.5 km^2"
+          population: "?"
+          filters: [
+            6, 9, 10, 12
+          ]
+          coordinates: ""
+          influence:
+            economical: [ ]
+            political: [ 1, 3 ]
+            socioculturel: [ 5, 7 ]
+        }
+        {
+          id: 5
+          name: "Erik the red's land"
+          continent: "Europe"
+          ocean: "n/a"
+          superficie: "? km^2"
+          population: "?"
+          filters: [
+            2, 5, 9, 10, 11, 12
+          ]
+          coordinates: ""
+          influence:
+            economical: [ ]
+            political: [ 2, 3, 4 ]
+            socioculturel: [ 2, 5, 7 ]
+        }
+        {
+          id: 6
+          name: "Saudi Iraki"
+          continent: "Afrique"
+          ocean: "n/a"
+          superficie: "7044 km^2"
+          population: "?"
+          filters: [
+          ]
+          coordinates: ""
+          influence:
+            economical: [ 2, 4 ]
+            political: [ 1, 2, 3, 4 ]
+            socioculturel: [ 3, 5, 7 ]
+        }
+        {
+          id: 7
+          name: "Saudi Kuwaiti"
+          continent: "Afrique"
+          ocean: "n/a"
+          superficie: "5770 km^2"
+          population: "?"
+          filters: [
+          ]
+          coordinates: ""
+          influence:
+            economical: [ 2, 4 ]
+            political: [ 1, 2, 3, 4 ]
+            socioculturel: [ 3, 5, 7 ]
+        }
+        {
+          id: 8
+          name: "Somaliland neutre"
+          continent: "Afrique"
+          ocean: "n/a"
+          superficie: "13760 km^2"
+          population: "1 M"
+          filters: [
+            1, 4, 9, 10
+          ]
+          coordinates: ""
+          influence:
+            economical: [ 2, 4 ]
+            political: [ 1, 2, 3, 4 ]
+            socioculturel: [ 3, 5, 7 ]
+        }
+        {
+          id: 9
+          name: "Bir Tawil"
+          continent: "Afrique"
+          ocean: "n/a"
+          superficie: "? km^2"
+          population: "?"
+          filters: [
+            1, 3, 4, 8, 11
+          ]
+          coordinates: "21° 52´ 14´´ N33° 44´ 14´´ Est"
+          influence:
+            economical: [ 2, 4 ]
+            political: [ 1, 2, 3, 4 ]
+            socioculturel: [ 3, 5, 7 ]
+        }
+        {
+          id: 10
+          name: "Zone coréenne démilitarisée"
+          continent: "Asie"
+          ocean: "n/a"
+          superficie: "<80 km^2"
+          population: "0"
+          filters: [
+            4, 7, 9, 12
+          ]
+          coordinates: ""
+          influence:
+            economical: [ 2, 4 ]
+            political: [ 1, 2, 3, 4 ]
+            socioculturel: [ 3, 5, 7 ]
+        }
+        {
+          id: 11
+          name: "Neutral strip of Louisiana"
+          continent: "Amérique centrale"
+          ocean: "n/a"
+          superficie: "? km^2"
+          population: "?"
+          filters: [
+            6, 9, 10, 12
+          ]
+          coordinates: ""
+          influence:
+            economical: [ 1, 3, 4 ]
+            political: [ 1, 2, 3 ]
+            socioculturel: [ 1, 2, 5, 7 ]
+        }
+        {
+          id: 12
+          name: "Oklahoma Panhandle"
+          continent: "Amérique centrale"
+          ocean: "n/a"
+          superficie: "1200 km^2"
+          population: "27000"
+          filters: [
+          ]
+          coordinates: ""
+          influence:
+            economical: [ 1, 3, 4 ]
+            political: [ 1, 2, 3 ]
+            socioculturel: [ 1, 2, 5, 7 ]
+        }
+        {
+          id: 13
+          name: "Fort Tongue sands"
+          continent: "n/a"
+          ocean: "Atlantique"
+          superficie: "200 km^2"
+          population: "0"
+          filters: [
+            3, 5, 6, 8, 12
+          ]
+          coordinates: ""
+          influence:
+            economical: [ 1, 2, 3 ]
+            political: [ 1, 3, 4 ]
+            socioculturel: [ 1, 2, 4, 5, 6, 7, 8 ]
+        }
+        # TODO add more territories
+    ]
     @territories = [
       "Antartique 1"
       "Antartique 2"
