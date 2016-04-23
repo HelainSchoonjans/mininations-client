@@ -8,5 +8,4 @@
 ###
 angular.module 'mininationsApp'
   .directive 'foundationIntroduction', ->
-    # restrict: 'EA'
-    templateUrl: '/views/partials/foundationIntroduction.html'
+    templateUrl: '/views/partials/foundation/introduction.html'

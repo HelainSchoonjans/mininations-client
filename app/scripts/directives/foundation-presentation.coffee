@@ -8,4 +8,4 @@
 ###
 angular.module 'mininationsApp'
   .directive 'foundationPresentation', ->
-    templateUrl: '/views/partials/foundationPresentation.html'
+    templateUrl: '/views/partials/foundation/presentation.html'

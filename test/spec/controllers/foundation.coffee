@@ -12,7 +12,7 @@ describe 'Controller: FoundationCtrl', ->
   beforeEach inject ($controller, $rootScope) ->
     scope = $rootScope.$new()
     FoundationCtrl = $controller 'FoundationCtrl', {
-      # place here mocked dependencies
+      $scope: scope
     }
 
   it 'should start with the step 0', ->

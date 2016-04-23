@@ -1,0 +1,30 @@
+<div ng-hide="!foundation.isStep(4)">
+
+  <p>4.titre et régime politique</p>
+
+  <form name="titleAndSystem" class="css-form">
+
+    je veux être
+
+    <select name="title" ng-model="selected.title" ng-options="title.name for title in titles" required="">
+        <option value="">-- Title --</option>
+    </select>
+
+    <div ng-show="selected.title">
+
+      dans {{ selected.system ? (selected.system.gender=="M" ? "un" : "une") : "" }}
+
+      <select ng-model="selected.system" ng-options="system.name for system in selected.title.systems" required="">
+          <option value="">-- System --</option>
+      </select>
+
+      <select ng-show="selected.system" ng-model="selected.type" ng-options="qualifier for qualifier in selected.system.types" required="">
+          <option value="">-- Qualifier --</option>
+      </select>
+
+    </div>
+
+    <input type="button" ng-click="foundation.previous()" value="précédent" />
+    <input type="submit" ng-click="foundation.next(selected, titleAndSystem.$valid)" value="suivant" />
+  </form>
+</div>

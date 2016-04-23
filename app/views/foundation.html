@@ -2,48 +2,9 @@
 <div foundation-presentation></div>
 <div foundation-reason></div>
 <div foundation-territory></div>
-
-
-<div ng-hide="!foundation.isStep(4)">
-  <p>4.titre et régime politique {{reason}} {{user}} {{territory}} {{system}}</p>
-  je veux être
-  <select name="titleSelect" id="titleSelect" ng-model="system.title">
-    <option ng-repeat="option in foundation.foundationHelperService.titles" value="{{option}}">{{option}}</option>
-  </select>
-  <div ng-show="system.title">
-    dans
-    <select name="systemSelect" id="systemSelect" ng-model="system.type">
-      <option ng-repeat="option in foundation.foundationHelperService.politicalSystems" value="{{option}}">{{option}}</option>
-    </select>
-    <select ng-show="system.type" name="systemQualifierSelect" id="systemQualifierSelect" ng-model="system.qualifier">
-      <option ng-repeat="option in Object.keys(foundation.foundationHelperService.politicalSystem[system.type])" value="{{option}}">{{option}}</option>
-    </select>
-  </div>
-  <p ng-hide="foundation.isStep(0)"><button type="button" ng-click="foundation.previous()" ng-hide="foundation.currentStep <= 0">précédent</button><button type="button" ng-click="foundation.next(system)" ng-hide="foundation.currentStep >= 9">suivant</button></p>
-</div>
-
-<div ng-hide="!foundation.isStep(5)">
-  <p>5.trouver un nom</p>
-  plusieurs techniques
-  <p ng-hide="foundation.isStep(0)"><button type="button" ng-click="foundation.previous()" ng-hide="foundation.currentStep <= 0">précédent</button><button type="button" ng-click="foundation.next()" ng-hide="foundation.currentStep >= 9">suivant</button></p>
-</div>
-
-<div ng-hide="!foundation.isStep(6)">
-  <p>6.composer sa devise</p>
-  <p ng-hide="foundation.isStep(0)"><button type="button" ng-click="foundation.previous()" ng-hide="foundation.currentStep <= 0">précédent</button><button type="button" ng-click="foundation.next()" ng-hide="foundation.currentStep >= 9">suivant</button></p>
-</div>
-
-<div ng-hide="!foundation.isStep(7)">
-  <p>7.faire son drapeau</p>
-  <p ng-hide="foundation.isStep(0)"><button type="button" ng-click="foundation.previous()" ng-hide="foundation.currentStep <= 0">précédent</button><button type="button" ng-click="foundation.next()" ng-hide="foundation.currentStep >= 9">suivant</button></p>
-</div>
-
-<div ng-hide="!foundation.isStep(8)">
-  <p>8.faire son blason</p>
-  <p ng-hide="foundation.isStep(0)"><button type="button" ng-click="foundation.previous()" ng-hide="foundation.currentStep <= 0">précédent</button><button type="button" ng-click="foundation.next()" ng-hide="foundation.currentStep >= 9">suivant</button></p>
-</div>
-
-<div ng-hide="!foundation.isStep(9)">
-  <p>result</p>
-  <p ng-hide="foundation.isStep(0)"><button type="button" ng-click="foundation.previous()" ng-hide="foundation.currentStep <= 0">précédent</button><button type="button" ng-click="foundation.next()" ng-hide="foundation.currentStep >= 9">suivant</button></p>
-</div>
+<div title-and-system></div>
+<div foundation-naming></div>
+<div foundation-anthem></div>
+<div foundation-flag></div>
+<div foundation-heraldry></div>
+<div foundation-render></div>

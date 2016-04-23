@@ -1,5 +1,7 @@
 <div ng-hide="!foundation.isStep(1)" id="presentation">
+
   <p>1. se présenter</p>
+
   <form name="userPresentation" class="css-form">
 
     Prénom:
@@ -21,5 +23,7 @@
 
     <input type="button" ng-click="foundation.previous()" value="précédent" />
     <input type="submit" ng-click="foundation.next(user, userPresentation.$valid)" value="suivant" />
+
   </form>
+
 </div>

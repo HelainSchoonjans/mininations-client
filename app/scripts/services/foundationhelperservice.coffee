@@ -32,47 +32,7 @@ angular.module 'mininationsApp'
       "par revendication"
       "pour être seul"
     ]
-    # @territoryFilters = {
-    #   "désert": [
-    #
-    #   ]
-    #   "glace": [
-    #
-    #   ]
-    #   "isolé": [
-    #
-    #   ]
-    #   "chaud": [
-    #
-    #   ]
-    #   "froid": [
-    #
-    #   ]
-    #   "humide": [
-    #
-    #   ]
-    #   "tropical": [
-    #
-    #   ]
-    #   "abandonné": [
-    #
-    #   ]
-    #   "abandonné": [
-    #
-    #   ]
-    #   "disputé/contesté": [
-    #
-    #   ]
-    #   "peuplé": [
-    #
-    #   ]
-    #   "naturel": [
-    #
-    #   ]
-    #   "construit": [
-    #
-    #   ]
-    # }
+
     @territoryFilters = [
         {
             name: "désert"
@@ -371,41 +331,133 @@ angular.module 'mininationsApp'
 
     # need to take into account the gender, the suffixes, or the
     # different names might be needed / or not.
-    @titles = [
-      "Roi"
-      "President"
-      "Empereur"
-      "Seigneur"
-    ]
+    # @titles = [
+    #   "Roi"
+    #   "President"
+    #   "Empereur"
+    #   "Seigneur"
+    #   "Leader"
+    #   "Général"
+    #   "Maréchal"
+    #   "Amiral"
+    # ]
+
     @politicalSystems = {
-      "République"
-      "Monarchie"
-      "Gouvernement autoritaire"
-      "Gouvernement religieux"
+      "République": {
+        name: "République"
+        types: [
+          "Présidentielle"
+          "Parlementaire"
+          "Parti unique"
+          "Sociocrate"
+        ]
+        gender: "F"
+      }
+      "Monarchie": {
+        name: "Monarchie"
+        types: [
+          "Parlementaire"
+          "Absolue"
+          "Constitutionnelle"
+        ]
+        gender: "F"
+      }
+      "Gouvernement autoritaire": {
+        name: "Gouvernement autoritaire"
+        types: [
+          "Dictatoriale"
+          "Totalitaire"
+          "Éco-anarchique"
+        ]
+        gender: "M"
+      }
+      "Gouvernement religieux": {
+        name: "Gouvernement religieux"
+        types: [
+          "Califat"
+          "Sultanat"
+          "Fanatisme"
+        ]
+        gender: "M"
+      }
     }
-    @politicalSystem = {
-      "République": [
-        "Présidentielle"
-        "Parlementaire"
-        "Parti unique"
-        "Sociocrate"
-      ]
-      "Monarchie": [
-        "Parlementaire"
-        "Absolue"
-        "Constitutionnelle"
-      ]
-      "Gouvernement autoritaire": [
-        "Dictatoriale"
-        "Totalitaire"
-        "Éco-anarchique"
-      ]
-      "Gouvernement religieux": [
-        "Califat"
-        "Sultanat"
-        "Fanatisme"
-      ]
-    }
+
+    @titles = [
+      {
+        name: "Roi"
+        systems: [
+          @politicalSystems["Monarchie"]
+          @politicalSystems["Gouvernement autoritaire"]
+          @politicalSystems["Gouvernement religieux"]
+        ]
+      }
+      {
+        name: "Président"
+        systems: [
+          @politicalSystems["République"]
+          @politicalSystems["Gouvernement autoritaire"]
+        ]
+      }
+      {
+        name: "Empereur"
+        systems: [
+          @politicalSystems["Monarchie"]
+          @politicalSystems["Gouvernement autoritaire"]
+        ]
+      }
+      {
+        name: "Seigneur"
+        systems: [
+          @politicalSystems["République"]
+          @politicalSystems["Monarchie"]
+          @politicalSystems["Gouvernement autoritaire"]
+          @politicalSystems["Gouvernement religieux"]
+        ]
+      }
+      {
+        name: "Leader"
+        systems: [
+          @politicalSystems["République"]
+          @politicalSystems["Monarchie"]
+          @politicalSystems["Gouvernement autoritaire"]
+          @politicalSystems["Gouvernement religieux"]
+        ]
+      }
+      {
+        name: "Général"
+        systems: [
+          @politicalSystems["République"]
+          @politicalSystems["Monarchie"]
+          @politicalSystems["Gouvernement autoritaire"]
+          @politicalSystems["Gouvernement religieux"]
+        ]
+      }
+      {
+        name: "Maréchal"
+        systems: [
+          @politicalSystems["République"]
+          @politicalSystems["Monarchie"]
+          @politicalSystems["Gouvernement autoritaire"]
+          @politicalSystems["Gouvernement religieux"]
+        ]
+      }
+      {
+        name: "Amiral"
+        systems: [
+          @politicalSystems["République"]
+          @politicalSystems["Monarchie"]
+          @politicalSystems["Gouvernement autoritaire"]
+          @politicalSystems["Gouvernement religieux"]
+        ]
+      }
+      {
+        name: "Duc"
+        systems: [
+          @politicalSystems["Monarchie"]
+          @politicalSystems["Gouvernement autoritaire"]
+        ]
+      }
+    ]
 
     @suggestions = {
       "pour gagner des sous": [

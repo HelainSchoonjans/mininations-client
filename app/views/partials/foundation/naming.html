@@ -1,0 +1,12 @@
+<div ng-hide="!foundation.isStep(5)">
+
+  <p>5.trouver un nom</p>
+
+  <form name="foundationNaming" class="css-form">
+
+    plusieurs techniques
+
+    <input type="button" ng-click="foundation.previous()" value="précédent" />
+    <input type="submit" ng-click="foundation.next(selected, foundationNaming.$valid)" value="suivant" />
+  </form>
+</div>

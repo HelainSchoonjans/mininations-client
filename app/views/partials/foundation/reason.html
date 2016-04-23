@@ -1,0 +1,27 @@
+<div ng-hide="!foundation.isStep(2)" id="reason">
+
+  <p>2. pour quelle raison</p>
+
+  <form name="foundationReason" class="css-form">
+
+    <select ng-model="reason" ng-options="reason for reason in economicalReasons" required="">
+        <option value="">-- Économiques --</option>
+    </select>
+
+    <select ng-model="reason" ng-options="reason for reason in politicalReasons" required="">
+        <option value="">-- Politiques --</option>
+    </select>
+
+    <select ng-model="reason" ng-options="reason for reason in culturalReasons" required="">
+        <option value="">-- Culturelles --</option>
+    </select>
+
+    <div ng-show="foundationReason.$submitted">
+      <div ng-show="foundationReason.$valid">Choisis une raison.</div>
+    </div>
+    <p>
+      <input type="button" ng-click="foundation.previous()" value="précédent" />
+      <input type="submit" ng-click="foundation.next(reason, foundationReason.$valid)" value="suivant" />
+    </p>
+  </form>
+</div>

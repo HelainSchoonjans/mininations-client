@@ -8,7 +8,15 @@
  # Controller of the mininationsApp
 ###
 angular.module 'mininationsApp'
-  .controller 'FoundationCtrl', (foundationHelperService) ->
+  .controller 'FoundationCtrl', ($scope, foundationHelperService) ->
+
+    $scope.selected = {}
+    $scope.titles = foundationHelperService.titles
+    $scope.territoryFilters = foundationHelperService.territoryFilters
+    $scope.economicalReasons = foundationHelperService.economicalReasons
+    $scope.politicalReasons = foundationHelperService.politicalReasons
+    $scope.culturalReasons = foundationHelperService.culturalReasons
+    $scope.territories = foundationHelperService.territoriesDetailed
 
     @foundationHelperService = foundationHelperService
 
@@ -31,6 +39,7 @@ angular.module 'mininationsApp'
       if valid && @currentStep < @maximumStep
         @currentNation[@currentStep] = data
         @currentStep = @currentStep + 1
+        $scope.selected = {}
 
     @previous = () ->
       if @currentStep > 0
