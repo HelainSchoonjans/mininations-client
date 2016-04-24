@@ -1,4 +1,11 @@
 <div ng-hide="!foundation.isStep(9)">
-  <p>result</p>
-  <p ng-hide="foundation.isStep(0)"><button type="button" ng-click="foundation.previous()" ng-hide="foundation.currentStep <= 0">précédent</button><button type="button" ng-click="foundation.next()" ng-hide="foundation.currentStep >= 9">suivant</button></p>
+
+  <p>{{user}}</p>
+  <p>{{reason}}</p>
+  <p>{{territory}}</p>
+  <p>{{system}}</p>
+  <p>{{nation}}</p>
+  <p>{{anthem}}</p>
+
+  <input type="button" ng-click="foundation.previous()" value="précédent" />
 </div>

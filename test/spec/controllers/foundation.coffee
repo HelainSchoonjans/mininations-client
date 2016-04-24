@@ -29,12 +29,12 @@ describe 'Controller: FoundationCtrl', ->
     FoundationCtrl.next()
     expect(FoundationCtrl.currentStep).toBe(1)
 
-  it 'should be able to make a transition, saving information', ->
-    payload = {"this is": "sparta"}
-    FoundationCtrl.next(payload)
-    expect(FoundationCtrl.currentStep).toBe(1)
-    expect(FoundationCtrl.currentNation[0]).toBe(payload)
-    expect(FoundationCtrl.currentNation[1]).toBe(undefined)
+  # it 'should be able to make a transition, saving information', ->
+  #   payload = {"this is": "sparta"}
+  #   FoundationCtrl.next(payload)
+  #   expect(FoundationCtrl.currentStep).toBe(1)
+  #   expect(FoundationCtrl.currentNation[0]).toBe(payload)
+  #   expect(FoundationCtrl.currentNation[1]).toBe(undefined)
 
   it "shouldn't be able to increase the step beyond the maximum number of steps", ->
     FoundationCtrl.maximumStep = 1
@@ -48,12 +48,12 @@ describe 'Controller: FoundationCtrl', ->
     FoundationCtrl.previous()
     expect(FoundationCtrl.currentStep).toBe(0)
 
-  it 'should be able to make a transition, erasing the information of the step', ->
-    FoundationCtrl.currentNation[1] = {"this is": "sparta"}
-    FoundationCtrl.currentStep = 1
-    expect(FoundationCtrl.currentNation[1]).not.toBe(null)
-    FoundationCtrl.previous()
-    expect(FoundationCtrl.currentNation[1]).toBe(null)
+  # it 'should be able to make a transition, erasing the information of the step', ->
+  #   FoundationCtrl.currentNation[1] = {"this is": "sparta"}
+  #   FoundationCtrl.currentStep = 1
+  #   expect(FoundationCtrl.currentNation[1]).not.toBe(null)
+  #   FoundationCtrl.previous()
+  #   expect(FoundationCtrl.currentNation[1]).toBe(null)
 
   it "shouldn't be able to decrease the step under 0", ->
     FoundationCtrl.previous()

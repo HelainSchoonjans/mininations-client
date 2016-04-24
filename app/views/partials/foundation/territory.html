@@ -9,7 +9,7 @@
     </select>
 
     <!-- TODO improve by making possible the use of multiple filters at the same time. -->
-    <select ng-model="selected.territory" ng-options="territory.name for territory in territories | filter:{filters: selected.filter.id}" required="">
+    <select ng-model="territory" ng-options="territory.name for territory in territories | filter:{filters: selected.filter.id, reasons: reason.id}" required="">
         <option value="">-- Territoires existants --</option>
     </select>
 
@@ -20,6 +20,6 @@
     </div>
 
     <input type="button" ng-click="foundation.previous()" value="précédent" />
-    <input type="submit" ng-click="foundation.next(selected, foundationTerritory.$valid)" value="suivant" />
+    <input type="submit" ng-click="foundation.next(territory, foundationTerritory.$valid)" value="suivant" />
   </form>
 </div>

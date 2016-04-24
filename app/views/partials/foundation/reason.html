@@ -4,24 +4,27 @@
 
   <form name="foundationReason" class="css-form">
 
-    <select ng-model="reason" ng-options="reason for reason in economicalReasons" required="">
+    <select ng-model="reason" ng-options="reason.name for reason in reasons.economical" required="">
         <option value="">-- Économiques --</option>
     </select>
 
-    <select ng-model="reason" ng-options="reason for reason in politicalReasons" required="">
+    <select ng-model="reason" ng-options="reason.name for reason in reasons.political" required="">
         <option value="">-- Politiques --</option>
     </select>
 
-    <select ng-model="reason" ng-options="reason for reason in culturalReasons" required="">
+    <select ng-model="reason" ng-options="reason.name for reason in reasons.cultural" required="">
         <option value="">-- Culturelles --</option>
     </select>
 
     <div ng-show="foundationReason.$submitted">
       <div ng-show="foundationReason.$valid">Choisis une raison.</div>
     </div>
+
     <p>
       <input type="button" ng-click="foundation.previous()" value="précédent" />
       <input type="submit" ng-click="foundation.next(reason, foundationReason.$valid)" value="suivant" />
     </p>
+
   </form>
+
 </div>

@@ -4,27 +4,28 @@
 
   <form name="titleAndSystem" class="css-form">
 
+    <!-- TODO add "une" or "un" depending on the sex of the title -> some are unisex. -->
     je veux être
 
-    <select name="title" ng-model="selected.title" ng-options="title.name for title in titles" required="">
+    <select name="title" ng-model="title" ng-options="title.name[user.gender] for title in titles" required="">
         <option value="">-- Title --</option>
     </select>
 
-    <div ng-show="selected.title">
+    <div ng-show="title">
 
-      dans {{ selected.system ? (selected.system.gender=="M" ? "un" : "une") : "" }}
+      dans {{ system ? (system.gender=="M" ? "un" : "une") : "" }}
 
-      <select ng-model="selected.system" ng-options="system.name for system in selected.title.systems" required="">
+      <select ng-model="system" ng-options="system.name for system in title.systems" required="">
           <option value="">-- System --</option>
       </select>
 
-      <select ng-show="selected.system" ng-model="selected.type" ng-options="qualifier for qualifier in selected.system.types" required="">
+      <select ng-show="system" ng-model="system.type" ng-options="qualifier for qualifier in system.types" required="">
           <option value="">-- Qualifier --</option>
       </select>
 
     </div>
 
     <input type="button" ng-click="foundation.previous()" value="précédent" />
-    <input type="submit" ng-click="foundation.next(selected, titleAndSystem.$valid)" value="suivant" />
+    <input type="submit" ng-click="foundation.next(system, titleAndSystem.$valid)" value="suivant" />
   </form>
 </div>
