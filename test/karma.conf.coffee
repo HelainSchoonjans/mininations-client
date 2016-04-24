@@ -41,7 +41,7 @@ module.exports = (config) ->
     # possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
     # logLevel: config.LOG_DEBUG
 
-    captureTimeout: 10000
+    captureTimeout: 60000
 
     colors: true
 
