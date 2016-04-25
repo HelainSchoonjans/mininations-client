@@ -1,8 +1,10 @@
 module.exports = (config) ->
+
   config.set
-    # base path, that will be used to resolve files and exclude
+
     singleRun: false
     autoWatch: true
+
     basePath: '../'
 
     # testing framework to use (jasmine/mocha/qunit/...)
@@ -28,7 +30,7 @@ module.exports = (config) ->
       # bower:coffee
       # endbower
       "app/scripts/**/*.coffee"
-      "test/mock/**/*.coffee"
+#      "test/mock/**/*.coffee"
       "test/spec/**/*.coffee"
     ],
 
@@ -37,29 +39,23 @@ module.exports = (config) ->
 
     # level of logging
     # possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-    logLevel: config.LOG_DEBUG
+    # logLevel: config.LOG_DEBUG
+
+    captureTimeout: 60000
+
+    colors: true
 
     browsers: [
-      "PhantomJS"
-	    #"Chrome"
+     "PhantomJS"
     ]
 
-    # Which plugins to enable
     plugins: [
       'karma-phantomjs-launcher',
-      #'karma-chrome-launcher',
       'karma-jasmine',
       'karma-junit-reporter',
-      #'karma-ng-html2js-preprocessor',
-      #'karma-browserify',
-      #'karma-requirejs',
       "karma-coffee-preprocessor",
       'karma-coverage'
     ]
-
-    captureTimeout: 10000
-
-    colors: true
 
     preprocessors: '**/*.coffee': ['coffee']
 
@@ -71,13 +67,24 @@ module.exports = (config) ->
 
     preprocessors:
       '**/*.coffee': ['coffee']
-      #'app/lib/**/*.js': 'coverage'
       'app/scripts/**/*.coffee': 'coverage'
 
     coverageReporter:
       type : 'cobertura'
       dir : 'reports/codecoverage/'
       file: 'cobertura-coverage.xml'
+
+    # browsers: [
+	  #   "Chrome"
+    # ]
+    #
+    # plugins: [
+    #   'karma-chrome-launcher',
+    #   'karma-jasmine',
+    #   'karma-junit-reporter',
+    #   "karma-coffee-preprocessor",
+    #   'karma-coverage'
+    # ]
 
 
     # Uncomment the following lines if you are using grunt's server to run the tests

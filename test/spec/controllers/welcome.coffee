@@ -2,7 +2,6 @@
 
 describe 'Controller: WelcomeCtrl', ->
 
-  # load the controller's module
   beforeEach module 'mininationsApp'
 
   WelcomeCtrl = {}

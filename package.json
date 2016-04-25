@@ -51,6 +51,7 @@
     "ms": "^0.7.1",
     "on-finished": "^2.3.0",
     "phantomjs-prebuilt": "^2.1.6",
+    "protractor": "^3.2.2",
     "range-parser": "^1.0.3",
     "raw-body": "^2.1.6",
     "serve-index": "^1.7.3",
@@ -63,16 +64,16 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "preinstall": "bower install --config.interactive=false --allow-root",
-    "prestart": "npm install",
+    "preinstall": "echo 'not bower install --config.interactive=false --allow-root'",
+    "prestart": "echo 'not npm install'",
     "start": "grunt serve",
-    "pretest": "npm install",
+    "pretest": "echo 'not npm install'",
     "test": "grunt test",
     "test-single-run": "grunt test --single-run",
-    "preupdate-webdriver": "npm install",
+    "preupdate-webdriver": "echo 'not npm install'",
     "update-webdriver": "webdriver-manager update",
     "preprotractor": "npm run update-webdriver",
-    "protractor": "protractor e2e-tests/protractor.conf.js",
+    "protractor": "protractor e2e/conf.coffee",
     "coffee-compile": "coffee --output app/lib --compile app/scripts"
   }
 }

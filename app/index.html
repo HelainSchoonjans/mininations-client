@@ -23,37 +23,43 @@
     <div class="header">
       <!--<div class="navbar navbar-default" role="navigation">-->
         <div class="container">
-          <div class="navbar-header">
+          <!--<div class="navbar-header">
 
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <!--<span class="sr-only">Toggle navigation</span>-->
+              <!-<span class="sr-only">Toggle navigation</span>->
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-
-            <!--
-            Commented the title of the page...
-            <a class="navbar-brand" href="#/">Micronations</a>
-
-            -->
-          </div>
-
+          </div>-->
+          <!--<div class="Bloc-de-texte-standard">
+          	<p class="Paragraphe-standard para-style-override-2">infos</p>
+      		</div>-->
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#/explain">EXPLIQUER</a></li>
-              <li><a ng-href="#/found">CREER</a></li>
-              <li><a ng-href="#/explore">EXPLORER</a></li>
-              <li><a ng-href="#/contact">CONTACT</a></li>
+              <li><a href="#/explain">expliquer</a></li><!-- class= "Paragraphe-standard para-style-override-7"-->
+              <li><a ng-href="#/found">créer</a></li><!--  class= "Paragraphe-standard para-style-override-3"-->
+              <li><a ng-href="#/explore">explorer</a></li><!--  class= "Paragraphe-standard para-style-override-3"-->
+              <li><a ng-href="#/contact">contact</a></li><!--  class= "Paragraphe-standard para-style-override-6"-->
             </ul>
           </div>
         </div>
-      <!--</div>-->
+        <!--<div class="Bloc-de-texte-standard">
+    			<p class="Paragraphe-standard para-style-override-7"><a href="#/explain">expliquer</a></p>
+    		</div>
+        <div>
+    			<p class="Paragraphe-standard para-style-override-3"><a ng-href="#/found">créer</a></p>
+    		</div>
+        <div class="Bloc-de-texte-standard">
+    			<p class="Paragraphe-standard para-style-override-3"><a ng-href="#/explore">explorer</a></p>
+    		</div>
+        <div class="Bloc-de-texte-standard">
+    			<p class="Paragraphe-standard para-style-override-6"><a ng-href="#/contact">contact</a></p>
+    		</div>-->
     </div>
 
     <div class="container">
-    <div ng-view=""></div>
+      <div ng-view=""></div>
     </div>
 
     <div class="footer">
@@ -94,6 +100,20 @@
     <script src="scripts/controllers/about.js"></script>
     <script src="scripts/controllers/explore.js"></script>
     <script src="scripts/controllers/foundation.js"></script>
+    <script src="scripts/controllers/contact.js"></script>
+    <script src="scripts/controllers/welcome.js"></script>
+    <script src="scripts/services/foundationhelperservice.js"></script>
+    <script src="scripts/directives/foundation-introduction.js"></script>
+    <script src="scripts/directives/foundation-presentation.js"></script>
+    <script src="scripts/directives/foundation-reason.js"></script>
+    <script src="scripts/directives/foundation-territory.js"></script>
+    <script src="scripts/directives/titleandsystem.js"></script>
+    <script src="scripts/directives/foundationnaming.js"></script>
+    <script src="scripts/directives/foundationanthem.js"></script>
+    <script src="scripts/directives/foundationflag.js"></script>
+    <script src="scripts/directives/foundationheraldry.js"></script>
+    <script src="scripts/directives/foundationpresentation.js"></script>
+    <script src="scripts/directives/foundationrender.js"></script>
     <!-- endbuild -->
 </body>
 </html>

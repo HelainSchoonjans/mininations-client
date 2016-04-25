@@ -1,0 +1,35 @@
+<div ng-hide="!foundation.isStep(1)" id="presentation">
+
+  <p>1. se présenter</p>
+
+  <form name="userPresentation" class="css-form">
+
+    Prénom:
+    <input type="text" ng-model="user.firstName" name="firstName" required="" /><br />
+    <div ng-show="userPresentation.$submitted || userPresentation.firstName.$touched">
+      <div ng-show="userPresentation.firstName.$error.required">Entre ton prénom.</div>
+    </div>
+
+    Nom:
+    <input type="text" ng-model="user.lastName" name="lastName" required="" /><br />
+    <div ng-show="userPresentation.$submitted || userPresentation.lastName.$touched">
+      <div ng-show="userPresentation.lastName.$error.required">Entre ton nom.</div>
+    </div>
+
+    Surnom:
+    <input type="text" ng-model="user.nickname" name="nickname" required="" /><br />
+    <div ng-show="userPresentation.$submitted || userPresentation.nickname.$touched">
+      <div ng-show="userPresentation.nickname.$error.required">Entre ton surnom.</div>
+    </div>
+
+    Genre:
+    <input type="radio" ng-model="user.gender" value="male" checked="checked" required="" />Homme
+    <input type="radio" ng-model="user.gender" value="female"  required="" />Femme
+    <br />
+
+    <input type="button" ng-click="foundation.previous()" value="précédent" />
+    <input type="submit" ng-click="foundation.next(user, userPresentation.$valid)" value="suivant" />
+
+  </form>
+
+</div>

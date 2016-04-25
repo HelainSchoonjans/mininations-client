@@ -1,0 +1,55 @@
+<div ng-hide="!foundation.isStep(6)">
+
+  <p>6.composer sa devise</p>
+
+  <form name="foundationAnthem" class="css-form">
+
+    <!-- <p>Choix 1. laisser faire le hazard</p>
+
+    <p>Au hazard
+    <p>Sélectionner -->
+
+
+    <p>Choix 2. composer sa devise</p>
+
+    <p>1. {{anthem.first? anthem.first.latin : "(NOMS)"}} et {{anthem.second? anthem.second.latin : "(NOMS)"}}</p>
+
+    <select ng-model="anthem.first" ng-options="noun.french for noun in words.nouns" required="">
+        <option value="">-- Noms --</option>
+    </select>
+
+    et
+
+    <select ng-model="anthem.second" ng-options="noun.french for noun in words.nouns" required="">
+        <option value="">-- Noms --</option>
+    </select>
+
+    <p>Exemple:</p>
+    <p>deus et patria</p>
+    <p>dieu and pays</p>
+
+
+    <!-- <p>2. (NOm), (NOm) and (NOm)</p>
+    <p>Exemple:
+    Tellus, ventus et ignis
+    la terre, le vent et le feu</p>
+
+    <p>3. de (NOm), (NOm)</p>
+    <p>Exemple:</p>
+    Ex luna sapientia
+    de la lune, la connaissance
+
+    <p>4. (NOm) (verbe) (objet)</p>
+    <p>Exemple:
+    dieu appel les sages
+    Deus sapientes vocat</p>
+
+    <p>5. dans (NOm) (NOm)</p>
+    <p>Exemple:
+    in gloria pax
+    dans la gloir la paix</p> -->
+
+    <input type="button" ng-click="foundation.previous()" value="précédent" />
+    <input type="submit" ng-click="foundation.next({anthem: anthem.first + ' and ' + anthem.second}, foundationAnthem.$valid)" value="suivant" />
+  </form>
+</div>

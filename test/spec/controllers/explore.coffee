@@ -2,7 +2,6 @@
 
 describe 'Controller: ExploreCtrl', ->
 
-  # load the controller's module
   beforeEach module 'mininationsApp'
 
   ExploreCtrl = {}
