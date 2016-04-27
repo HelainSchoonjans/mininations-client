@@ -237,7 +237,7 @@ angular.module 'mininationsApp'
           superficie: "<500 km^2"
           population: "0"
           filters: [
-            1, 2, 3, 11
+            1, 2, 3, 5, 11
           ]
           coordinates: ""
           influence:
@@ -254,7 +254,7 @@ angular.module 'mininationsApp'
           superficie: "<1500 km^2"
           population: "0"
           filters: [
-            1, 2, 3, 11
+            1, 2, 3, 5, 11
           ]
           coordinates: ""
           influence:
@@ -271,7 +271,7 @@ angular.module 'mininationsApp'
           superficie: "<100 km^2"
           population: "0"
           filters: [
-            1, 2, 3, 11
+            1, 2, 3, 5, 11
           ]
           coordinates: ""
           influence:
@@ -447,21 +447,382 @@ angular.module 'mininationsApp'
             socioculturel: [ 1, 2, 4, 5, 6, 7, 8 ]
           reasons: [ 1, 2, 3, 5, 7, 8, 9, 10, 12, 13, 14, 15, 16 ]
         }
-        # TODO add more territories
+        {
+          id: 14
+          name: "Fort sunk head"
+          continent: "n/a"
+          ocean: "Atlantique"
+          superficie: "200 m^2"
+          population: "0"
+          filters: [
+            3, 5, 6, 8, 12
+          ]
+          coordinates: ""
+          influence:
+            economical: [ 1, 2, 3 ]
+            political: [ 1, 3, 4 ]
+            socioculturel: [ 1, 2, 4, 5, 6, 7, 8 ]
+          reasons: [ 1, 2, 3, 5, 7, 8, 9, 10, 12, 13, 14, 15, 16 ]
+        }
+        {
+          id: 15
+          name: "Fort red sands"
+          continent: "n/a"
+          ocean: "Atlantique"
+          superficie: "100 km^2"
+          population: "0"
+          filters: [
+            3, 5, 6, 8, 12
+          ]
+          coordinates: "51° 28′ 06′′ N 0° 59′ 06′′ E"
+          influence:
+            economical: [ 1, 2, 3 ]
+            political: [ 1, 3, 4 ]
+            socioculturel: [ 1, 2, 4, 5, 6, 7, 8 ]
+          reasons: [ 1, 2, 3, 5, 7, 8, 9, 10, 12, 13, 14, 15, 16 ]
+        }
+        {
+          id: 16
+          name: "Fort bull sand"
+          continent: "n/a"
+          ocean: "Atlantique"
+          superficie: "200 m^2"
+          population: "0"
+          filters: [
+            3, 5, 6, 8, 12
+          ]
+          coordinates: "51° 28′ 06′′ N 0° 59′ 06′′ E"
+          influence:
+            economical: [ 1, 2, 3 ]
+            political: [ 1, 3, 4 ]
+            socioculturel: [ 1, 2, 4, 5, 6, 7, 8 ]
+          reasons: [ 1, 2, 3, 5, 7, 8, 9, 10, 12, 13, 14, 15, 16 ]
+        }
+        {
+          id: 17
+          name: "Texas Tower"
+          continent: "n/a"
+          ocean: "Atlantique"
+          superficie: "300 m^2"
+          population: "0"
+          filters: [
+            3, 5, 6, 8, 12
+          ]
+          coordinates: "51° 28′ 06′′ N 0° 59′ 06′′ E"
+          influence:
+            economical: [ 1, 2, 3 ]
+            political: [ 1, 3, 4 ]
+            socioculturel: [ 1, 2, 4, 5, 6, 7, 8 ]
+          reasons: [ 1, 2, 3, 5, 7, 8, 9, 10, 12, 13, 14, 15, 16 ]
+        }
+        {
+          id: 18
+          name: "plateforme pétrolière Huldra"
+          continent: "n/a"
+          ocean: "Atlantique"
+          superficie: "300 m^2"
+          population: "0"
+          filters: [
+            3, 5, 6, 8, 12
+          ]
+          coordinates: ""
+          influence:
+            economical: [ 1, 2, 3 ]
+            political: [ 1, 3, 4 ]
+            socioculturel: [ 1, 2, 4, 5, 6, 7, 8 ]
+          reasons: [ 1, 2, 3, 5, 7, 8, 9, 10, 12, 13, 14, 15, 16 ]
+        }
+        {
+          id: 19
+          name: "Fort Rough sands"
+          continent: "n/a"
+          ocean: "Atlantique"
+          superficie: "200 m^2"
+          population: "0"
+          filters: [
+            3, 5, 6, 8, 12
+          ]
+          coordinates: ""
+          influence:
+            economical: [ 1, 2, 3 ]
+            political: [ 1, 3, 4 ]
+            socioculturel: [ 1, 2, 4, 5, 6, 7, 8 ]
+          reasons: [ 1, 2, 3, 5, 7, 8, 9, 10, 12, 13, 14, 15, 16 ]
+        }
+        {
+          id: 20
+          name: "Îles Spartleys 1"
+          continent: "n/a"
+          ocean: "Pacifique"
+          superficie: "500 m^2"
+          population: "0"
+          filters: [
+            3, 4, 6, 7, 9, 11
+          ]
+          coordinates: "8° 38 ′ 00 ′′ N111° 55 ′ 00 ′′ E"
+          influence:
+            economical: [ 1, 2, 3 ]
+            political: [ 1 ]
+            socioculturel: [ 4, 6 ]
+          reasons: [ 1, 2, 3, 5, 12, 14 ]
+        }
+        {
+          id: 21
+          name: "Îles Spartleys 2"
+          continent: "n/a"
+          ocean: "Pacifique"
+          superficie: "<10 km^2"
+          population: "0"
+          filters: [
+            3, 4, 6, 7, 9, 11
+          ]
+          coordinates: "8° 38 ′ 00 ′′ N111° 55 ′ 00 ′′ E"
+          influence:
+            economical: [ 1, 2, 3 ]
+            political: [ 1 ]
+            socioculturel: [ 4, 6 ]
+          reasons: [ 1, 2, 3, 5, 12, 14 ]
+        }
+        {
+          id: 22
+          name: "Îles Spartleys 3"
+          continent: "n/a"
+          ocean: "Pacifique"
+          superficie: "<10 km^2"
+          population: "0"
+          filters: [
+            3, 4, 6, 7, 9, 11
+          ]
+          coordinates: "8° 38 ′ 00 ′′ N111° 55 ′ 00 ′′ E"
+          influence:
+            economical: [ 1, 2, 3 ]
+            political: [ 1 ]
+            socioculturel: [ 4, 6 ]
+          reasons: [ 1, 2, 3, 5, 12, 14 ]
+        }
+        {
+          id: 23
+          name: "Îles Paraceles Rocky Island"
+          continent: "n/a"
+          ocean: "Pacifique"
+          superficie: "<10 km^2"
+          population: "0"
+          filters: [
+            3, 4, 6, 7, 9, 11
+          ]
+          coordinates: "16° 30 ′ N112° 00 ′ E"
+          influence:
+            economical: [ 1, 2, 3 ]
+            political: [ 1 ]
+            socioculturel: [ 4, 6 ]
+          reasons: [ 1, 2, 3, 5, 12, 14 ]
+        }
+        {
+          id: 24
+          name: "Îles Spartleys 5"
+          continent: "n/a"
+          ocean: "Pacifique"
+          superficie: "25 km^2"
+          population: "0"
+          filters: [
+            3, 4, 6, 7, 9, 11
+          ]
+          coordinates: "8° 38 ′ 00 ′′ N111° 55 ′ 00 ′′ E"
+          influence:
+            economical: [ 1, 2, 3 ]
+            political: [ 1 ]
+            socioculturel: [ 4, 6 ]
+          reasons: [ 1, 2, 3, 5, 12, 14 ]
+        }
+        {
+          id: 25
+          name: "Îles Spartleys 6"
+          continent: "n/a"
+          ocean: "Pacifique"
+          superficie: "<10 km^2"
+          population: "0"
+          filters: [
+            3, 4, 6, 7, 9, 11
+          ]
+          coordinates: "8° 38 ′ 00 ′′ N111° 55 ′ 00 ′′ E"
+          influence:
+            economical: [ 1, 2, 3 ]
+            political: [ 1 ]
+            socioculturel: [ 4, 6 ]
+          reasons: [ 1, 2, 3, 5, 12, 14 ]
+        }
+        {
+          id: 26
+          name: "Îles Spartleys 7"
+          continent: "n/a"
+          ocean: "Pacifique"
+          superficie: "<10 km^2"
+          population: "0"
+          filters: [
+            3, 4, 6, 7, 9, 11
+          ]
+          coordinates: "8° 38 ′ 00 ′′ N111° 55 ′ 00 ′′ E"
+          influence:
+            economical: [ 1, 2, 3 ]
+            political: [ 1 ]
+            socioculturel: [ 4, 6 ]
+          reasons: [ 1, 2, 3, 5, 12, 14 ]
+        }
+        {
+          id: 28
+          name: "Îles Spartleys 8"
+          continent: "n/a"
+          ocean: "Pacifique"
+          superficie: "<10 km^2"
+          population: "0"
+          filters: [
+            3, 4, 6, 7, 9, 11
+          ]
+          coordinates: "8° 38 ′ 00 ′′ N111° 55 ′ 00 ′′ E"
+          influence:
+            economical: [ 1, 2, 3 ]
+            political: [ 1 ]
+            socioculturel: [ 4, 6 ]
+          reasons: [ 1, 2, 3, 5, 12, 14 ]
+        }
+        {
+          id: 29
+          name: "Îles Spartleys 9"
+          continent: "n/a"
+          ocean: "Pacifique"
+          superficie: "<10 km^2"
+          population: "0"
+          filters: [
+            3, 4, 6, 7, 9, 11
+          ]
+          coordinates: "8° 38 ′ 00 ′′ N111° 55 ′ 00 ′′ E"
+          influence:
+            economical: [ 1, 2, 3 ]
+            political: [ 1 ]
+            socioculturel: [ 4, 6 ]
+          reasons: [ 1, 2, 3, 5, 12, 14 ]
+        }
+        {
+          id: 30
+          name: "Îles Paraceles Lincoln Island"
+          continent: "n/a"
+          ocean: "Pacifique"
+          superficie: "<10 km^2"
+          population: "0"
+          filters: [
+            3, 4, 6, 7, 9, 11
+          ]
+          coordinates: "16° 30 ′ N112° 00 ′ E"
+          influence:
+            economical: [ 1, 2, 3 ]
+            political: [ 1 ]
+            socioculturel: [ 4, 6 ]
+          reasons: [ 1, 2, 3, 5, 12, 14 ]
+        }
+        {
+          id: 31
+          name: "Îles Paraceles North Reef"
+          continent: "n/a"
+          ocean: "Pacifique"
+          superficie: "40 km^2"
+          population: "0"
+          filters: [
+            3, 4, 6, 7, 9, 11
+          ]
+          coordinates: "16° 30 ′ N112° 00 ′ E"
+          influence:
+            economical: [ 1, 2, 3 ]
+            political: [ 1 ]
+            socioculturel: [ 4, 6 ]
+          reasons: [ 1, 2, 3, 5, 12, 14 ]
+        }
+        {
+          id: 32
+          name: "Récif de Scarborough"
+          continent: "n/a"
+          ocean: "Pacifique"
+          superficie: "20 km^2"
+          population: "0"
+          filters: [
+            3, 4, 6, 7, 9, 11
+          ]
+          coordinates: "15° 11 ′ 00 ′′ N117° 46 ′ 00 ′′ E"
+          influence:
+            economical: [ 1, 2, 3 ]
+            political: [ 1 ]
+            socioculturel: [ 4, 6 ]
+          reasons: [ 1, 2, 3, 5, 12, 14 ]
+        }
+        {
+          id: 33
+          name: "Île de Clipperton"
+          continent: "n/a"
+          ocean: "Pacifique"
+          superficie: "1.7 km^2"
+          population: "0"
+          filters: [
+            3, 4,  7, 8, 11
+          ]
+          coordinates: "10° 18 ′ 00 ′′ N109° 13 ′ 01 ′′ O"
+          influence:
+            economical: [ 1, 2, 3 ]
+            political: [ 1 ]
+            socioculturel: [ 4, 6 ]
+          reasons: [ 1, 2, 3, 5, 12, 14 ]
+        }
+        {
+          id: 34
+          name: "Svalbard 1"
+          continent: "n/a"
+          ocean: "Arctique"
+          superficie: "? km^2"
+          population: "?"
+          filters: [
+            1, 2, 5, 8, 11
+          ]
+          coordinates: "78° N16° E"
+          influence:
+            economical: [ 2 ]
+            political: [ 4 ]
+            socioculturel: [ 1, 5, 6, 8 ]
+          reasons: [ 2, 8, 9, 13, 14, 16 ]
+        }
+        {
+          id: 35
+          name: "Svalbard 2"
+          continent: "n/a"
+          ocean: "Arctique"
+          superficie: "? km^2"
+          population: "?"
+          filters: [
+            1, 2, 5, 8, 11
+          ]
+          coordinates: "78° N16° E"
+          influence:
+            economical: [ 2 ]
+            political: [ 4 ]
+            socioculturel: [ 1, 5, 6, 8 ]
+          reasons: [ 2, 8, 9, 13, 14, 16 ]
+        }
+        {
+          id: 36
+          name: "Svalbard 3"
+          continent: "n/a"
+          ocean: "Arctique"
+          superficie: "? km^2"
+          population: "0"
+          filters: [
+            1, 2, 5, 8, 11
+          ]
+          coordinates: "78° N16° E"
+          influence:
+            economical: [ 2 ]
+            political: [ 4 ]
+            socioculturel: [ 1, 5, 6, 8 ]
+          reasons: [ 2, 8, 9, 13, 14, 16 ]
+        }
     ]
-    # @territories = [
-    #   "Antartique 1"
-    #   "Antartique 2"
-    #   "Antartique 3"
-    #   "Moresnet neutre"
-    #   "Erik the red's land"
-    #   "Saudi Iraki"
-    #   "Saudi Kuwaiti"
-    #   "Somaliland neutre"
-    #   "Bir Tawil"
-    #   "Zone coréenne démilitarisée"
-    #   "Neutral strip of Louisiana"
-    #   "Oklahoma Panhandle"
+
     #   "Fort Tongue sands"
     #   "Fort sunk head"
     #   "Fort red sands"

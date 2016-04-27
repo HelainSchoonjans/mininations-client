@@ -8,8 +8,7 @@
         <option value="">-- Filtres --</option>
     </select>
 
-    <!-- TODO improve by making possible the use of multiple filters at the same time. -->
-    <select ng-model="territory" ng-options="territory.name for territory in territories | filter:{filters: selected.filter.id, reasons: reason.id}" required="">
+    <select ng-model="territory" ng-options="territory.name for territory in territories | filter:{filters: selected.filter.id, reasons: reason.id} : true | orderBy: 'name'" required="">
         <option value="">-- Territoires existants --</option>
     </select>
 
