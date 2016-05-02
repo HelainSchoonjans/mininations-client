@@ -1,6 +1,6 @@
 'use strict'
 
-###*
+###
  # @ngdoc overview
  # @name mininationsApp
  # @description
@@ -10,11 +10,11 @@
 ###
 angular
   .module('mininationsApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
+    'ngAnimate'
+    'ngCookies'
+    'ngResource'
+    'ngRoute'
+    'ngSanitize'
     'ngTouch'
   ])
   .config ($routeProvider) ->
