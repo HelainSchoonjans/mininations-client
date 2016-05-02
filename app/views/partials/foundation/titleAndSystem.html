@@ -1,10 +1,9 @@
-<div ng-hide="!foundation.isStep(4)">
+<div ng-hide="!foundation.isStep(4)" class="ng-hide">
 
   <p>4.titre et régime politique</p>
 
   <form name="titleAndSystem" class="css-form">
 
-    <!-- TODO add "une" or "un" depending on the sex of the title -> some are unisex. -->
     je veux être
 
     <select name="title" ng-model="title" ng-options="title.name[user.gender] for title in titles" required="">
@@ -14,7 +13,6 @@
     <div ng-show="title">
 
       dans {{ system ? (system.gender=="M" ? "un" : "une") : "" }}
-
       <select ng-model="system" ng-options="system.name for system in title.systems" required="">
           <option value="">-- System --</option>
       </select>
