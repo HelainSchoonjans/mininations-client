@@ -1,35 +1,70 @@
-<div ng-hide="!foundation.isStep(1)" id="presentation" class="ng-hide">
+<div  ng-hide="!foundation.isStep(1)" id="presentation" class="ng-hide">
 
-  <p>1. se présenter</p>
+  <hr/>
+  <h2 class="text-uppercase text-center">1. Se présenter</h2>
+  <hr/>
 
-  <form name="userPresentation" class="css-form">
+  <div class = "row">
 
-    Prénom:
-    <input type="text" ng-model="user.firstName" name="firstName" required="" /><br />
-    <div ng-show="userPresentation.$submitted || userPresentation.firstName.$touched">
-      <div ng-show="userPresentation.firstName.$error.required">Entre ton prénom.</div>
+    <div class="col-md-4">
+      <p>
+        Il vous faut remplir ce formulaire de départ avant de passer à la suite.
+      </p>
     </div>
 
-    Nom:
-    <input type="text" ng-model="user.lastName" name="lastName" required="" /><br />
-    <div ng-show="userPresentation.$submitted || userPresentation.lastName.$touched">
-      <div ng-show="userPresentation.lastName.$error.required">Entre ton nom.</div>
+    <div class="col-md-12">
+
+      <form name="userPresentation" class="css-form form-horizontal">
+
+        <div class="form-group">
+          <label for="inputFirstName" class="col-sm-2 control-label">Prénom</label>
+          <div class="col-sm-10">
+            <input type="text" ng-model="user.firstName" name="firstName" class="form-control" required  id="inputFirstName" placeholder="Prénom"/><br />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputLastName" class="col-sm-2 control-label">Nom</label>
+          <div class="col-sm-10">
+            <input type="text" ng-model="user.lastName" name="lastName" class="form-control" required="" id="inputLastName" placeholder="Nom"/><br />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputNickname" class="col-sm-2 control-label">Surnom</label>
+          <div class="col-sm-10">
+            <input type="text" ng-model="user.nickname" name="nickname" class="form-control" required="" id="inputNickname" placeholder="Surnom" /><br />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputGender" class="col-sm-2 control-label">Genre</label>
+          <div class="col-sm-10">
+            <select ng-model="user.gender" ng-options="gender.value for gender in genders" class="form-control text-center" required="">
+              <option value=""> Genre </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="col-md-offset-2 col-md-10 col-xs-12">
+
+              <span class="input-group-btn">
+                <button type="button" ng-click="foundation.previous()" class="form-control btn btn-default">Précédent</button>
+              </span>
+
+              <span class="input-group-btn">
+                <button type="submit" ng-click="foundation.next(user, userPresentation.$valid)" class="form-control btn btn-default">Suivant</button>
+              </span>
+
+            </div>
+          </div>
+        </div>
+
+      </form>
+
     </div>
-
-    Surnom:
-    <input type="text" ng-model="user.nickname" name="nickname" required="" /><br />
-    <div ng-show="userPresentation.$submitted || userPresentation.nickname.$touched">
-      <div ng-show="userPresentation.nickname.$error.required">Entre ton surnom.</div>
-    </div>
-
-    Genre:
-    <input type="radio" ng-model="user.gender" value="male" checked="checked" required="" />Homme
-    <input type="radio" ng-model="user.gender" value="female"  required="" />Femme
-    <br />
-
-    <input type="button" ng-click="foundation.previous()" value="précédent" />
-    <input type="submit" ng-click="foundation.next(user, userPresentation.$valid)" value="suivant" />
-
-  </form>
-
+    <!-- <div class="col-md-2"></div> -->
+  </div>
 </div>

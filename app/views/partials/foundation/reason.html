@@ -1,30 +1,63 @@
-<div ng-hide="!foundation.isStep(2)" id="reason" class="ng-hide">
+<div  ng-hide="!foundation.isStep(2)" id="reason" class="row ng-hide">
 
-  <p>2. pour quelle raison</p>
+  <hr/>
+  <h2 class="text-uppercase text-center">2. Avoir une raison</h2>
+  <hr/>
 
-  <form name="foundationReason" class="css-form">
 
-    <select ng-model="reason" ng-options="reason.name for reason in reasons.economical" required="">
-        <option value="">-- Économiques --</option>
-    </select>
-
-    <select ng-model="reason" ng-options="reason.name for reason in reasons.political" required="">
-        <option value="">-- Politiques --</option>
-    </select>
-
-    <select ng-model="reason" ng-options="reason.name for reason in reasons.cultural" required="">
-        <option value="">-- Culturelles --</option>
-    </select>
-
-    <div ng-show="foundationReason.$submitted">
-      <div ng-show="foundationReason.$valid">Choisis une raison.</div>
-    </div>
-
+  <div class="col-md-4">
     <p>
-      <input type="button" ng-click="foundation.previous()" value="précédent" />
-      <input type="submit" ng-click="foundation.next(reason, foundationReason.$valid)" value="suivant" />
-    </p>
+      Parmi ces propositions, choisissez la raison qui vous a poussé à créer votre micronation.
+      Une seule réponse possible.
+      </p>
+  </div>
 
-  </form>
+  <div class="col-md-8">
 
+    <form name="foundationReason" class="css-form">
+
+      <div class="form-group">
+        <div >
+          <select ng-model="reason" ng-options="reason.name for reason in reasons.economical" class="form-control text-center text-uppercase" required="">
+            <option value=""> Économique </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div >
+          <select ng-model="reason" ng-options="reason.name for reason in reasons.political" class="form-control text-center text-uppercase" required="">
+            <option value=""> Politique </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div >
+          <select ng-model="reason" ng-options="reason.name for reason in reasons.cultural" class="form-control text-center text-uppercase" required="">
+            <option value=""> Culturelle </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <div class="col-xs-12">
+
+            <span class="input-group-btn">
+              <button type="button" ng-click="foundation.previous()" class="form-control btn btn-default">Précédent</button>
+            </span>
+
+            <span class="input-group-btn">
+              <button type="submit" ng-click="foundation.next(reason, foundationReason.$valid)" class="form-control btn btn-default">Suivant</button>
+            </span>
+
+          </div>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+  <!-- <div class="col-md-2"></div> -->
 </div>

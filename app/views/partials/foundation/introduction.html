@@ -1,11 +1,39 @@
-<div ng-show="foundation.isStep(0)" id="introduction">
-  <p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">1.</span><span class="char-style-override-6">se présenter</span></p>
-  <p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">2.</span><span class="char-style-override-6">pour quelle raison</span></p>
-  <p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">3.</span><span class="char-style-override-6">choisir un territoire</span></p>
-  <p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">4.</span><span class="char-style-override-6">régime politique</span></p>
-  <p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">5.</span><span class="char-style-override-6">trouver un nom</span></p>
-  <p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">6.</span><span class="char-style-override-6">composer sa devise</span></p>
-  <p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">7.</span><span class="char-style-override-6">faire son drapeau</span></p>
-  <p class="Paragraphe-standard para-style-override-13"><span class="char-style-override-5">8.</span><span class="char-style-override-6">faire son blason </span></p>
-  <p><button type="button" ng-click="foundation.next()" id="beginFoundationButton">Commencer</button></p>
+<div  ng-show="foundation.isStep(0)" id="introduction" class="row">
+  <!-- <div class="col-md-2">
+    <p>
+      Marre de la politique démente, de l'ingérence gouvernementale et du laxisme social qui ne
+      font que s'aggraver ? Vos impôts deviennent trop lourds à gérer ? Si vous avez toujours
+      pensé que le monde irait mieux si on laissait les peuples le diriger à leur manière, ne perdez
+      pas espoir : vous pouvez fonder une micronation ! Ce n'est sans doute pas facile,
+      mais cela n'a rien d'impossible et nous sommes là pour vous aider à le faire. La réussite
+      de certains, tout comme l'échec des autres, illustrera ce kit de démarrage et vous dévoilera
+      les perspectives de l'édification des nations.
+    </p>
+  </div> -->
+
+  <div class="col-md-12">
+    <h2 class="text-center text-uppercase">
+      <ol>
+        <li>1. Se présenter</li>
+        <li>2. Pour quelle raison</li>
+        <li>3. Choisir un territoire</li>
+        <li>4. Régime politique</li>
+        <li>5. Trouver un nom</li>
+        <li>6. Composer sa devise</li>
+        <li>7. Faire son drapeau</li>
+        <li>8. Faire son blason</li>
+      </ol>
+    </h2>
+
+    <div class="form-group">
+      <div class="input-group">
+        <div class="col-md-offset-3 col-md-6  col-xs-12">
+          <span class="input-group-btn">
+            <button ng-click="foundation.next()" class="form-control btn btn-default" id="beginFoundationButton">Commencer</button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>

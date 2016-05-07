@@ -16,15 +16,9 @@ angular.module 'mininationsApp'
     $scope.words = foundationHelperService.words
     $scope.reasons = foundationHelperService.reasons
     $scope.territories = foundationHelperService.territoriesDetailed
+    $scope.genders = foundationHelperService.genders
 
     @foundationHelperService = foundationHelperService
-
-    @stepFieldMapping =
-      0: "",
-      1: "",
-      2: "",
-      3: "",
-      4: ""
 
     @maximumStep = 9
     @currentStep = 0

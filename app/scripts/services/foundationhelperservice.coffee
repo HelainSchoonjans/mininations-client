@@ -10,6 +10,14 @@
 angular.module 'mininationsApp'
   .service 'foundationHelperService', ->
 
+    @genders = [
+      id: "male"
+      value: "Homme"
+    ,
+      id: "female"
+      value: "Femme"
+    ]
+
     @reasons =
       economical: [
         {

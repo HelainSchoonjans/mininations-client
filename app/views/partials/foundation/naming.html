@@ -1,26 +1,52 @@
-<div ng-hide="!foundation.isStep(5)" class="ng-hide">
+<div  ng-hide="!foundation.isStep(5)" class="ng-hide row">
 
-  <p>5. trouver un nom</p>
+  <hr/>
+  <h2 class="text-uppercase text-center">5. Trouver un nom</h2>
+  <hr/>
 
-  <form name="foundationNaming" class="css-form">
+  <div class="col-md-4">
+    <p>
+      Dans « proposition » nous vous avons trouvé des noms sur mesure. Néanmoins si vous
+      avez déjà en tête le nom de votre nation, inscrivez le dans « choisir son nom ».
+      </p>
+  </div>
 
-    <!-- propositions vs choisir le nom -->
+  <div class="col-md-8">
 
-    <!-- <p>Choix en fonction des raisons:</p>
-    <p>Choix en fonction de la politique:</p>
-    <p>Choix en fonction du territoire:</p> -->
+    <form name="foundationNaming" class="css-form">
 
-    <select ng-model="nation.name" ng-options="name for name in reason.nation.names" required="">
-        <option value="">-- Propositions --</option>
-    </select>
+      <!-- propositions vs choisir le nom -->
 
-    Choisir le nom:
-    <input type="text" ng-model="nation.name" name="nationName" required="" /><br />
-    <div ng-show="foundationNaming.$submitted || foundationNaming.nationName.$touched">
-      <div ng-show="foundationNaming.nationName.$error.required">Entre le nom de ta nation.</div>
-    </div>
+      <!-- <p>Choix en fonction des raisons:</p>
+      <p>Choix en fonction de la politique:</p>
+      <p>Choix en fonction du territoire:</p> -->
 
-    <input type="button" ng-click="foundation.previous()" value="précédent" />
-    <input type="submit" ng-click="foundation.next(nation, foundationNaming.$valid)" value="suivant" />
-  </form>
+      <div class="form-group">
+        <select ng-model="nation.name" ng-options="name for name in reason.nation.names" class="form-control text-center text-uppercase" required="">
+          <option value="">Propositions</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <input type="text" ng-model="nation.name" class="form-control" required="" id="nationName" placeholder="Nom de nation" /><br />
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <div class="col-xs-12">
+
+            <span class="input-group-btn">
+              <button type="button" ng-click="foundation.previous()" class="form-control btn btn-default">Précédent</button>
+            </span>
+
+            <span class="input-group-btn">
+              <button type="submit" ng-click="foundation.next(nation, foundationNaming.$valid)" class="form-control btn btn-default">Suivant</button>
+            </span>
+
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
 </div>

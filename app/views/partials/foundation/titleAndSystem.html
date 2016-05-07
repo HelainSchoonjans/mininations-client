@@ -1,29 +1,56 @@
-<div ng-hide="!foundation.isStep(4)" class="ng-hide">
+<div ng-hide="!foundation.isStep(4)" class="row ng-hide">
 
-  <p>4.titre et régime politique</p>
+  <hr/>
+  <h2 class="text-uppercase text-center">4. Régime politique</h2>
+  <hr/>
 
-  <form name="titleAndSystem" class="css-form">
+  <div class="col-md-4">
+    <p>
+      Roi, reine, dictateur, president(e) et j'en passe. Ici vous pouvez décider de votre titre et de
+      la manière dont vous aller gouverner notre nation.
+    </p>
+  </div>
 
-    je veux être
+  <div class="col-md-8">
 
-    <select name="title" ng-model="title" ng-options="title.name[user.gender] for title in titles" required="">
-        <option value="">-- Title --</option>
-    </select>
+    <form name="titleAndSystem" class="css-form">
 
-    <div ng-show="title">
+      <div class="form-group">
+        <div>
+          <select ng-model="title" ng-options="title.name[user.gender.id] for title in titles" class="form-control text-center text-uppercase" required="">
+            <option value=""> Je veux être </option>
+          </select>
+        </div>
+      </div>
 
-      dans {{ system ? (system.gender=="M" ? "un" : "une") : "" }}
-      <select ng-model="system" ng-options="system.name for system in title.systems" required="">
-          <option value="">-- System --</option>
-      </select>
+      <div ng-show="title">
 
-      <select ng-show="system" ng-model="system.type" ng-options="qualifier for qualifier in system.types" required="">
-          <option value="">-- Qualifier --</option>
-      </select>
+        <div class="form-group">
+          <div>
+            <select ng-model="system" ng-options="system.name for system in title.systems" class="form-control text-center text-uppercase" required="">
+              <option value=""> dans </option>
+            </select>
+          </div>
+        </div>
 
-    </div>
+        <div class="form-group">
+          <div>
+            <select ng-show="system" ng-model="system.type" ng-options="qualifier for qualifier in system.types" class="form-control text-center text-uppercase" required="">
+              <option value=""> qualificatif </option>
+            </select>
+          </div>
+        </div>
 
-    <input type="button" ng-click="foundation.previous()" value="précédent" />
-    <input type="submit" ng-click="foundation.next(system, titleAndSystem.$valid)" value="suivant" />
-  </form>
+      </div
+
+      <!-- TODO btn-block for two buttons -->
+      <div class="form-group">
+        <div>
+          <button type="button" ng-click="foundation.previous()" class="btn btn-default">Précédent</button>
+          <button type="submit" ng-click="foundation.next(system, titleAndSystem.$valid)" class="btn btn-default">Suivant</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
 </div>

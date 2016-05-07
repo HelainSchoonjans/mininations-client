@@ -1,4 +1,37 @@
-<div ng-hide="!foundation.isStep(7)" class="ng-hide">
-  <p>7.faire son drapeau</p>
-  <p ng-hide="foundation.isStep(0)"><button type="button" ng-click="foundation.previous()" ng-hide="foundation.currentStep <= 0">précédent</button><button type="button" ng-click="foundation.next()" ng-hide="foundation.currentStep >= 9">suivant</button></p>
+<div ng-hide="!foundation.isStep(7)" class="ng-hide row">
+
+  <hr/>
+  <h2 class="text-uppercase text-center">7. Mon drapeau</h2>
+  <hr/>
+
+  <div class="col-md-4">
+    <p>
+      Le drapeau est le premier élément qui permet d'identifier une nation. Composez le votre
+      grâce aux outils que l'on a mis en place pour vous. Soyez créatif !
+    </p>
+  </div>
+
+  <div class="col-md-8">
+
+    <form name="foundationFlag" class="css-form">
+
+      <div class="form-group">
+        <div class="input-group">
+          <div class="col-md-offset-3 col-md-9 col-xs-12">
+
+            <span class="input-group-btn">
+              <button type="button" ng-click="foundation.previous()" class="form-control btn btn-default">Précédent</button>
+            </span>
+
+            <span class="input-group-btn">
+              <button type="submit" ng-click="foundation.next(flag, foundationFlag.$valid)" class="form-control btn btn-default">Suivant</button>
+            </span>
+
+          </div>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
 </div>

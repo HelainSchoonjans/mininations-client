@@ -1,24 +1,56 @@
-<div ng-hide="!foundation.isStep(3)" id="territory" class="ng-hide">
+<div ng-hide="!foundation.isStep(3)" id="territory" class="ng-hide row">
 
-  <p>3. choisir un territoire</p>
+  <hr/>
+  <h2 class="text-uppercase text-center">3. Trouver un territoire</h2>
+  <hr/>
 
-  <form name="foundationTerritory" class="css-form">
+  <div class="col-md-4">
+    <p>
+      Pas de nation sans territoire. Ici vous avez le choix: une liste de territoire existants à été
+      sélectionnés selon la raison que vous avez choisi dans l'étape 2. Ou bien, si vous avez
+      déjà un lieu personnel où réclamer votre souveraineté (une maison, un quartier, un pont
+      etc soyez inventif ! ) vous pouvez l'ajouter dans la rubrique "territoire personnel". Cependant,
+      le reste du programme sera moins personnalisé.
+    </p>
+  </div>
+  <div class="col-md-8">
 
-    <select ng-model="selected.filter" ng-options="filter.name for filter in territoryFilters">
-        <option value="">-- Filtres --</option>
-    </select>
+    <form name="foundationTerritory" class="css-form">
 
-    <select ng-model="territory" ng-options="territory.name for territory in territories | filter:{filters: selected.filter.id, reasons: reason.id} : true | orderBy: 'name'" required="">
-        <option value="">-- Territoires existants --</option>
-    </select>
+      <div class="form-group">
+        <div>
+          <select ng-model="selected.filter" ng-options="filter.name for filter in territoryFilters" class="form-control text-center text-uppercase">
+            <option value="">Filtres</option>
+          </select>
+        </div>
+      </div>
 
-    <!-- Territoires personels: -->
+      <div class="form-group">
+        <div>
+          <select ng-model="territory" ng-options="territory.name for territory in territories | filter:{filters: selected.filter.id, reasons: reason.id} : true | orderBy: 'name'" class="form-control text-center text-uppercase" required="">
+            <option value="">Territoires existants</option>
+          </select>
+        </div>
+      </div>
 
-    <div ng-show="foundationTerritory.$submitted">
-      <div ng-show="foundationTerritory.$valid">Choisis un territoire.</div>
-    </div>
+      <!-- Territoires personels: -->
 
-    <input type="button" ng-click="foundation.previous()" value="précédent" />
-    <input type="submit" ng-click="foundation.next(territory, foundationTerritory.$valid)" value="suivant" />
-  </form>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="col-xs-12">
+
+            <span class="input-group-btn">
+              <button type="button" ng-click="foundation.previous()" class="form-control btn btn-default">Précédent</button>
+            </span>
+
+            <span class="input-group-btn">
+              <button type="submit" ng-click="foundation.next(territory, foundationTerritory.$valid)" class="form-control btn btn-default">Suivant</button>
+            </span>
+
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
 </div>

@@ -1,11 +1,60 @@
-<div ng-hide="!foundation.isStep(9)" class="ng-hide">
+<div ng-hide="!foundation.isStep(9)" class="ng-hide row">
 
-  <p>{{user}}</p>
-  <p>{{reason}}</p>
-  <p>{{territory}}</p>
-  <p>{{system}}</p>
-  <p>{{nation}}</p>
-  <p>{{anthem}}</p>
+  <hr/>
+  <h2 class="text-uppercase text-center">9. Ma nation</h2>
+  <hr/>
 
-  <input type="button" ng-click="foundation.previous()" value="précédent" />
+  <div class="col-md-4">
+    <p>
+      Bravo, vous avez créé une nouvelle nation!
+    </p>
+  </div>
+
+  <div class="col-md-8">
+
+    <div class="col-md-4">
+      <p>{{user}}</p>
+      <p>{{reason}}</p>
+      <p>{{territory}}</p>
+      <p>{{system}}</p>
+      <p>{{nation}}</p>
+      <p>{{anthem}}</p>
+    </div>
+
+
+    <form name="foundationRender" class="css-form">
+
+      <!-- display leader with full title -->
+      <!-- display nation name with system and motto -->
+      <!-- display territorry and herald / flag -->
+
+      <!-- <div class="form-group">
+        <label class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+          <p class="form-control-static">email@example.com</p>
+        </div>
+      </div> -->
+
+
+
+      <div class="form-group">
+        <div class="input-group">
+          <div class="col-md-offset-3 col-md-9 col-xs-12">
+
+            <span class="input-group-btn">
+              <button type="button" ng-click="foundation.previous()" class="form-control btn btn-default">Précédent</button>
+            </span>
+
+            <span class="input-group-btn">
+              <button type="submit" ng-disabled="true" class="form-control btn btn-default">Suivant</button>
+            </span>
+
+          </div>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+
 </div>

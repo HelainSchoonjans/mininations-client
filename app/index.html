@@ -27,10 +27,10 @@
             </button>
             <div class="collapse navbar-collapse" id="js-navbar-collapse">
               <ul class="nav navbar-nav">
-                <li><a href="#/explain">expliquer</a></li>
-                <li><a ng-href="#/found">créer</a></li>
-                <li><a ng-href="#/explore">explorer</a></li>
-                <li><a ng-href="#/contact">contact</a></li>
+                <li><a href="#/explain" data-toggle="collapse" data-target="#js-navbar-collapse">expliquer</a></li>
+                <li><a ng-href="#/found" data-toggle="collapse" data-target="#js-navbar-collapse">créer</a></li>
+                <li><a ng-href="#/explore" data-toggle="collapse" data-target="#js-navbar-collapse">explorer</a></li>
+                <li><a ng-href="#/contact" data-toggle="collapse" data-target="#js-navbar-collapse">contact</a></li>
               </ul>
             </div>
           </div>
@@ -39,6 +39,7 @@
     </div>
 
     <div class="container">
+      <!-- -fluid -->
       <div ng-view=""></div>
     </div>
 

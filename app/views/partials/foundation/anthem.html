@@ -1,55 +1,85 @@
-<div ng-hide="!foundation.isStep(6)" class="ng-hide">
+<div  ng-hide="!foundation.isStep(6)" class="ng-hide row">
 
-  <p>6.composer sa devise</p>
+  <hr/>
+  <h2 class="text-uppercase text-center">6. Composer ma devise</h2>
+  <hr/>
 
-  <form name="foundationAnthem" class="css-form">
+  <div class="col-md-4">
+    <p>
+      La devise d'un pays doit exprimer son identité, son comportement, ses valeurs. Pour créer
+      votre devise : soit vous laissez faire le hasard, sois vous la composé avec les mots proposés.
+    </p>
+  </div>
 
-    <!-- <p>Choix 1. laisser faire le hazard</p>
+  <div class="col-md-8">
 
-    <p>Au hazard
-    <p>Sélectionner -->
+    <form name="foundationAnthem" class="css-form">
 
+      <!-- <p>Choix 1. laisser faire le hazard</p>
 
-    <p>Choix 2. composer sa devise</p>
-
-    <p>1. {{anthem.first? anthem.first.latin : "(NOMS)"}} et {{anthem.second? anthem.second.latin : "(NOMS)"}}</p>
-
-    <select ng-model="anthem.first" ng-options="noun.french for noun in words.nouns" required="">
-        <option value="">-- Noms --</option>
-    </select>
-
-    et
-
-    <select ng-model="anthem.second" ng-options="noun.french for noun in words.nouns" required="">
-        <option value="">-- Noms --</option>
-    </select>
-
-    <p>Exemple:</p>
-    <p>deus et patria</p>
-    <p>dieu and pays</p>
+      <p>Au hazard
+      <p>Sélectionner -->
 
 
-    <!-- <p>2. (NOm), (NOm) and (NOm)</p>
-    <p>Exemple:
-    Tellus, ventus et ignis
-    la terre, le vent et le feu</p>
+      <hr/>
+      <h3 class="text-uppercase text-center">Composer sa devise</h3>
+      <hr/>
 
-    <p>3. de (NOm), (NOm)</p>
-    <p>Exemple:</p>
-    Ex luna sapientia
-    de la lune, la connaissance
+      <div class="form-group">
+        <label class="col-sm-3 control-label text-uppercase">{{anthem.first? anthem.first.latin : "(NOMS)"}} et {{anthem.second? anthem.second.latin : "(NOMS)"}}</label>
+        <div class="col-sm-9">
+          <div class="input-group">
+            <select ng-model="anthem.first" ng-options="noun.french for noun in words.nouns" class="form-control text-center text-uppercase" required="">
+              <option value=""> Nom </option>
+            </select>
 
-    <p>4. (NOm) (verbe) (objet)</p>
-    <p>Exemple:
-    dieu appel les sages
-    Deus sapientes vocat</p>
+            <span class="input-group-addon">et</span>
 
-    <p>5. dans (NOm) (NOm)</p>
-    <p>Exemple:
-    in gloria pax
-    dans la gloir la paix</p> -->
+            <select ng-model="anthem.second" ng-options="noun.french for noun in words.nouns" class="form-control text-center text-uppercase" required="">
+              <option value=""> Nom </option>
+            </select>
+          </div>
+        </div>
+      </div>
 
-    <input type="button" ng-click="foundation.previous()" value="précédent" />
-    <input type="submit" ng-click="foundation.next({anthem: anthem.first + ' and ' + anthem.second}, foundationAnthem.$valid)" value="suivant" />
-  </form>
+      <p class="help-block">Exemple: 'Deus et patria' pour 'Dieu and pays'</p>
+
+      <!-- <p>2. (NOm), (NOm) and (NOm)</p>
+      <p>Exemple:
+      Tellus, ventus et ignis
+      la terre, le vent et le feu</p>
+
+      <p>3. de (NOm), (NOm)</p>
+      <p>Exemple:</p>
+      Ex luna sapientia
+      de la lune, la connaissance
+
+      <p>4. (NOm) (verbe) (objet)</p>
+      <p>Exemple:
+      dieu appel les sages
+      Deus sapientes vocat</p>
+
+      <p>5. dans (NOm) (NOm)</p>
+      <p>Exemple:
+      in gloria pax
+      dans la gloir la paix</p> -->
+
+      <div class="form-group">
+        <div class="input-group">
+          <div class="col-md-offset-3 col-md-9 col-xs-12">
+
+            <span class="input-group-btn">
+              <button type="button" ng-click="foundation.previous()" class="form-control btn btn-default">Précédent</button>
+            </span>
+
+            <span class="input-group-btn">
+              <button type="submit" ng-click="foundation.next({anthem: anthem.first + ' and ' + anthem.second}, foundationAnthem.$valid)" class="form-control btn btn-default">Suivant</button>
+            </span>
+
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
 </div>
