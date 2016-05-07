@@ -76,5 +76,5 @@
     "protractor": "protractor e2e/conf.coffee",
     "coffee-compile": "coffee --output app/lib --compile app/scripts"
   },
-  "version": "0.0.1"
+  "version": "0.0.2"
 }
