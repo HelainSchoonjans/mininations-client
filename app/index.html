@@ -19,21 +19,27 @@
       <div class="navbar navbar-default" role="navigation">
         <div class="container">
           <div class="navbar-header">
+
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <div class="collapse navbar-collapse" id="js-navbar-collapse">
-              <ul class="nav navbar-nav">
-                <li><a href="#/explain" data-toggle="collapse" data-target="#js-navbar-collapse">expliquer</a></li>
-                <li><a ng-href="#/found" data-toggle="collapse" data-target="#js-navbar-collapse">créer</a></li>
-                <li><a ng-href="#/explore" data-toggle="collapse" data-target="#js-navbar-collapse">explorer</a></li>
-                <li><a ng-href="#/contact" data-toggle="collapse" data-target="#js-navbar-collapse">contact</a></li>
-              </ul>
-            </div>
+
+            <a class="navbar-brand" href="#/" data-toggle="collapse" data-target="#js-navbar-collapse">Micronations</a>
+
           </div>
+
+          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+            <ul class="nav navbar-nav text-uppercase">
+              <li><a ng-href="#/explain" data-toggle="collapse" data-target="#js-navbar-collapse">expliquer</a></li>
+              <li><a ng-href="#/found" data-toggle="collapse" data-target="#js-navbar-collapse">créer</a></li>
+              <li><a ng-href="#/explore" data-toggle="collapse" data-target="#js-navbar-collapse">explorer</a></li>
+              <li><a ng-href="#/contact" data-toggle="collapse" data-target="#js-navbar-collapse">contact</a></li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </div>

@@ -41,13 +41,16 @@
           </div>
         </div>
 
-      </div
+      </div>
 
-      <!-- TODO btn-block for two buttons -->
       <div class="form-group">
-        <div>
-          <button type="button" ng-click="foundation.previous()" class="btn btn-default">Précédent</button>
-          <button type="submit" ng-click="foundation.next(system, titleAndSystem.$valid)" class="btn btn-default">Suivant</button>
+        <div class="input-group">
+          <span class="input-group-btn">
+            <button type="button" ng-click="foundation.previous()" class="btn btn-default btn-block">Précédent</button>
+          </span>
+          <span class="input-group-btn">
+            <button type="submit" ng-click="foundation.next(system, titleAndSystem.$valid)" class="btn btn-default btn-block">Suivant</button>
+          </span>
         </div>
       </div>
 
