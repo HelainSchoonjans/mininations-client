@@ -12,19 +12,31 @@
 
   <div class="col-md-8">
 
-    <div class="col-md-4">
-      <p>{{user}}</p>
-      <p>{{reason}}</p>
-      <p>{{territory}}</p>
-      <p>{{system}}</p>
-      <p>{{nation}}</p>
-      <p>{{anthem}}</p>
-    </div>
+    <dl class="dl-horizontal">
 
+      <dt>Nom</dt>
+      <dd class="text-capitalize">{{nation.name}}</dd>
+
+      <dt>Système politique</dt>
+      <dd>{{system.name}} {{system.type}}</dd>
+
+      <dt>Anthem</dt>
+      <dd class="text-uppercase">{{anthem.first.latin}} et {{anthem.second.latin}}</dd>
+
+      <dt>Raison d'être</dt>
+      <dd>{{reason.name}}</dd>
+
+      <dt>Territoire</dt>
+      <dd>{{territory.name}}</dd>
+
+      <dt>Chef</dt>
+      <dd>
+        {{title.name[user.gender.id]}} {{user[title.name.variable_1]}}{{title.name.secondPart || title.name.genderedSecondPart[user.gender.id]}}{{title.name.variable_2 ? territory.name : ""}}
+      </dd>
+    </dl>
 
     <form name="foundationRender" class="css-form">
 
-      <!-- display leader with full title -->
       <!-- display nation name with system and motto -->
       <!-- display territorry and herald / flag -->
 
@@ -39,7 +51,7 @@
 
       <div class="form-group">
         <div class="input-group">
-          <div class="col-sm-offset-3 col-sm-9 col-xs-12">
+          <!-- <div class="col-sm-offset-3 col-sm-9 col-xs-12"> -->
 
             <span class="input-group-btn">
               <button type="button" ng-click="foundation.previous()" class="btn btn-default btn-block">Précédent</button>
@@ -49,7 +61,7 @@
               <button type="submit" ng-disabled="true" class="btn btn-default btn-block">Suivant</button>
             </span>
 
-          </div>
+          <!-- </div> -->
         </div>
       </div>
 

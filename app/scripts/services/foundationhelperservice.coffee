@@ -20,8 +20,7 @@ angular.module 'mininationsApp'
 
     @reasons =
       economical: [
-        {
-          name: "pour gagner des sous"
+          name: "Par gagner des sous"
           id: 1
           nation:
             names: [
@@ -30,9 +29,8 @@ angular.module 'mininationsApp'
               "billy"
               "Jacque Potte"
             ]
-        }
-        {
-          name: "pour cacher des sous"
+        ,
+          name: "Pour cacher des sous"
           id: 2
           nation:
             names: [
@@ -41,9 +39,8 @@ angular.module 'mininationsApp'
               "cashcash"
               "pixou"
             ]
-        }
-        {
-          name: "pour garder des sous"
+        ,
+          name: "Pour garder des sous"
           id: 3
           nation:
             names: [
@@ -52,9 +49,8 @@ angular.module 'mininationsApp'
               "keptoland"
               "Mont pressieux"
             ]
-        }
-        {
-          name: "pour partager des sous"
+        ,
+          name: "Pour partager des sous"
           id: 4
           nation:
             names: [
@@ -63,11 +59,10 @@ angular.module 'mininationsApp'
               "novum"
               "sossiokool"
             ]
-        }
       ]
       political: [
         {
-          name: "pour le pouvoir"
+          name: "Pour le pouvoir"
           id: 5
           nation:
             names: [
@@ -78,7 +73,7 @@ angular.module 'mininationsApp'
             ]
         }
         {
-          name: "par conscience politique"
+          name: "Par conscience politique"
           id: 6
           nation:
             names: [
@@ -88,7 +83,7 @@ angular.module 'mininationsApp'
             ]
         }
         {
-          name: "par rébellion politique"
+          name: "Par rébellion politique"
           id: 7
           nation:
             names: [
@@ -98,7 +93,7 @@ angular.module 'mininationsApp'
             ]
         }
         {
-          name: "par idéal politique"
+          name: "Par idéal politique"
           id: 8
           nation:
             names: [
@@ -110,7 +105,7 @@ angular.module 'mininationsApp'
       ]
       cultural: [
         {
-          name: "pour être libre"
+          name: "Pour être libre"
           id: 9
           nation:
             names: [
@@ -120,7 +115,7 @@ angular.module 'mininationsApp'
             ]
         }
         {
-          name: "pour perdre son anonymat"
+          name: "Pour perdre son anonymat"
           id: 10
           nation:
             names: [
@@ -129,7 +124,7 @@ angular.module 'mininationsApp'
             ]
         }
         {
-          name: "pour être utile"
+          name: "Pour être utile"
           id: 11
           nation:
             names: [
@@ -137,7 +132,7 @@ angular.module 'mininationsApp'
             ]
         }
         {
-          name: "par plaisir"
+          name: "Par plaisir"
           id: 12
           nation:
             names: [
@@ -145,7 +140,7 @@ angular.module 'mininationsApp'
             ]
         }
         {
-          name: "par utopie"
+          name: "Par utopie"
           id: 13
           nation:
             names: [
@@ -156,7 +151,7 @@ angular.module 'mininationsApp'
             ]
         }
         {
-          name: "par opportunité"
+          name: "Par opportunité"
           id: 14
           nation:
             names:  [
@@ -167,7 +162,7 @@ angular.module 'mininationsApp'
             ]
         }
         {
-          name: "par revendication"
+          name: "Par revendication"
           id: 15
           nation:
             names:  [
@@ -176,7 +171,7 @@ angular.module 'mininationsApp'
             ]
         }
         {
-          name: "pour être seul"
+          name: "Pour être seul"
           id: 16
           nation:
             names:  [
@@ -985,10 +980,10 @@ angular.module 'mininationsApp'
       "République": {
         name: "République"
         types: [
-          "Présidentielle"
-          "Parlementaire"
-          "Parti unique"
-          "Sociocrate"
+          "présidentielle"
+          "parlementaire"
+          "parti unique"
+          "sociocrate"
         ]
         names: [
           "respublika"
@@ -998,9 +993,9 @@ angular.module 'mininationsApp'
       "Monarchie": {
         name: "Monarchie"
         types: [
-          "Parlementaire"
-          "Absolue"
-          "Constitutionnelle"
+          "parlementaire"
+          "absolue"
+          "constitutionnelle"
         ]
         names: [
           "harmonic"
@@ -1012,9 +1007,9 @@ angular.module 'mininationsApp'
       "Gouvernement autoritaire": {
         name: "Gouvernement autoritaire"
         types: [
-          "Dictatoriale"
-          "Totalitaire"
-          "Éco-anarchique"
+          "dictatoriale"
+          "totalitaire"
+          "éco-anarchique"
         ]
         names: [
           "Little ductor"
@@ -1026,9 +1021,9 @@ angular.module 'mininationsApp'
       "Gouvernement religieux": {
         name: "Gouvernement religieux"
         types: [
-          "Califat"
-          "Sultanat"
-          "Fanatisme"
+          "califat"
+          "sultanat"
+          "fanatisme"
         ]
         names: [
           "Kredo"
@@ -1045,7 +1040,9 @@ angular.module 'mininationsApp'
           male: "Roi"
           female: "Reine"
           variable_1: "firstName"
-          secondPart: "1er"
+          genderedSecondPart:
+            male: " 1er "
+            female: " 1ère "
         systems: [
           @politicalSystems["Monarchie"]
           @politicalSystems["Gouvernement autoritaire"]
@@ -1147,7 +1144,7 @@ angular.module 'mininationsApp'
           male: "Duc"
           female: "Duchesse"
           variable_1: "lastName"
-          secondPart: "de"
+          secondPart: " de "
           variable_2: "nation.name"
         systems: [
           @politicalSystems["Monarchie"]
@@ -1156,22 +1153,4 @@ angular.module 'mininationsApp'
       }
     ]
 
-  # 2/ choix en fonction de la politique
-  # REPUBLIQUE MONARCHIE AUTORITAIRE RELIGIEUX
-  # respublika harmonic Little ductor Kredo
-  # Rex paulo t.o.r deuz
-  # Rex wooden taar Abrahkadabra
-  # Surnom + tor
-
-
-
-  # 3/ territoire
-  # Surnomland surnom island Nomland Prenom nom
-  # 1,2,4,6,7,8,9,1
-  # 0,11,12,13,14,
-  # 15,16,17,18,19
-  # ,20
-  # Icenomland Surnom strip À FINIR À FINIR
-  # 1,2,3,5,34,35,
-  # 36
     return
