@@ -1,17 +1,17 @@
 <div  ng-hide="!foundation.isStep(6)" class="ng-hide row">
 
-  <hr/>
-  <h2 class="text-uppercase text-center">6. Composer ma devise</h2>
+  <!-- <hr/> -->
+  <h3 class="text-uppercase text-center">6. Devise</h3>
   <hr/>
 
-  <div class="col-md-4">
+  <div class="col-md-4 form-group">
     <p>
       La devise d'un pays doit exprimer son identité, son comportement, ses valeurs. Pour créer
       votre devise : soit vous laissez faire le hasard, sois vous la composé avec les mots proposés.
     </p>
   </div>
 
-  <div class="col-md-8">
+  <div class="col-md-8 form-group">
 
     <form name="foundationAnthem" class="css-form">
 
@@ -22,7 +22,7 @@
 
 
       <hr/>
-      <h3 class="text-uppercase text-center">Composer sa devise</h3>
+      <h4 class="text-uppercase text-center">Composer sa devise</h4>
       <hr/>
 
       <div class="form-group">
@@ -42,7 +42,7 @@
         </div>
       </div>
 
-      <p class="help-block">Exemple: 'Deus et patria' pour 'Dieu and pays'</p>
+      <p class="help-block form-group">Exemple: 'Deus et patria' pour 'Dieu and pays'</p>
 
       <!-- <p>2. (NOm), (NOm) and (NOm)</p>
       <p>Exemple:
@@ -69,11 +69,15 @@
           <div class="col-sm-offset-3 col-sm-9 col-xs-12">
 
             <span class="input-group-btn">
-              <button type="button" ng-click="foundation.previous()" class="form-control btn btn-defaultbtn btn-default btn-block">Précédent</button>
+              <button type="button" ng-click="foundation.previous()" class="form-control btn btn-defaultbtn btn-default btn-block">
+                <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+              </button>
             </span>
 
             <span class="input-group-btn">
-              <button type="submit" ng-click="foundation.next({anthem: anthem.first + ' and ' + anthem.second}, foundationAnthem.$valid)" class="btn btn-default btn-block">Suivant</button>
+              <button type="submit" ng-click="foundation.next({anthem: anthem.first + ' and ' + anthem.second}, foundationAnthem.$valid)" class="btn btn-default btn-block">
+                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+              </button>
             </span>
 
           </div>

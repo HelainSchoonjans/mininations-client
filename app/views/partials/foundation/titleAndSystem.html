@@ -1,17 +1,17 @@
 <div ng-hide="!foundation.isStep(4)" class="row ng-hide">
 
-  <hr/>
+  <!-- <hr/> -->
   <h2 class="text-uppercase text-center">4. Régime politique</h2>
   <hr/>
 
-  <div class="col-md-4">
+  <div class="col-md-4 form-group">
     <p>
       Roi, reine, dictateur, president(e) et j'en passe. Ici vous pouvez décider de votre titre et de
       la manière dont vous aller gouverner notre nation.
     </p>
   </div>
 
-  <div class="col-md-8">
+  <div class="col-md-8 form-group">
 
     <form name="titleAndSystem" class="css-form">
 
@@ -46,10 +46,14 @@
       <div class="form-group">
         <div class="input-group">
           <span class="input-group-btn">
-            <button type="button" ng-click="foundation.previous()" class="btn btn-default btn-block">Précédent</button>
+            <button type="button" ng-click="foundation.previous()" class="btn btn-default btn-block">
+              <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+            </button>
           </span>
           <span class="input-group-btn">
-            <button type="submit" ng-click="foundation.next(system, titleAndSystem.$valid)" class="btn btn-default btn-block">Suivant</button>
+            <button type="submit" ng-click="foundation.next(system, titleAndSystem.$valid)" class="btn btn-default btn-block">
+              <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+            </button>
           </span>
         </div>
       </div>

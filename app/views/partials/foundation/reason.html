@@ -1,18 +1,18 @@
 <div  ng-hide="!foundation.isStep(2)" id="reason" class="row ng-hide">
 
-  <hr/>
-  <h2 class="text-uppercase text-center">2. Avoir une raison</h2>
+  <!-- <hr/> -->
+  <h3 class="text-uppercase text-center">2. Avoir une raison</h3>
   <hr/>
 
 
-  <div class="col-md-4">
+  <div class="col-md-4 form-group">
     <p>
       Parmi ces propositions, choisissez la raison qui vous a poussé à créer votre micronation.
       Une seule réponse possible.
       </p>
   </div>
 
-  <div class="col-md-8">
+  <div class="col-md-8 form-group">
 
     <form name="foundationReason" class="css-form">
 
@@ -45,11 +45,15 @@
           <div class="col-xs-12">
 
             <span class="input-group-btn">
-              <button type="button" ng-click="foundation.previous()" class="btn btn-default btn-block">Précédent</button>
+              <button type="button" ng-click="foundation.previous()" class="btn btn-default btn-block">
+                <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+              </button>
             </span>
 
             <span class="input-group-btn">
-              <button type="submit" ng-click="foundation.next(reason, foundationReason.$valid)" class="btn btn-default btn-block">Suivant</button>
+              <button type="submit" ng-click="foundation.next(reason, foundationReason.$valid)" class="btn btn-default btn-block">
+                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+              </button>
             </span>
 
           </div>

@@ -1,18 +1,18 @@
 <div ng-hide="!foundation.isStep(9)" class="ng-hide row">
 
-  <hr/>
-  <h2 class="text-uppercase text-center">9. Ma nation</h2>
+  <!-- <hr/> -->
+  <h3 class="text-uppercase text-center">9. Ma nation</h3>
   <hr/>
 
-  <div class="col-md-4">
+  <div class="col-md-4 form-group">
     <p>
       Bravo, vous avez créé une nouvelle nation!
     </p>
   </div>
 
-  <div class="col-md-8">
+  <div class="col-md-8 form-group">
 
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal  form-group">
 
       <dt>Nom</dt>
       <dd class="text-capitalize">{{nation.name}}</dd>
@@ -35,7 +35,7 @@
       </dd>
     </dl>
 
-    <form name="foundationRender" class="css-form">
+    <form name="foundationRender" class="css-form form-group">
 
       <!-- display nation name with system and motto -->
       <!-- display territorry and herald / flag -->
@@ -54,11 +54,15 @@
           <!-- <div class="col-sm-offset-3 col-sm-9 col-xs-12"> -->
 
             <span class="input-group-btn">
-              <button type="button" ng-click="foundation.previous()" class="btn btn-default btn-block">Précédent</button>
+              <button type="button" ng-click="foundation.previous()" class="btn btn-default btn-block">
+                <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+              </button>
             </span>
 
             <span class="input-group-btn">
-              <button type="submit" ng-disabled="true" class="btn btn-default btn-block">Suivant</button>
+              <button type="submit" ng-disabled="true" class="btn btn-default btn-block">
+                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+              </button>
             </span>
 
           <!-- </div> -->

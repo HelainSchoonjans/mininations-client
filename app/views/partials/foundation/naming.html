@@ -1,17 +1,17 @@
 <div  ng-hide="!foundation.isStep(5)" class="ng-hide row">
 
-  <hr/>
-  <h2 class="text-uppercase text-center">5. Trouver un nom</h2>
+  <!-- <hr/> -->
+  <h3 class="text-uppercase text-center">5. Trouver un nom</h3>
   <hr/>
 
-  <div class="col-md-4">
+  <div class="col-md-4 form-group">
     <p>
       Dans « proposition » nous vous avons trouvé des noms sur mesure. Néanmoins si vous
       avez déjà en tête le nom de votre nation, inscrivez le dans « choisir son nom ».
       </p>
   </div>
 
-  <div class="col-md-8">
+  <div class="col-md-8 form-group">
 
     <form name="foundationNaming" class="css-form">
 
@@ -36,11 +36,15 @@
           <div class="col-xs-12">
 
             <span class="input-group-btn">
-              <button type="button" ng-click="foundation.previous()" class="btn btn-default btn-block">Précédent</button>
+              <button type="button" ng-click="foundation.previous()" class="btn btn-default btn-block">
+                <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+              </button>
             </span>
 
             <span class="input-group-btn">
-              <button type="submit" ng-click="foundation.next(nation, foundationNaming.$valid)" class="btn btn-default btn-block">Suivant</button>
+              <button type="submit" ng-click="foundation.next(nation, foundationNaming.$valid)" class="btn btn-default btn-block">
+                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+              </button>
             </span>
 
           </div>

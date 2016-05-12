@@ -1,17 +1,17 @@
 <div ng-hide="!foundation.isStep(7)" class="ng-hide row">
 
-  <hr/>
-  <h2 class="text-uppercase text-center">7. Mon drapeau</h2>
+  <!-- <hr/> -->
+  <h3 class="text-uppercase text-center">7. Mon drapeau</h3>
   <hr/>
 
-  <div class="col-md-4">
+  <div class="col-md-4 form-group">
     <p>
       Le drapeau est le premier élément qui permet d'identifier une nation. Composez le votre
       grâce aux outils que l'on a mis en place pour vous. Soyez créatif !
     </p>
   </div>
 
-  <div class="col-md-8">
+  <div class="col-md-8 form-group">
 
     <form name="foundationFlag" class="css-form">
 
@@ -20,11 +20,15 @@
           <div class="col-sm-offset-3 col-sm-9 col-xs-12">
 
             <span class="input-group-btn">
-              <button type="button" ng-click="foundation.previous()" class="btn btn-default btn-block">Précédent</button>
+              <button type="button" ng-click="foundation.previous()" class="btn btn-default btn-block">
+                <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+              </button>
             </span>
 
             <span class="input-group-btn">
-              <button type="submit" ng-click="foundation.next(flag, foundationFlag.$valid)" class="btn btn-default btn-block">Suivant</button>
+              <button type="submit" ng-click="foundation.next(flag, foundationFlag.$valid)" class="btn btn-default btn-block">
+                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+              </button>
             </span>
 
           </div>

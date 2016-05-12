@@ -1,44 +1,44 @@
 <div  ng-hide="!foundation.isStep(1)" id="presentation" class="ng-hide">
 
-  <hr/>
-  <h2 class="text-uppercase text-center">1. Se présenter</h2>
+  <!-- <hr/> -->
+  <h3 class="text-uppercase text-center">1. Se présenter</h3>
   <hr/>
 
   <div class = "row">
 
-    <div class="col-md-4">
+    <div class="col-md-4 form-group">
       <p>
         Il vous faut remplir ce formulaire de départ avant de passer à la suite.
       </p>
     </div>
 
-    <div class="col-md-12">
+    <div class="col-md-8 form-group">
 
       <form name="userPresentation" class="css-form form-horizontal">
 
         <div class="form-group">
-          <label for="inputFirstName" class="col-sm-2 control-label">Prénom</label>
+          <label for="inputFirstName" class="col-sm-2 control-label hidden-xs">Prénom</label>
           <div class="col-sm-10">
             <input type="text" ng-model="user.firstName" name="firstName" class="form-control" required  id="inputFirstName" placeholder="Prénom"/><br />
           </div>
         </div>
 
         <div class="form-group">
-          <label for="inputLastName" class="col-sm-2 control-label">Nom</label>
+          <label for="inputLastName" class="col-sm-2 control-label hidden-xs">Nom</label>
           <div class="col-sm-10">
             <input type="text" ng-model="user.lastName" name="lastName" class="form-control" required="" id="inputLastName" placeholder="Nom"/><br />
           </div>
         </div>
 
         <div class="form-group">
-          <label for="inputNickname" class="col-sm-2 control-label">Surnom</label>
+          <label for="inputNickname" class="col-sm-2 control-label hidden-xs">Surnom</label>
           <div class="col-sm-10">
             <input type="text" ng-model="user.nickname" name="nickname" class="form-control" required="" id="inputNickname" placeholder="Surnom" /><br />
           </div>
         </div>
 
         <div class="form-group">
-          <label for="inputGender" class="col-sm-2 control-label">Genre</label>
+          <label for="inputGender" class="col-sm-2 control-label hidden-xs">Genre</label>
           <div class="col-sm-10">
             <select ng-model="user.gender" ng-options="gender.value for gender in genders" class="form-control text-center" required="">
               <option value=""> Genre </option>
@@ -51,11 +51,15 @@
             <div class="col-sm-offset-2 col-sm-10 col-xs-12">
 
               <span class="input-group-btn">
-                <button type="button" ng-click="foundation.previous()" class="btn btn-default btn-block">Précédent</button>
+                <button type="button" ng-click="foundation.previous()" class="btn btn-default btn-block">
+                  <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                </button>
               </span>
 
               <span class="input-group-btn">
-                <button type="submit" ng-click="foundation.next(user, userPresentation.$valid)" class="btn btn-default btn-block">Suivant</button>
+                <button type="submit" ng-click="foundation.next(user, userPresentation.$valid)" class="btn btn-default btn-block">
+                  <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                </button>
               </span>
 
             </div>
@@ -65,6 +69,5 @@
       </form>
 
     </div>
-    <!-- <div class="col-md-2"></div> -->
   </div>
 </div>
