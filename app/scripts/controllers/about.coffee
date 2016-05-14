@@ -9,9 +9,4 @@
 ###
 angular.module 'mininationsApp'
   .controller 'AboutCtrl', ->
-    @awesomeThings = [
-      'HTML5 Boilerplate'
-      'AngularJS'
-      'Karma'
-    ]
     return

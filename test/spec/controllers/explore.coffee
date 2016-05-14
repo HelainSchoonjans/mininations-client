@@ -15,5 +15,5 @@ describe 'Controller: ExploreCtrl', ->
       # place here mocked dependencies
     }
 
-  it 'should attach a list of awesomeThings to the scope', ->
-    expect(ExploreCtrl.awesomeThings.length).toBe 3
+  # it 'should attach a list of awesomeThings to the scope', ->
+  #   expect(ExploreCtrl.awesomeThings.length).toBe 3

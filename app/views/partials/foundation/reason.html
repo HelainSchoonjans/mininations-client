@@ -1,7 +1,7 @@
 <div  ng-hide="!foundation.isStep(2)" id="reason" class="row ng-hide">
 
   <!-- <hr/> -->
-  <h3 class="text-uppercase text-center">2. Avoir une raison</h3>
+  <h3 class="text-uppercase text-center">2. Raison d'être</h3>
   <hr/>
 
 
@@ -17,8 +17,8 @@
     <form name="foundationReason" class="css-form">
 
       <div class="form-group">
-        <div >
-          <select ng-model="reason" ng-options="reason.name for reason in reasons.economical" class="form-control text-center text-uppercase" required="">
+        <div class="text-uppercase text-center">
+          <select ng-model="reason" ng-options="reason.name for reason in reasons.economical" class="form-control text-uppercase text-center" required="">
             <option value=""> Économique </option>
           </select>
         </div>

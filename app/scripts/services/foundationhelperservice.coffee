@@ -234,6 +234,7 @@ angular.module 'mininationsApp'
     @territoriesDetailed = [
         {
           id: 1
+          image: "01-antarctique1.jpg"
           name: "Antartique 1"
           continent: "Antartique"
           ocean: "n/a"
@@ -251,6 +252,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 2
+          image: "02-antarctique2.jpg"
           name: "Antartique 2"
           continent: "Antartique"
           ocean: "n/a"
@@ -268,6 +270,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 3
+          image: "03-antarctique3.jpg"
           name: "Antartique 3"
           continent: "Antartique"
           ocean: "n/a"
@@ -302,6 +305,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 5
+          image: "05-erik-thered-land.jpg"
           name: "Erik the red's land"
           continent: "Europe"
           ocean: "n/a"
@@ -319,6 +323,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 6
+          image: "06-saudi-iraki.jpg"
           name: "Saudi Iraki"
           continent: "Afrique"
           ocean: "n/a"
@@ -335,6 +340,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 7
+          image: "07-saudi-kuwaiti.jpg"
           name: "Saudi Kuwaiti"
           continent: "Afrique"
           ocean: "n/a"
@@ -351,6 +357,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 8
+          image: "08-somaliland.jpg"
           name: "Somaliland neutre"
           continent: "Afrique"
           ocean: "n/a"
@@ -368,6 +375,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 9
+          image: "09-bir-tawil.jpg"
           name: "Bir Tawil"
           continent: "Afrique"
           ocean: "n/a"
@@ -385,6 +393,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 10
+          image: "10-ZCM.jpg"
           name: "Zone coréenne démilitarisée"
           continent: "Asie"
           ocean: "n/a"
@@ -402,6 +411,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 11
+          image: "11-neutralstrip-louisiana.jpg"
           name: "Neutral strip of Louisiana"
           continent: "Amérique centrale"
           ocean: "n/a"
@@ -419,6 +429,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 12
+          image: "12-oklahoma-panhandle.jpg"
           name: "Oklahoma Panhandle"
           continent: "Amérique centrale"
           ocean: "n/a"
@@ -435,6 +446,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 13
+          image: "13-fort-tongue-sand.jpg"
           name: "Fort Tongue sands"
           continent: "n/a"
           ocean: "Atlantique"
@@ -452,6 +464,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 14
+          image: "14-fort-sunkhead.jpg"
           name: "Fort sunk head"
           continent: "n/a"
           ocean: "Atlantique"
@@ -469,6 +482,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 15
+          image: "15-fort-red-sand.jpg"
           name: "Fort red sands"
           continent: "n/a"
           ocean: "Atlantique"
@@ -486,6 +500,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 16
+          image: "16-fort-bull-sand.jpg"
           name: "Fort bull sand"
           continent: "n/a"
           ocean: "Atlantique"
@@ -503,6 +518,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 17
+          image: "17-texas-tower.jpg"
           name: "Texas Tower"
           continent: "n/a"
           ocean: "Atlantique"
@@ -520,6 +536,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 18
+          image: "18-plateforme-huldra.jpg"
           name: "plateforme pétrolière Huldra"
           continent: "n/a"
           ocean: "Atlantique"
@@ -537,6 +554,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 19
+          image: "19-fort-rough-sands.jpg"
           name: "Fort Rough sands"
           continent: "n/a"
           ocean: "Atlantique"
@@ -554,6 +572,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 20
+          image: "20-spartleys1.jpg"
           name: "Îles Spartleys 1"
           continent: "n/a"
           ocean: "Pacifique"
@@ -571,6 +590,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 21
+          image: "21-spartleys2.jpg"
           name: "Îles Spartleys 2"
           continent: "n/a"
           ocean: "Pacifique"
@@ -588,6 +608,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 22
+          image: "22-spartleys3.jpg"
           name: "Îles Spartleys 3"
           continent: "n/a"
           ocean: "Pacifique"
@@ -605,6 +626,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 23
+          image: "23-paracel-rocky.jpg"
           name: "Îles Paraceles Rocky Island"
           continent: "n/a"
           ocean: "Pacifique"
@@ -622,6 +644,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 24
+          image: "24-sparleys5.jpg"
           name: "Îles Spartleys 5"
           continent: "n/a"
           ocean: "Pacifique"
@@ -639,6 +662,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 25
+          image: "25-sparleys6.jpg"
           name: "Îles Spartleys 6"
           continent: "n/a"
           ocean: "Pacifique"
@@ -656,6 +680,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 26
+          image: "26-sparleys7.jpg"
           name: "Îles Spartleys 7"
           continent: "n/a"
           ocean: "Pacifique"
@@ -673,6 +698,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 28
+          image: "27-sparleys8.jpg"
           name: "Îles Spartleys 8"
           continent: "n/a"
           ocean: "Pacifique"
@@ -690,6 +716,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 29
+          image: "29-sparleys9.jpg"
           name: "Îles Spartleys 9"
           continent: "n/a"
           ocean: "Pacifique"
@@ -707,6 +734,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 30
+          image: "30-paracel-lincoln.jpg"
           name: "Îles Paraceles Lincoln Island"
           continent: "n/a"
           ocean: "Pacifique"
@@ -724,6 +752,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 31
+          image: "31-paracel-northreef.jpg"
           name: "Îles Paraceles North Reef"
           continent: "n/a"
           ocean: "Pacifique"
@@ -741,6 +770,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 32
+          image: "32-scarborough.jpg"
           name: "Récif de Scarborough"
           continent: "n/a"
           ocean: "Pacifique"
@@ -758,6 +788,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 33
+          image: "33-clipperton.jpg"
           name: "Île de Clipperton"
           continent: "n/a"
           ocean: "Pacifique"
@@ -775,6 +806,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 34
+          image: "34-svalbard1.jpg"
           name: "Svalbard 1"
           continent: "n/a"
           ocean: "Arctique"
@@ -792,6 +824,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 35
+          image: "35-svalbard2.jpg"
           name: "Svalbard 2"
           continent: "n/a"
           ocean: "Arctique"
@@ -809,6 +842,7 @@ angular.module 'mininationsApp'
         }
         {
           id: 36
+          image: "36-svalbard3.jpg"
           name: "Svalbard 3"
           continent: "n/a"
           ocean: "Arctique"

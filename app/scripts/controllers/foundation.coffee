@@ -26,7 +26,7 @@ angular.module 'mininationsApp'
     @isStep = (step) ->
       step == @currentStep
 
-    @next = (data, valid = true) ->
+    @next = (valid = true) ->
       if valid && @currentStep < @maximumStep
         @currentStep = @currentStep + 1
 
