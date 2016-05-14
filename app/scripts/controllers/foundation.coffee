@@ -20,18 +20,47 @@ angular.module 'mininationsApp'
 
     @foundationHelperService = foundationHelperService
 
-    @maximumStep = 9
-    @currentStep = 0
+    @currentStepName = "introduction"
+
+    @stepFSM =
+      introduction:
+        next: "presentation"
+      presentation:
+        previous: "introduction"
+        next: "reason"
+      reason:
+        previous: "presentation"
+        next: "territory"
+      territory:
+        previous: "reason"
+        next: "titleAndSystem"
+      titleAndSystem:
+        previous: "territory"
+        next: "naming"
+      naming:
+        previous: "titleAndSystem"
+        next: "anthem"
+      anthem:
+        previous: "naming"
+        next: "flag"
+      flag:
+        previous: "anthem"
+        next: "heraldry"
+      heraldry:
+        previous: "flag"
+        next: "render"
+      render:
+        previous: "heraldry"
 
     @isStep = (step) ->
-      step == @currentStep
+      step == @currentStepName
 
     @next = (valid = true) ->
-      if valid && @currentStep < @maximumStep
-        @currentStep = @currentStep + 1
+      if valid && @stepFSM[@currentStepName].next
+        @currentStepName = @stepFSM[@currentStepName].next
 
     @previous = () ->
-      if @currentStep > 0
-       @currentStep = @currentStep - 1
+      if @stepFSM[@currentStepName].previous
+       @currentStepName = @stepFSM[@currentStepName].previous
 
     return

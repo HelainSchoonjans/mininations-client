@@ -14,32 +14,31 @@ describe 'Controller: FoundationCtrl', ->
     FoundationCtrl = $controller 'FoundationCtrl',
       $scope: scope
 
-  it 'should start with the step 0', ->
-    expect(FoundationCtrl.currentStep).toBe(0)
+  it 'should start with the step "introduction"', ->
+    expect(FoundationCtrl.currentStepName).toBe("introduction")
 
-  it 'should check that step is 0', ->
-    expect(FoundationCtrl.isStep(0)).toBe(true)
+  it 'should check that step is "introduction"', ->
+    expect(FoundationCtrl.isStep("introduction")).toBe(true)
 
-  it 'should check that step is 1', ->
-    FoundationCtrl.currentStep = 1
-    expect(FoundationCtrl.isStep(1)).toBe(true)
+  it 'should check that step is "presentation"', ->
+    FoundationCtrl.currentStepName = "presentation"
+    expect(FoundationCtrl.isStep("presentation")).toBe(true)
 
-  it 'should be able to make a transition, increasing the step', ->
+  it 'should be able to make a transition, increasing going to the next step', ->
     FoundationCtrl.next()
-    expect(FoundationCtrl.currentStep).toBe(1)
+    expect(FoundationCtrl.currentStepName).toBe("presentation")
 
-  it "shouldn't be able to increase the step beyond the maximum number of steps", ->
-    FoundationCtrl.maximumStep = 1
+  it "shouldn't be able to go to the next step when there isn't one", ->
+    FoundationCtrl.currentStepName = "render"
+    expect(FoundationCtrl.currentStepName).toBe("render")
     FoundationCtrl.next()
-    expect(FoundationCtrl.currentStep).toBe(1)
-    FoundationCtrl.next()
-    expect(FoundationCtrl.currentStep).toBe(1)
+    expect(FoundationCtrl.currentStepName).toBe("render")
 
-  it 'should be able to make a transition, decreasing the step', ->
-    FoundationCtrl.currentStep = 1
+  it 'should be able to make a transition, going to the previous step', ->
+    FoundationCtrl.currentStepName = "presentation"
     FoundationCtrl.previous()
-    expect(FoundationCtrl.currentStep).toBe(0)
+    expect(FoundationCtrl.currentStepName).toBe("introduction")
 
-  it "shouldn't be able to decrease the step under 0", ->
+  it "shouldn't be able to go to the previous step if there isn't one", ->
     FoundationCtrl.previous()
-    expect(FoundationCtrl.currentStep).toBe(0)
+    expect(FoundationCtrl.currentStepName).toBe("introduction")
