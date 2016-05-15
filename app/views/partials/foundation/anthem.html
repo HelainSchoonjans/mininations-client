@@ -6,28 +6,72 @@
   <div class="col-md-4 form-group">
     <p>
       La devise d'un pays doit exprimer son identité, son comportement, ses valeurs. Pour créer
-      votre devise : soit vous laissez faire le hasard, sois vous la composé avec les mots proposés.
+      votre devise : soit vous laissez faire le hasard, soit vous la composer avec les mots proposés.
     </p>
   </div>
 
   <div class="col-md-8 form-group">
 
-    <form name="foundationAnthem" class="css-form">
+    <div class="form-group">
+      <button type="button" class="btn btn btn-defaultbtn btn-primary btn-block" ng-click="method = 'random'">
+        <h4 class="text-uppercase text-center">
+          Laisser faire le hazard
+        </h4>
+      </button>
+    </div>
 
-      <!-- <p>Choix 1. laisser faire le hazard</p>
+    <div ng-show="method == 'random'">
+      <form name="randomAnthem" class="css-form form-group">
 
-      <p>Au hazard
-      <p>Sélectionner -->
+        <div class="form-group">
+            <input type="text" ng-model="anthem.random" class="form-control text-uppercase text-center" required placeholder="Devise" disabled="disabled"/><br />
+        </div>
 
+        <button type="button" ng-click="foundation.setRandomAnthem()" class="form-group btn btn-default btn-block">
+          <span class="text-center text-uppercase">Au hazard</span>
+        </button>
 
-      <hr/>
-      <h4 class="text-uppercase text-center">Composer sa devise</h4>
-      <hr/>
+        </br>
+
+        <div class="form-group">
+          <div class="input-group col-xs-12">
+
+              <step-navigation-buttons
+                form="randomAnthem"
+                controller="foundation"
+              />
+
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="form-group">
+      <button type="button" class="form-group btn btn btn-defaultbtn btn-primary btn-block" ng-click="method = 'compose'; anthem = null">
+        <h4 class="text-uppercase text-center">
+          Composer sa devise
+        </h4>
+      </button>
+    </div>
+
+    <div ng-show="method == 'compose'">
 
       <div class="form-group">
-        <label class="col-sm-3 control-label text-uppercase">{{anthem.first? anthem.first.latin : "(NOMS)"}} et {{anthem.second? anthem.second.latin : "(NOMS)"}}</label>
-        <div class="col-sm-9">
-          <div class="input-group">
+        <button type="button" class="form-group btn btn btn-defaultbtn btn-default btn-block" ng-click="subMethod = 'nounAndNoun'">
+          <h4 class="text-uppercase text-center">
+            (Nom) et (nom)
+          </h4>
+        </button>
+      </div>
+
+
+
+      <form name="composeAnthem" class="css-form form-group" ng-show="subMethod == 'nounAndNoun'">
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label text-uppercase">{{anthem.first? anthem.first.latin : "(NOMS)"}} et {{anthem.second? anthem.second.latin : "(NOMS)"}}</label>
+          <div class="input-group col-sm-9">
             <select ng-model="anthem.first" ng-options="noun.french for noun in words.nouns" class="form-control text-center text-uppercase" required="">
               <option value=""> Nom </option>
             </select>
@@ -39,50 +83,42 @@
             </select>
           </div>
         </div>
-      </div>
 
-      <p class="help-block form-group">Exemple: 'Deus et patria' pour 'Dieu and pays'</p>
+        <p class="help-block form-group">Exemple: 'Deus et patria' pour 'Dieu and pays'</p>
 
-      <!-- <p>2. (NOm), (NOm) and (NOm)</p>
-      <p>Exemple:
-      Tellus, ventus et ignis
-      la terre, le vent et le feu</p>
+        <!-- <p>2. (NOm), (NOm) and (NOm)</p>
+        <p>Exemple:
+        Tellus, ventus et ignis
+        la terre, le vent et le feu</p>
 
-      <p>3. de (NOm), (NOm)</p>
-      <p>Exemple:</p>
-      Ex luna sapientia
-      de la lune, la connaissance
+        <p>3. de (NOm), (NOm)</p>
+        <p>Exemple:</p>
+        Ex luna sapientia
+        de la lune, la connaissance
 
-      <p>4. (NOm) (verbe) (objet)</p>
-      <p>Exemple:
-      dieu appel les sages
-      Deus sapientes vocat</p>
+        <p>4. (NOm) (verbe) (objet)</p>
+        <p>Exemple:
+        dieu appel les sages
+        Deus sapientes vocat</p>
 
-      <p>5. dans (NOm) (NOm)</p>
-      <p>Exemple:
-      in gloria pax
-      dans la gloir la paix</p> -->
+        <p>5. dans (NOm) (NOm)</p>
+        <p>Exemple:
+        in gloria pax
+        dans la gloir la paix</p> -->
 
-      <div class="form-group">
-        <div class="input-group">
-          <div class="col-sm-offset-3 col-sm-9 col-xs-12">
+        <div class="form-group">
+          <div class="input-group col-sm-offset-3 col-sm-9 col-xs-12">
 
-            <span class="input-group-btn">
-              <button type="button" ng-click="foundation.previous()" class="form-control btn btn-defaultbtn btn-default btn-block">
-                <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-              </button>
-            </span>
-
-            <span class="input-group-btn">
-              <button type="submit" ng-click="foundation.next({anthem: anthem.first + ' and ' + anthem.second}, foundationAnthem.$valid)" class="btn btn-default btn-block">
-                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-              </button>
-            </span>
+            <step-navigation-buttons
+              form="composeAnthem"
+              controller="foundation"
+            />
 
           </div>
         </div>
-      </div>
 
-    </form>
+      </form>
+    </div>
+
   </div>
 </div>

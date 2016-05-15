@@ -10,6 +10,36 @@
 angular.module 'mininationsApp'
   .service 'foundationHelperService', ->
 
+    @steps =
+      introduction:
+        next: "presentation"
+      presentation:
+        previous: "introduction"
+        next: "reason"
+      reason:
+        previous: "presentation"
+        next: "territory"
+      territory:
+        previous: "reason"
+        next: "titleAndSystem"
+      titleAndSystem:
+        previous: "territory"
+        next: "naming"
+      naming:
+        previous: "titleAndSystem"
+        next: "anthem"
+      anthem:
+        previous: "naming"
+        next: "flag"
+      flag:
+        previous: "anthem"
+        next: "heraldry"
+      heraldry:
+        previous: "flag"
+        next: "render"
+      render:
+        previous: "heraldry"
+
     @genders = [
       id: "male"
       value: "Homme"

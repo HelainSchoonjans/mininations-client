@@ -22,45 +22,41 @@ angular.module 'mininationsApp'
 
     @currentStepName = "introduction"
 
-    @stepFSM =
-      introduction:
-        next: "presentation"
-      presentation:
-        previous: "introduction"
-        next: "reason"
-      reason:
-        previous: "presentation"
-        next: "territory"
-      territory:
-        previous: "reason"
-        next: "titleAndSystem"
-      titleAndSystem:
-        previous: "territory"
-        next: "naming"
-      naming:
-        previous: "titleAndSystem"
-        next: "anthem"
-      anthem:
-        previous: "naming"
-        next: "flag"
-      flag:
-        previous: "anthem"
-        next: "heraldry"
-      heraldry:
-        previous: "flag"
-        next: "render"
-      render:
-        previous: "heraldry"
+    @steps = foundationHelperService.steps
 
     @isStep = (step) ->
       step == @currentStepName
 
     @next = (valid = true) ->
-      if valid && @stepFSM[@currentStepName].next
-        @currentStepName = @stepFSM[@currentStepName].next
+      if valid and not @isLastStep()
+        @currentStepName = @getNextStepName()
 
-    @previous = () ->
-      if @stepFSM[@currentStepName].previous
-       @currentStepName = @stepFSM[@currentStepName].previous
+    @previous = ->
+      if not @isFirstStep()
+       @currentStepName = @getPreviousStepName()
+
+    @isLastStep = ->
+      !@getNextStepName()
+
+    @isFirstStep = ->
+      !@getPreviousStepName()
+
+    @setRandomAnthem = ->
+      nouns = foundationHelperService.words.nouns
+      randomWord = nouns[Math.floor(Math.random() * nouns.length)];
+      randomWord2 = nouns[Math.floor(Math.random() * nouns.length)];
+      $scope.anthem =
+        first: randomWord
+        second: randomWord2
+        random: "#{randomWord.latin} et #{randomWord2.latin}"
+
+    @getCurrentStep = ->
+      @steps[@currentStepName]
+
+    @getNextStepName = ->
+      @getCurrentStep().next
+
+    @getPreviousStepName = ->
+      @getCurrentStep().previous
 
     return

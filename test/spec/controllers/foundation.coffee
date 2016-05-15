@@ -39,6 +39,18 @@ describe 'Controller: FoundationCtrl', ->
     FoundationCtrl.previous()
     expect(FoundationCtrl.currentStepName).toBe("introduction")
 
-  it "shouldn't be able to go to the previous step if there isn't one", ->
-    FoundationCtrl.previous()
-    expect(FoundationCtrl.currentStepName).toBe("introduction")
+  it "should tell if we are on a step without predecessor", ->
+    FoundationCtrl.currentStepName = "introduction"
+    expect(FoundationCtrl.isFirstStep()).toBe(true)
+
+  it "should tell if we are on a step with predecessor", ->
+    FoundationCtrl.currentStepName = "render"
+    expect(FoundationCtrl.isFirstStep()).toBe(false)
+
+  it "should tell if we are on a step without successor", ->
+    FoundationCtrl.currentStepName = "render"
+    expect(FoundationCtrl.isLastStep()).toBe(true)
+
+  it "should tell if we are on a step with successor", ->
+    FoundationCtrl.currentStepName = "introduction"
+    expect(FoundationCtrl.isLastStep()).toBe(false)
