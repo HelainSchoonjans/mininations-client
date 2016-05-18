@@ -1,4 +1,4 @@
-<div ng-hide="!foundation.isStep('territory')" id="territory" class="ng-hide row">
+<div ng-hide="foundation.isStep('territory')" id="territory" class="ng-hide row">
 
   <h3 class="text-uppercase text-center">3. Trouver un territoire</h3>
   <hr/>
@@ -12,7 +12,7 @@
       le reste du programme sera moins personnalisé.
     </p>
   </div>
-  
+
   <div class="col-md-8 form-group">
 
     <form name="foundationTerritory" class="css-form">
@@ -33,11 +33,36 @@
         </div>
       </div>
 
-      <!-- Territoires personels: -->
-
       <div class="form-group">
         <img ng-src="/images/territories/{{territory.image}}" alt="{{territory.name}}" width="100%"/>
       </div>
+
+      <div class="form-group" ng-show="territory">
+
+        <div class="col-xs-6">
+          <h4 class="glyphicon glyphicon-plus"/>
+          <ul ng-repeat="advantage in territory.advantages">
+            <li>
+              <i class="glyphicon glyphicon-minus"></i> {{advantage}}
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-xs-6">
+          <h4 class="glyphicon glyphicon-minus"/>
+          <ul ng-repeat="disadvantage in territory.disadvantages">
+            <li>
+              <i class="glyphicon glyphicon-minus"></i> {{disadvantage}}
+            </li>
+          </ul>
+        </div>
+
+        <div class="clearfix form-group"></div>
+
+        <h4 class="form-group">PLUS D'INFOS</h4>
+        {{territory.description}}
+      </div>
+
 
       <div class="form-group">
         <div class="input-group col-xs-12">
