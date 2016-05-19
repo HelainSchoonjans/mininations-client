@@ -13,7 +13,66 @@
   <div class="col-md-8 form-group">
 
     <div class="form-group">
-      <button type="button" class="btn btn btn-defaultbtn btn-primary btn-block" ng-click="method = 'random'">
+      <button type="button" class="btn btn btn-defaultbtn btn-primary btn-block" ng-click="method = 'cadavreExquis'; anthem = null">
+        <h4 class="text-uppercase text-center">
+          Cadavre exquis
+        </h4>
+      </button>
+    </div>
+
+    <div ng-show="method == 'cadavreExquis'">
+
+      <form name="cadavreExquisAnthem" class="css-form form-group">
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label text-uppercase">
+            {{anthem.first.latin}} {{anthem.second.latin[anthem.first.plural][anthem.first.gender]}} {{anthem.third.latin[anthem.first.plural]}} {{anthem.fourth.latin}} {{anthem.fifth.latin[anthem.fourth.plural][anthem.fourth.gender]}}
+          </label>
+          <div class="input-group col-sm-9">
+
+            <select ng-model="anthem.first"
+            ng-options="noun.french for noun in cadavreExquis.nouns" class="form-control text-center text-uppercase" required="">
+              <option value=""> Noms </option>
+            </select>
+
+            <select ng-model="anthem.second"
+            ng-options="adjective.french[anthem.first.plural][anthem.first.gender] for adjective in cadavreExquis.adjectives" class="form-control text-center text-uppercase" required="">
+              <option value=""> Adjectifs </option>
+            </select>
+
+            <select ng-model="anthem.third"
+            ng-options="verb.french[anthem.first.plural] for verb in cadavreExquis.verbs" class="form-control text-center text-uppercase" required="">
+              <option value=""> Verbes </option>
+            </select>
+
+            <select ng-model="anthem.fourth"
+            ng-options="noun.french for noun in cadavreExquis.nouns" class="form-control text-center text-uppercase" required="">
+              <option value=""> COD </option>
+            </select>
+
+            <select ng-model="anthem.fifth"
+            ng-options="adjective.french[anthem.fourth.plural][anthem.fourth.gender] for adjective in cadavreExquis.adjectives" class="form-control text-center text-uppercase" required="">
+              <option value=""> Adjectifs </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group col-sm-offset-3 col-sm-9 col-xs-12">
+
+            <step-navigation-buttons
+              form="cadavreExquisAnthem"
+              controller="foundation"
+            />
+
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="form-group">
+      <button type="button" class="btn btn btn-defaultbtn btn-primary btn-block" ng-click="method = 'random'; anthem = null">
         <h4 class="text-uppercase text-center">
           Laisser faire le hazard
         </h4>

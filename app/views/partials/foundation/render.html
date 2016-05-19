@@ -20,7 +20,12 @@
       <dd>{{system.name}} {{system.type}}</dd>
 
       <dt>Anthem</dt>
-      <dd class="text-uppercase">{{anthem.first.latin}} et {{anthem.second.latin}}</dd>
+      <dd class="text-uppercase" ng-show="method == 'compose' || method == 'random'">
+        {{anthem.first.latin}} et {{anthem.second.latin}}
+      </dd>
+      <dd class="text-uppercase" ng-show="method == 'cadavreExquis'">
+        {{anthem.first.latin}} {{anthem.second.latin[anthem.first.plural][anthem.first.gender]}} {{anthem.third.latin[anthem.first.plural]}} {{anthem.fourth.latin}} {{anthem.fifth.latin[anthem.fourth.plural][anthem.fourth.gender]}}
+      </dd>
 
       <dt>Raison d'être</dt>
       <dd>{{reason.name}}</dd>

@@ -17,6 +17,7 @@ angular.module 'mininationsApp'
     $scope.reasons = foundationHelperService.reasons
     $scope.territories = foundationHelperService.territoriesDetailed
     $scope.genders = foundationHelperService.genders
+    $scope.cadavreExquis = foundationHelperService.cadavreExquis
 
     @foundationHelperService = foundationHelperService
 
