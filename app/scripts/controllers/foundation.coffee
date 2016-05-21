@@ -43,13 +43,23 @@ angular.module 'mininationsApp'
       !@getPreviousStepName()
 
     @setRandomAnthem = ->
-      nouns = foundationHelperService.words.nouns
-      randomWord = nouns[Math.floor(Math.random() * nouns.length)];
-      randomWord2 = nouns[Math.floor(Math.random() * nouns.length)];
-      $scope.anthem =
-        first: randomWord
-        second: randomWord2
-        random: "#{randomWord.latin} et #{randomWord2.latin}"
+      nouns = foundationHelperService.cadavreExquis.nouns
+      adjectives = foundationHelperService.cadavreExquis.adjectives
+      verbs = foundationHelperService.cadavreExquis.verbs
+
+      noun = nouns[Math.floor(Math.random() * nouns.length)]
+      adjective = adjectives[Math.floor(Math.random() * adjectives.length)]
+      verb = verbs[Math.floor(Math.random() * verbs.length)]
+      cod = nouns[Math.floor(Math.random() * nouns.length)]
+      adjective2 = adjectives[Math.floor(Math.random() * adjectives.length)]
+
+      $scope.anthem=
+        french: "#{noun.french} #{adjective.french[noun.plural][noun.gender]}"+
+          " #{verb.french[noun.plural]} #{cod.french}"+
+          " #{adjective2.french[cod.plural][cod.gender]}"
+        latin: "#{noun.latin} #{adjective.latin[noun.plural][noun.gender]}"+
+          " #{verb.latin[noun.plural]} #{cod.latin}"+
+          " #{adjective2.latin[cod.plural][cod.gender]}"
 
     @getCurrentStep = ->
       @steps[@currentStepName]

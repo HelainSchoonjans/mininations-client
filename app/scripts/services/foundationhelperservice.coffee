@@ -2114,8 +2114,44 @@ l’Antarctique du 1er décembre 1959). Il reste une partie de l’Antarctique q
           latin: "uictoria"
         }
       ]
-      verbs: [ ]
-      pronouns: [ ]
+      verbs: [
+        french: "aime"
+        latin: "sicut"
+      ,
+        french: "appel"
+        latin: "vocat"
+      ,
+        french: "choisi"
+        latin: "lectus"
+      ,
+        french: "aide"
+        latin: "auxilium"
+      ,
+        french: "protège"
+        latin: "Suscepit"
+      ]
+      pronouns: [
+
+      ]
+      objects: [
+          french: "moi"
+          latin: "ergo"
+        ,
+          french: "nous"
+          latin: "nobis"
+        ,
+          french: "les aimés"
+          latin: "amatam"
+        ,
+          french: "les fidèles"
+          latin: "fidelium"
+        ,
+          french: "les forts"
+          latin: "fortem"
+        ,
+          french: "les sages"
+          latin: "sapientes"
+      ]
 
     @politicalSystems = {
       "République": {

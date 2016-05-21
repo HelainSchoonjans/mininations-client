@@ -13,65 +13,6 @@
   <div class="col-md-8 form-group">
 
     <div class="form-group">
-      <button type="button" class="btn btn btn-defaultbtn btn-primary btn-block" ng-click="method = 'cadavreExquis'; anthem = null">
-        <h4 class="text-uppercase text-center">
-          Cadavre exquis
-        </h4>
-      </button>
-    </div>
-
-    <div ng-show="method == 'cadavreExquis'">
-
-      <form name="cadavreExquisAnthem" class="css-form form-group">
-
-        <div class="form-group">
-          <label class="col-sm-3 control-label text-uppercase">
-            {{anthem.first.latin}} {{anthem.second.latin[anthem.first.plural][anthem.first.gender]}} {{anthem.third.latin[anthem.first.plural]}} {{anthem.fourth.latin}} {{anthem.fifth.latin[anthem.fourth.plural][anthem.fourth.gender]}}
-          </label>
-          <div class="input-group col-sm-9">
-
-            <select ng-model="anthem.first"
-            ng-options="noun.french for noun in cadavreExquis.nouns" class="form-control text-center text-uppercase" required="">
-              <option value=""> Noms </option>
-            </select>
-
-            <select ng-model="anthem.second"
-            ng-options="adjective.french[anthem.first.plural][anthem.first.gender] for adjective in cadavreExquis.adjectives" class="form-control text-center text-uppercase" required="">
-              <option value=""> Adjectifs </option>
-            </select>
-
-            <select ng-model="anthem.third"
-            ng-options="verb.french[anthem.first.plural] for verb in cadavreExquis.verbs" class="form-control text-center text-uppercase" required="">
-              <option value=""> Verbes </option>
-            </select>
-
-            <select ng-model="anthem.fourth"
-            ng-options="noun.french for noun in cadavreExquis.nouns" class="form-control text-center text-uppercase" required="">
-              <option value=""> COD </option>
-            </select>
-
-            <select ng-model="anthem.fifth"
-            ng-options="adjective.french[anthem.fourth.plural][anthem.fourth.gender] for adjective in cadavreExquis.adjectives" class="form-control text-center text-uppercase" required="">
-              <option value=""> Adjectifs </option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <div class="input-group col-sm-offset-3 col-sm-9 col-xs-12">
-
-            <step-navigation-buttons
-              form="cadavreExquisAnthem"
-              controller="foundation"
-            />
-
-          </div>
-        </div>
-
-      </form>
-    </div>
-
-    <div class="form-group">
       <button type="button" class="btn btn btn-defaultbtn btn-primary btn-block" ng-click="method = 'random'; anthem = null">
         <h4 class="text-uppercase text-center">
           Laisser faire le hazard
@@ -83,8 +24,12 @@
       <form name="randomAnthem" class="css-form form-group">
 
         <div class="form-group">
-            <input type="text" ng-model="anthem.random" class="form-control text-uppercase text-center" required placeholder="Devise" disabled="disabled"/><br />
+            <input type="text" ng-model="anthem.latin" class="form-control text-uppercase text-center" required placeholder="Devise" disabled="disabled"/><br />
         </div>
+
+        <p class="help-block form-group" ng-show="anthem">
+          Traduction: '{{anthem.french}}'
+        </p>
 
         <button type="button" ng-click="foundation.setRandomAnthem()" class="form-group btn btn-default btn-block">
           <span class="text-center text-uppercase">Au hazard</span>
@@ -117,14 +62,12 @@
     <div ng-show="method == 'compose'">
 
       <div class="form-group">
-        <button type="button" class="form-group btn btn btn-defaultbtn btn-default btn-block" ng-click="subMethod = 'nounAndNoun'">
+        <button type="button" class="form-group btn btn btn-defaultbtn btn-default btn-block" ng-click="subMethod = 'nounAndNoun'; anthem = null">
           <h4 class="text-uppercase text-center">
             (Nom) et (nom)
           </h4>
         </button>
       </div>
-
-
 
       <form name="composeAnthem" class="css-form form-group" ng-show="subMethod == 'nounAndNoun'">
 
@@ -145,25 +88,55 @@
 
         <p class="help-block form-group">Exemple: 'Deus et patria' pour 'Dieu and pays'</p>
 
-        <!-- <p>2. (NOm), (NOm) and (NOm)</p>
-        <p>Exemple:
-        Tellus, ventus et ignis
-        la terre, le vent et le feu</p>
+        <div class="form-group">
+          <div class="input-group col-sm-offset-3 col-sm-9 col-xs-12">
 
-        <p>3. de (NOm), (NOm)</p>
-        <p>Exemple:</p>
-        Ex luna sapientia
-        de la lune, la connaissance
+            <step-navigation-buttons
+              form="composeAnthem"
+              controller="foundation"
+            />
 
-        <p>4. (NOm) (verbe) (objet)</p>
-        <p>Exemple:
-        dieu appel les sages
-        Deus sapientes vocat</p>
+          </div>
+        </div>
 
-        <p>5. dans (NOm) (NOm)</p>
-        <p>Exemple:
-        in gloria pax
-        dans la gloir la paix</p> -->
+      </form>
+
+      <div class="form-group">
+        <button type="button" class="form-group btn btn btn-defaultbtn btn-default btn-block"
+          ng-click="subMethod = 'nounAndNounAndNoun'; anthem = null">
+          <h4 class="text-uppercase text-center">
+            (Nom) et (nom) et (nom)
+          </h4>
+        </button>
+      </div>
+
+      <form name="composeAnthem" class="css-form form-group" ng-show="subMethod == 'nounAndNounAndNoun'">
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label text-uppercase">{{anthem.first? anthem.first.latin : "(NOMS)"}} et {{anthem.second? anthem.second.latin : "(NOMS)"}}
+           et {{anthem.third? anthem.third.latin : "(NOMS)"}}</label>
+          <div class="input-group col-sm-9">
+            <select ng-model="anthem.first" ng-options="noun.french for noun in words.nouns" class="form-control text-center text-uppercase" required="">
+              <option value=""> Nom </option>
+            </select>
+
+            <span class="input-group-addon">et</span>
+
+            <select ng-model="anthem.second" ng-options="noun.french for noun in words.nouns" class="form-control text-center text-uppercase" required="">
+              <option value=""> Nom </option>
+            </select>
+
+            <span class="input-group-addon">et</span>
+
+            <select ng-model="anthem.third" ng-options="noun.french for noun in words.nouns" class="form-control text-center text-uppercase" required="">
+              <option value=""> Nom </option>
+            </select>
+          </div>
+        </div>
+
+        <p class="help-block form-group">
+          Exemple: 'Tellus, ventus et ignis': 'la terre, le vent et le feu'
+        </p>
 
         <div class="form-group">
           <div class="input-group col-sm-offset-3 col-sm-9 col-xs-12">
@@ -177,6 +150,163 @@
         </div>
 
       </form>
+
+      <div class="form-group">
+        <button type="button" class="form-group btn btn btn-defaultbtn btn-default btn-block"
+          ng-click="subMethod = 'deNounAndNoun'; anthem = null">
+          <h4 class="text-uppercase text-center">
+            de (Nom), (nom)
+          </h4>
+        </button>
+      </div>
+
+      <form name="composeAnthem" class="css-form form-group" ng-show="subMethod == 'deNounAndNoun'">
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label text-uppercase">
+            de {{anthem.first? anthem.first.latin : "(NOMS)"}}, {{anthem.second? anthem.second.latin : "(NOMS)"}}
+          </label>
+          <div class="input-group col-sm-9">
+
+            <span class="input-group-addon">de</span>
+
+            <select ng-model="anthem.first" ng-options="noun.french for noun in words.nouns" class="form-control text-center text-uppercase" required="">
+              <option value=""> Nom </option>
+            </select>
+
+            <span class="input-group-addon">, </span>
+
+            <select ng-model="anthem.second" ng-options="noun.french for noun in words.nouns" class="form-control text-center text-uppercase" required="">
+              <option value=""> Nom </option>
+            </select>
+
+          </div>
+        </div>
+
+        <p class="help-block form-group">
+          Example: 'de luna, sapientia' : 'de la lune, la connaissance'
+        </p>
+
+        <div class="form-group">
+          <div class="input-group col-sm-offset-3 col-sm-9 col-xs-12">
+
+            <step-navigation-buttons
+              form="composeAnthem"
+              controller="foundation"
+            />
+
+          </div>
+        </div>
+
+      </form>
+
+      <div class="form-group">
+        <button type="button" class="form-group btn btn btn-defaultbtn btn-default btn-block"
+          ng-click="subMethod = 'nounAndVerbAndObject'; anthem = null">
+          <h4 class="text-uppercase text-center">
+            (NOm) (verbe) (objet)
+          </h4>
+        </button>
+      </div>
+
+      <form name="composeAnthem" class="css-form form-group" ng-show="subMethod == 'nounAndVerbAndObject'">
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label text-uppercase">
+            {{anthem.first? anthem.first.latin : "(NOM)"}}
+             {{anthem.second? anthem.second.latin : "(VERBE)"}}
+             {{anthem.third? anthem.third.latin : "(Objet)"}}
+          </label>
+          <div class="input-group col-sm-9">
+
+            <select ng-model="anthem.first" ng-options="noun.french for noun in words.nouns"
+            class="form-control text-center text-uppercase" required="">
+              <option value=""> Nom </option>
+            </select>
+
+            <select ng-model="anthem.second" ng-options="verb.french for verb in words.verbs"
+              class="form-control text-center text-uppercase" required="">
+              <option value=""> Verbe </option>
+            </select>
+
+            <select ng-model="anthem.third" ng-options="object.french for object in words.objects"
+            class="form-control text-center text-uppercase" required="">
+              <option value=""> Objet </option>
+            </select>
+
+          </div>
+        </div>
+
+        <p class="help-block form-group">
+          Exemple: 'dieu appel les sages' : 'Deus sapientes vocat'
+        </p>
+
+        <div class="form-group">
+          <div class="input-group col-sm-offset-3 col-sm-9 col-xs-12">
+
+            <step-navigation-buttons
+              form="composeAnthem"
+              controller="foundation"
+            />
+
+          </div>
+        </div>
+
+      </form>
+      <div class="form-group">
+        <button type="button" class="form-group btn btn btn-defaultbtn btn-default btn-block"
+          ng-click="subMethod = 'inNounAndNoun'; anthem = null">
+          <h4 class="text-uppercase text-center">
+            in (Nom), (nom)
+          </h4>
+        </button>
+      </div>
+
+      <form name="composeAnthem" class="css-form form-group"
+       ng-show="subMethod == 'inNounAndNoun'">
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label text-uppercase">
+            in
+             {{anthem.first? anthem.first.latin : "(nom)"}}
+             {{anthem.second? anthem.second.latin : "(nom)"}}
+          </label>
+          <div class="input-group col-sm-9">
+
+            <span class="input-group-addon">Dans</span>
+
+            <select ng-model="anthem.first" ng-options="noun.french for noun in words.nouns"
+             class="form-control text-center text-uppercase" required="">
+              <option value=""> Nom </option>
+            </select>
+
+            <span class="input-group-addon">,</span>
+
+            <select ng-model="anthem.second" ng-options="noun.french for noun in words.nouns"
+              class="form-control text-center text-uppercase" required="">
+              <option value=""> Nom </option>
+            </select>
+
+          </div>
+        </div>
+
+        <p class="help-block form-group">
+          Exemple: 'in gloria pax' : 'dans la gloir la paix'
+        </p>
+
+        <div class="form-group">
+          <div class="input-group col-sm-offset-3 col-sm-9 col-xs-12">
+
+            <step-navigation-buttons
+              form="composeAnthem"
+              controller="foundation"
+            />
+
+          </div>
+        </div>
+
+      </form>
+
     </div>
 
   </div>

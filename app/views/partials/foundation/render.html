@@ -20,11 +20,23 @@
       <dd>{{system.name}} {{system.type}}</dd>
 
       <dt>Anthem</dt>
-      <dd class="text-uppercase" ng-show="method == 'compose' || method == 'random'">
+      <dd class="text-uppercase" ng-show="method == 'compose' && subMethod == 'nounAndNoun'">
         {{anthem.first.latin}} et {{anthem.second.latin}}
       </dd>
-      <dd class="text-uppercase" ng-show="method == 'cadavreExquis'">
-        {{anthem.first.latin}} {{anthem.second.latin[anthem.first.plural][anthem.first.gender]}} {{anthem.third.latin[anthem.first.plural]}} {{anthem.fourth.latin}} {{anthem.fifth.latin[anthem.fourth.plural][anthem.fourth.gender]}}
+      <dd class="text-uppercase" ng-show="method == 'compose' && subMethod == 'nounAndNounAndNoun'">
+        {{anthem.first.latin}} et {{anthem.second.latin}} et {{anthem.third.latin}}
+      </dd>
+      <dd class="text-uppercase" ng-show="method == 'compose' && subMethod == 'nounAndVerbAndObject'">
+        {{anthem.first.latin}} {{anthem.second.latin}} {{anthem.third.latin}}
+      </dd>
+      <dd class="text-uppercase" ng-show="method == 'compose' && subMethod == 'inNounAndNoun'">
+        in {{anthem.first.latin}} {{anthem.second.latin}}
+      </dd>
+      <dd class="text-uppercase" ng-show="method == 'compose' && subMethod == 'deNounAndNoun'">
+        de {{anthem.first.latin}}, {{anthem.second.latin}}
+      </dd>
+      <dd class="text-uppercase" ng-show="method == 'random'">
+        {{anthem.latin}}
       </dd>
 
       <dt>Raison d'être</dt>
