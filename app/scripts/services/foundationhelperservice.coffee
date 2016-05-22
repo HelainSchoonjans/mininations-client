@@ -10,6 +10,61 @@
 angular.module 'mininationsApp'
   .service 'foundationHelperService', ->
 
+    @nationNameSuggestionsForTerritory = [
+        ids: [
+          1, 2, 4, 6, 7, 8, 9, 10, 11,
+          12, 13, 14, 15, 16, 17, 18, 19, 20
+        ]
+        getNameFrom: (user) ->
+          "#{user.nickname}land"
+      ,
+        ids: [
+          3, 17, 18, 20, 21, 22, 23, 24, 25, 26,
+          27, 28, 29, 30, 31, 32, 33, 34, 35, 36
+        ]
+        getNameFrom: (user) ->
+          "#{user.nickname} island"
+      ,
+        ids: [
+          1, 2, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+          17, 18, 19, 20
+        ]
+        getNameFrom: (user) ->
+          "#{user.lastName}land"
+      ,
+        ids: [
+          3, 17, 18, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
+          30, 31, 32, 33, 34, 35, 36
+        ]
+        getNameFrom: (user) ->
+          "#{user.firstName} #{user.lastName} island"
+      ,
+        ids: [
+          13, 14, 15, 16, 17, 18, 19, 20
+        ]
+        getNameFrom: (user) ->
+          "Fort #{user.nickname}"
+      ,
+        ids: [
+          13, 14, 15, 16, 17, 18, 19, 20
+        ]
+        getNameFrom: (user) ->
+          "Fort #{user.lastName}"
+      ,
+        ids: [
+          1, 2, 3, 5, 34, 35, 36
+        ]
+        getNameFrom: (user) ->
+          "Ice#{user.lastName}land"
+    ]
+
+    @getNationNames = (user, territory) ->
+      nationNames = []
+      for name in @nationNameSuggestionsForTerritory
+        if territory.id in name.ids
+          nationNames.push name.getNameFrom(user)
+      return nationNames
+
     @steps =
       introduction:
         next: "presentation"

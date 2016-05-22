@@ -12,12 +12,20 @@ angular.module 'mininationsApp'
 
     $scope.titles = foundationHelperService.titles
     $scope.territoryFilters = foundationHelperService.territoryFilters
-    $scope.nationNames = foundationHelperService.nationNames
     $scope.words = foundationHelperService.words
     $scope.reasons = foundationHelperService.reasons
     $scope.territories = foundationHelperService.territoriesDetailed
     $scope.genders = foundationHelperService.genders
     $scope.cadavreExquis = foundationHelperService.cadavreExquis
+    $scope.resetNationNames = () ->
+      nationNames = []
+      nationNames.push name for name in $scope.reason.nation.names
+      nationNames.push name for name in foundationHelperService.getNationNames(
+        $scope.user
+        $scope.territory
+      )
+      nationNames.push name for name in $scope.system.names
+      $scope.nationNames = nationNames
 
     @foundationHelperService = foundationHelperService
 

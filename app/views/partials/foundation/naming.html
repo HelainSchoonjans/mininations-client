@@ -7,21 +7,15 @@
     <p>
       Dans « proposition » nous vous avons trouvé des noms sur mesure. Néanmoins si vous
       avez déjà en tête le nom de votre nation, inscrivez le dans « choisir son nom ».
-      </p>
+    </p>
   </div>
 
   <div class="col-md-8 form-group">
 
     <form name="foundationNaming" class="css-form">
 
-      <!-- propositions vs choisir le nom -->
-
-      <!-- <p>Choix en fonction des raisons:</p>
-      <p>Choix en fonction de la politique:</p>
-      <p>Choix en fonction du territoire:</p> -->
-
       <div class="form-group">
-        <select ng-model="nation.name" ng-options="name for name in reason.nation.names" class="form-control text-center text-uppercase" required="">
+        <select ng-model="nation.name" ng-options="name for name in nationNames" class="form-control text-center text-uppercase" required="">
           <option value="">Propositions</option>
         </select>
       </div>

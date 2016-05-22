@@ -34,7 +34,9 @@
 
         <div class="form-group">
           <div>
-            <select ng-show="system" ng-model="system.type" ng-options="qualifier for qualifier in system.types" class="form-control text-center text-uppercase" required="">
+            <select ng-show="system" ng-model="system.type"
+            ng-change="resetNationNames()"
+            ng-options="qualifier for qualifier in system.types" class="form-control text-center text-uppercase" required="">
               <option value=""> qualificatif </option>
             </select>
           </div>
