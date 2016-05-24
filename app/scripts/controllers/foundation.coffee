@@ -26,6 +26,15 @@ angular.module 'mininationsApp'
       )
       nationNames.push name for name in $scope.system.names
       $scope.nationNames = nationNames
+    $scope.setTitle = (title) ->
+      $scope.title = title
+      $scope.method = 'system'
+    $scope.setSystem = (system) ->
+      $scope.system = system
+      $scope.method = 'qualifier'
+    $scope.setQualifier = (qualifier) ->
+      $scope.system.type = qualifier
+      $scope.method = ''
 
     @foundationHelperService = foundationHelperService
 

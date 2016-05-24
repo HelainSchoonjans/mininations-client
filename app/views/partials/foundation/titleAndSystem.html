@@ -5,8 +5,8 @@
 
   <div class="col-md-4 form-group">
     <p>
-      Roi, reine, dictateur, president(e) et j'en passe. Ici vous pouvez décider de votre titre et de
-      la manière dont vous aller gouverner notre nation.
+      Roi, reine, dictateur, président(e) et j'en passe. Ici vous pouvez décider de votre titre et de
+      la manière dont vous aller gouverner votre nation.
     </p>
   </div>
 
@@ -15,36 +15,91 @@
     <form name="titleAndSystem" class="css-form">
 
       <div class="form-group">
-        <div>
-          <select ng-model="title" ng-options="title.name[user.gender.id] for title in titles" class="form-control text-center text-uppercase" required="">
+        <div class="hidden-xs">
+
+          <select ng-model="title" ng-options="title.name[user.gender.id] for title in titles"
+          class="form-control text-center text-uppercase" novalidate required="">
             <option value=""> Je veux être </option>
           </select>
+
+        </div>
+        <div class="visible-xs">
+
+          <button type="button" class="btn btn btn-defaultbtn btn-primary btn-block" ng-click="method = 'title'">
+            <h4 class="text-uppercase text-center">
+              Je veux être {{title.name[user.gender.id]}}
+            </h4>
+          </button>
+
+          <div ng-repeat="someTitle in titles" ng-show="method == 'title'">
+            <button type="button" class="btn btn-link"
+              ng-click="setTitle(someTitle)">
+              #{{someTitle.name[user.gender.id]}}
+            </button>
+          </div>
+
         </div>
       </div>
 
       <div ng-show="title">
 
         <div class="form-group">
-          <div>
+          <div class="hidden-xs">
             <select ng-model="system" ng-options="system.name for system in title.systems" class="form-control text-center text-uppercase" required="">
               <option value=""> dans </option>
             </select>
           </div>
+          <div class="visible-xs">
+
+            <button type="button" class="btn btn btn-defaultbtn btn-primary btn-block" ng-click="method = 'system'">
+              <h4 class="text-uppercase text-center">
+                dans {{system.gender == "F" ? "une" : system.gender == "M"? "un" : ""}}
+                  {{system ? system.shortName :""}}
+              </h4>
+            </button>
+
+            <div ng-repeat="someSystem in title.systems" ng-show="method == 'system'">
+              <button type="button" class="btn btn-link"
+                ng-click="setSystem(someSystem)">
+                #{{someSystem.name}}
+              </button>
+            </div>
+
+          </div>
         </div>
 
-        <div class="form-group">
-          <div>
-            <select ng-show="system" ng-model="system.type"
-            ng-change="resetNationNames()"
-            ng-options="qualifier for qualifier in system.types" class="form-control text-center text-uppercase" required="">
+        <div class="form-group" ng-show="system">
+          <div class="hidden-xs">
+
+            <select ng-model="system.type"
+              ng-change="resetNationNames()"
+              ng-options="qualifier for qualifier in system.types"
+              class="form-control text-center text-uppercase" required="">
               <option value=""> qualificatif </option>
             </select>
+
+          </div>
+          <div class="visible-xs">
+
+            <button type="button" class="btn btn btn-defaultbtn btn-primary btn-block" ng-click="method = 'qualifier'">
+              <h4 class="text-uppercase text-center">
+                {{system.type ? system.type : "qualificatif"}}
+              </h4>
+            </button>
+
+            <div ng-repeat="someQualifier in system.types" ng-show="method == 'qualifier'">
+              <button type="button" class="btn btn-link"
+                ng-click="setQualifier(someQualifier)">
+                #{{someQualifier}}
+              </button>
+            </div>
+
           </div>
         </div>
 
       </div>
 
-      <div class="form-group">
+      <div class="form-group" ng-show="system.type">
         <div class="input-group col-xs-12">
 
           <step-navigation-buttons

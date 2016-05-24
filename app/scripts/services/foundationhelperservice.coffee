@@ -2211,6 +2211,7 @@ l’Antarctique du 1er décembre 1959). Il reste une partie de l’Antarctique q
     @politicalSystems = {
       "République": {
         name: "République"
+        shortName: "République"
         types: [
           "présidentielle"
           "parlementaire"
@@ -2224,6 +2225,7 @@ l’Antarctique du 1er décembre 1959). Il reste une partie de l’Antarctique q
       }
       "Monarchie": {
         name: "Monarchie"
+        shortName: "Monarchie"
         types: [
           "parlementaire"
           "absolue"
@@ -2238,6 +2240,7 @@ l’Antarctique du 1er décembre 1959). Il reste une partie de l’Antarctique q
       }
       "Gouvernement autoritaire": {
         name: "Gouvernement autoritaire"
+        shortName: "Gvt. autoritaire"
         types: [
           "dictatoriale"
           "totalitaire"
@@ -2252,6 +2255,7 @@ l’Antarctique du 1er décembre 1959). Il reste une partie de l’Antarctique q
       }
       "Gouvernement religieux": {
         name: "Gouvernement religieux"
+        shortName: "Gvt. religieux"
         types: [
           "califat"
           "sultanat"
