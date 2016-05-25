@@ -36,6 +36,21 @@ angular.module 'mininationsApp'
       $scope.system.type = qualifier
       $scope.method = ''
 
+    @initSelectedFilters = () ->
+      $scope.selected = {} if not $scope.selected
+      $scope.selected.filters = [] if not $scope.selected.filters
+
+    $scope.toggleFilter = (filter) =>
+      filter.active = not filter?.active
+      @initSelectedFilters()
+      filters = $scope.selected.filters
+      filterId = filter.id
+      index = filters.indexOf(filterId)
+      if index > -1
+        filters.splice(index, 1)
+      else
+        filters.push filterId
+
     @foundationHelperService = foundationHelperService
 
     @currentStepName = "introduction"
