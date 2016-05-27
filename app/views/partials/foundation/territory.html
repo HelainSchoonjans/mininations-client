@@ -23,15 +23,15 @@
 
           <!-- NORMAL STATE -->
           <div ng-hide="someFilter.active">
-            <button type="button" class="btn btn-link"
+            <button type="button" class="btn btn-link btn-link-hashtag"
               ng-click="toggleFilter(someFilter)">
               #{{someFilter.name}}
             </button>
           </div>
 
           <!-- ACTIVE STATE -->
-          <div ng-hide="!someFilter.active">
-            <button type="button" class="btn btn-link text-uppercase"
+          <div ng-show="someFilter.active">
+            <button type="button" class="btn btn-link btn-link-hashtag-selected"
               ng-click="toggleFilter(someFilter)">
               #{{someFilter.name}}
             </button>

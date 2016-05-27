@@ -36,6 +36,34 @@ body {
   }
 }
 
+.btn-link-hashtag
+{
+    color:black;
+}
+
+.btn-link-hashtag:hover
+{
+    color:black;
+}
+
+.btn-link-hashtag-selected
+{
+    color:black;
+    text-decoration: underline;
+    -webkit-text-decoration-color: red;
+    -moz-text-decoration-color: red;
+    text-decoration-color: red;
+}
+
+.btn-link-hashtag-selected:hover
+{
+    color:black;
+    text-decoration: underline;
+    -webkit-text-decoration-color: red;
+    -moz-text-decoration-color: red;
+    text-decoration-color: red;
+}
+
 /* Start of the copy-paste from In-design*/
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, p, pre, code, blockquote {
 	margin:0;
