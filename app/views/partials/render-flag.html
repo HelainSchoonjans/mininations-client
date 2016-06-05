@@ -1,0 +1,85 @@
+<svg width="100%" height="100%" viewBox="0 0 350 220">
+
+  <!-- divisions 220-->
+
+  <rect ng-show="division == 'full'" x="0" y="0" width="100%" height="100%" ng-style="getStyle(divisionColor)" />
+
+  <rect ng-show="division == 'halfVertical'" x="0" y="0" width="50%" height="100%" ng-style="getStyle(divisionColor)" />
+  <rect ng-show="division == 'halfVertical'" x="50%" y="0" width="49.5%" height="100%" ng-style="getStyle(secondDivisionColor)" />
+
+  <rect ng-show="division == 'halfHorizontal'" x="0" y="0" width="100%" height="50%" ng-style="getStyle(divisionColor)" />
+  <rect ng-show="division == 'halfHorizontal'" x="0" y="50%" width="100%" height="49%" ng-style="getStyle(secondDivisionColor)" />
+
+  <rect ng-show="division == 'fiveSixHorizontal'" x="0" y="0" width="100%" height="11%" ng-style="getStyle(divisionColor)" />
+  <rect ng-show="division == 'fiveSixHorizontal'" x="0" y="11%" width="100%" height="11%" ng-style="getStyle(secondDivisionColor)" />
+  <rect ng-show="division == 'fiveSixHorizontal'" x="0" y="22%" width="100%" height="11%" ng-style="getStyle(divisionColor)" />
+  <rect ng-show="division == 'fiveSixHorizontal'" x="0" y="33%" width="100%" height="11%" ng-style="getStyle(secondDivisionColor)" />
+  <rect ng-show="division == 'fiveSixHorizontal'" x="0" y="44%" width="100%" height="11%" ng-style="getStyle(divisionColor)" />
+  <rect ng-show="division == 'fiveSixHorizontal'" x="0" y="55%" width="100%" height="11%" ng-style="getStyle(secondDivisionColor)" />
+  <rect ng-show="division == 'fiveSixHorizontal'" x="0" y="66%" width="100%" height="11%" ng-style="getStyle(divisionColor)" />
+  <rect ng-show="division == 'fiveSixHorizontal'" x="0" y="77%" width="100%" height="11%" ng-style="getStyle(secondDivisionColor)" />
+  <rect ng-show="division == 'fiveSixHorizontal'" x="0" y="88%" width="100%" height="11%" ng-style="getStyle(divisionColor)" />
+
+  <rect ng-show="division == 'threeThreeVertical'" x="0" y="0" width="16.5%" height="100%" ng-style="getStyle(divisionColor)" />
+  <rect ng-show="division == 'threeThreeVertical'" x="16.5%" y="0" width="16.5%" height="100%" ng-style="getStyle(secondDivisionColor)" />
+  <rect ng-show="division == 'threeThreeVertical'" x="33%" y="0" width="16.5%" height="100%" ng-style="getStyle(divisionColor)" />
+  <rect ng-show="division == 'threeThreeVertical'" x="49.5%" y="0" width="16.5%" height="100%" ng-style="getStyle(secondDivisionColor)" />
+  <rect ng-show="division == 'threeThreeVertical'" x="66%" y="0" width="16.5%" height="100%" ng-style="getStyle(divisionColor)" />
+  <rect ng-show="division == 'threeThreeVertical'" x="82.5%" y="0" width="17%" height="100%" ng-style="getStyle(secondDivisionColor)" />
+
+  <rect ng-show="division == 'twoOneVertical'" x="0" y="0" width="33%" height="100%" ng-style="getStyle(divisionColor)" />
+  <rect ng-show="division == 'twoOneVertical'" x="33%" y="0" width="33%" height="100%" ng-style="getStyle(secondDivisionColor)" />
+  <rect ng-show="division == 'twoOneVertical'" x="66%" y="0" width="33.5%" height="100%" ng-style="getStyle(thirdDivisionColor)" />
+
+  <rect ng-show="division == 'twoOneHorizontal'" x="0" y="0" width="100%" height="33%" ng-style="getStyle(divisionColor)" />
+  <rect ng-show="division == 'twoOneHorizontal'" x="0" y="33%" width="100%" height="33%" ng-style="getStyle(secondDivisionColor)" />
+  <rect ng-show="division == 'twoOneHorizontal'" x="0" y="66%" width="100%" height="33%" ng-style="getStyle(thirdDivisionColor)" />
+
+  <polygon ng-show="division == 'oneOneDiagonal'" points="0,0 0,220 350,0" ng-style="getStyle(divisionColor)" />
+  <polygon ng-show="division == 'oneOneDiagonal'" points="350,0 350,220 0,220" ng-style="getStyle(secondDivisionColor)" />
+
+  <rect ng-show="division == 'fourSquares'" x="0" y="0" width="50%" height="50%" ng-style="getStyle(divisionColor)" />
+  <rect ng-show="division == 'fourSquares'" x="50%" y="0" width="50%" height="50%" ng-style="getStyle(secondDivisionColor)" />
+  <rect ng-show="division == 'fourSquares'" x="50%" y="50%" width="50%" height="50%" ng-style="getStyle(divisionColor)" />
+  <rect ng-show="division == 'fourSquares'" x="0" y="50%" width="50%" height="50%" ng-style="getStyle(secondDivisionColor)" />
+
+  <polygon ng-show="division == 'twoDiagonals'" points="0,0 175,110 0,220" ng-style="getStyle(divisionColor)" />
+  <polygon ng-show="division == 'twoDiagonals'" points="0,0 175,110 350,0" ng-style="getStyle(secondDivisionColor)" />
+  <polygon ng-show="division == 'twoDiagonals'" points="175,110 350,0 350,220" ng-style="getStyle(divisionColor)" />
+  <polygon ng-show="division == 'twoDiagonals'" points="175,110 0,220 350,220" ng-style="getStyle(secondDivisionColor)" />
+
+  <!-- <rect ng-show="division == 'manyPoints'" x="0" y="0" width="50%" height="50%" ng-style="getStyle('division')" /> -->
+
+  <!-- rabattements -->
+
+  <rect ng-show="rabattement == 'croixGauche'" x="15%" y="0" width="40" height="100%" ng-style="getStyle(rabattementColor)" />
+  <rect ng-show="rabattement == 'croixGauche'" x="0" y="43%" width="100%" height="40" ng-style="getStyle(rabattementColor)" />
+
+  <rect ng-show="rabattement == 'croixCentre'" x="43%" y="0" width="40" height="100%" ng-style="getStyle(rabattementColor)" />
+  <rect ng-show="rabattement == 'croixCentre'" x="0" y="43%" width="100%" height="40" ng-style="getStyle(rabattementColor)" />
+
+  <line ng-show="rabattement == 'croisé'" x1="0" y1="0" x2="100%" y2="100%" ng-style="getLineStyle(rabattementColor)" />
+  <line ng-show="rabattement == 'croisé'" x1="100%" y1="0" x2="0" y2="100%" ng-style="getLineStyle(rabattementColor)" />
+
+  <rect ng-show="rabattement == 'quart'" x="0" y="5%" width="50%" height="50%" ng-style="getStyle(rabattementColor)" />
+
+  <rect ng-show="rabattement == 'coin'" x="0" y="0" width="33%" height="33%" ng-style="getStyle(rabattementColor)" />
+
+  <rect ng-show="rabattement == 'carré'" x="40%" y="33%" width="20%" height="33%" ng-style="getStyle(rabattementColor)" />
+
+  <polygon ng-show="rabattement == 'triangle'" points="0,0 175,110 0,220" ng-style="getStyle(rabattementColor)" />
+
+  <line ng-show="rabattement == 'diagonale'" x1="0" y1="0" x2="100%" y2="100%" ng-style="getLineStyle(rabattementColor)" />
+
+  <line ng-show="rabattement == 'diagonale inversée'" x1="100%" y1="0" x2="0" y2="100%" ng-style="getLineStyle(rabattementColor)" />
+
+  <polygon ng-show="rabattement == 'lozange'" points="86,110 175,22 262,110 175,198" ng-style="getStyle(rabattementColor)" />
+
+  <circle ng-show="rabattement == 'cercle'" cx="50%" cy="50%" r="88" ng-style="getStyle(rabattementColor)" />
+
+  <text text-anchor="middle" x="50%" y="50%" ng-style="getTextStyle(flagTextSize, flagFontFamily, textColor)">{{flagText}}</text>
+
+  <rect x="0" y="0" width="100%" height="100%"
+  style="stroke-width:3;stroke:rgb(0,0,0);fill-opacity:0.0" />
+
+</svg>

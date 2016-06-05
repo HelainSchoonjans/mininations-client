@@ -10,6 +10,110 @@
 angular.module 'mininationsApp'
   .service 'foundationHelperService', ->
 
+    @divisions = [
+      "full"
+      "halfVertical"
+      "halfHorizontal"
+      "fiveSixHorizontal"
+      "threeThreeVertical"
+      "twoOneVertical"
+      "twoOneHorizontal"
+      "oneOneDiagonal"
+      "fourSquares"
+      "twoDiagonals"
+      # "manyPoints"
+    ]
+
+    @colors = [
+      name: "jaune"
+      red: "255"
+      green: "255"
+      blue: "0"
+    ,
+      name: "cyan"
+      red: "0"
+      green: "255"
+      blue: "255"
+    ,
+      name: "rouge"
+      red: "255"
+      green: "0"
+      blue: "0"
+    ,
+      name: "magenta"
+      red: "255"
+      green: "0"
+      blue: "255"
+    ,
+      name: "orange"
+      red: "255"
+      green: "140"
+      blue: "0"
+    ,
+      name: "blanc"
+      red: "255"
+      green: "255"
+      blue: "255"
+    ,
+      name: "noir"
+      red: "0"
+      green: "0"
+      blue: "0"
+    ,
+      name: "bleu"
+      red: "0"
+      green: "0"
+      blue: "255"
+    ]
+
+    @fontFamilies = [
+      value: "Georgia"
+      name: "Georgia"
+    ,
+      value: "Times New Roman"
+      name: "Times New Roman"
+    ,
+      value: "Arial"
+      name: "Arial"
+    ,
+      value: "Tahoma"
+      name: "Tahoma"
+    ,
+      value: "Gadget"
+      name: "Gadget"
+    ,
+      value: "cursive"
+      name: "Cursive"
+    ,
+      value: "Charcoal"
+      name: "Charcoal"
+    ,
+      value: "Courier"
+      name: "Courier"
+    ,
+      value: "Monaco"
+      name: "Monaco"
+    ]
+
+    @rabattements = [
+      "aucun"
+      "croixGauche"
+      "croixCentre"
+      "croisé"
+      "quart"
+      "coin"
+      "carré"
+      "triangle"
+      "diagonale"
+      "lozange"
+      "cercle"
+      "diagonale inversée"
+    ]
+
+    @symbols = [
+      "symb1"
+    ]
+
     @nationNameSuggestionsForTerritory = [
         ids: [
           1, 2, 4, 6, 7, 8, 9, 10, 11,
@@ -88,12 +192,13 @@ angular.module 'mininationsApp'
         next: "flag"
       flag:
         previous: "anthem"
-        next: "heraldry"
-      heraldry:
-        previous: "flag"
+      #   next: "heraldry"
+      # heraldry:
+      #   previous: "flag"
         next: "render"
       render:
-        previous: "heraldry"
+          previous: "flag"
+        # previous: "heraldry"
 
     @cadavreExquis =
       nouns: [

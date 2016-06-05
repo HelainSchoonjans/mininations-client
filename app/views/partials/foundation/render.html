@@ -1,6 +1,6 @@
 <div ng-hide="!foundation.isStep('render')" class="ng-hide row">
 
-  <h3 class="text-uppercase text-center">9. Ma nation</h3>
+  <h3 class="text-uppercase text-center">8. Ma nation</h3>
   <hr/>
 
   <div class="col-md-4 form-group">
@@ -11,7 +11,11 @@
 
   <div class="col-md-8 form-group">
 
-    <dl class="dl-horizontal  form-group">
+    <div id="svg-container" style="width:100%;height:100%;">
+      <div render-flag></div>
+    </div>
+
+    <dl class="dl-horizontal form-group">
 
       <dt>Nom</dt>
       <dd class="text-capitalize">{{nation.name}}</dd>
@@ -19,7 +23,7 @@
       <dt>Système politique</dt>
       <dd>{{system.name}} {{system.type}}</dd>
 
-      <dt>Anthem</dt>
+      <dt>Devise</dt>
       <dd class="text-uppercase" ng-show="method == 'compose' && subMethod == 'nounAndNoun'">
         {{anthem.first.latin}} et {{anthem.second.latin}}
       </dd>

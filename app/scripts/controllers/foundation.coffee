@@ -17,6 +17,12 @@ angular.module 'mininationsApp'
     $scope.territories = foundationHelperService.territoriesDetailed
     $scope.genders = foundationHelperService.genders
     $scope.cadavreExquis = foundationHelperService.cadavreExquis
+    $scope.colors = foundationHelperService.colors
+    $scope.divisions = foundationHelperService.divisions
+    $scope.rabattements = foundationHelperService.rabattements
+    $scope.symbols = foundationHelperService.symbols
+    $scope.fontFamilies = foundationHelperService.fontFamilies
+
     $scope.resetNationNames = () ->
       nationNames = []
       nationNames.push name for name in $scope.reason.nation.names
@@ -26,6 +32,7 @@ angular.module 'mininationsApp'
       )
       nationNames.push name for name in $scope.system.names
       $scope.nationNames = nationNames
+
     $scope.setTitle = (title) ->
       $scope.title = title
       $scope.method = 'system'
@@ -35,6 +42,39 @@ angular.module 'mininationsApp'
     $scope.setQualifier = (qualifier) ->
       $scope.system.type = qualifier
       $scope.method = ''
+      $scope.resetNationNames()
+
+
+    $scope.setDivision = (division) ->
+      $scope.division = division
+    $scope.setRabattement = (rabattement) ->
+      $scope.rabattement = rabattement
+    $scope.setDivisionColor = (color) ->
+      $scope.divisionColor = color
+    $scope.setRabattementColor = (color) ->
+      $scope.rabattementColor = color
+    $scope.setSecondDivisionColor = (color) ->
+      $scope.secondDivisionColor = color
+    $scope.setThirdDivisionColor = (color) ->
+      $scope.thirdDivisionColor = color
+    $scope.setTextColor = (color) ->
+      $scope.textColor = color
+
+    @getRGBColorStyle = (color, dflt="rgb(255, 255, 255)") ->
+      if color
+        return "rgb(#{color.red}, #{color.green}, #{color.blue})"
+      else
+        return dflt
+
+    $scope.getStyle = (color) =>
+      fill: @getRGBColorStyle(color)
+    $scope.getLineStyle = (color) =>
+      stroke: @getRGBColorStyle(color)
+      "stroke-width":"20"
+    $scope.getTextStyle = (size, font, color) =>
+      'font-size': size or '25'
+      'font-family': font?.value or ''
+      fill: @getRGBColorStyle(color, "rgb(0, 0, 0)")
 
     @initSelectedFilters = () ->
       $scope.selected = {} if not $scope.selected

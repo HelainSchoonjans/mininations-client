@@ -3,7 +3,7 @@
   <h3 class="text-uppercase text-center">7. Mon drapeau</h3>
   <hr/>
 
-  <div class="col-md-4 form-group">
+  <div class="col-md-6 form-group">
     <p>
       Le drapeau est le premier élément qui permet d'identifier une nation. Composez le votre
       grâce aux outils que l'on a mis en place pour vous. Soyez créatif !
@@ -19,9 +19,167 @@
     taille
   -->
 
-  <div class="col-md-8 form-group">
+  <div class="col-md-6 form-group">
 
     <form name="foundationFlag" class="css-form">
+
+      <div id="svg-container" style="width:100%;height:100%;">
+        <div render-flag></div>
+      </div>
+
+        <div class="form-group">
+          <button type="button" class="btn btn btn-defaultbtn btn-primary btn-block" ng-click="flagPanel = 'divisions'">
+            <h4 class="text-uppercase text-center">
+              Division
+            </h4>
+          </button>
+        </div>
+
+        <div class="row form-group" ng-repeat="division in divisions track by $index" ng-if="$index % 4 == 0" ng-show="flagPanel == 'divisions'">
+          <div class="col-xs-3"
+               ng-repeat="i in [$index, $index + 1, $index + 2, $index + 3]"
+               ng-if="divisions[i] != null">
+             <button type="button" class="btn btn-default"
+               ng-click="setDivision(divisions[i])">
+               {{divisions[i]}}
+             </button>
+          </div>
+        </div>
+
+        <h4 ng-show="flagPanel == 'divisions'" class="form-group">First color</h4>
+        <div class="row form-group" ng-repeat="color in colors track by $index" ng-if="$index % 4 == 0" ng-show="flagPanel == 'divisions'">
+          <div class="col-xs-3"
+               ng-repeat="i in [$index, $index + 1, $index + 2, $index + 3]"
+               ng-if="colors[i] != null">
+             <svg width="100%" height="50">
+               <rect x="0" y="0" width="100%" height="100%" ng-style="getStyle(colors[i])"/>
+               <rect x="0" y="0" width="100%" height="100%" ng-click="setDivisionColor(colors[i])"
+               style="stroke-width:3;stroke:rgb(0,0,0);fill-opacity:0.0" />
+             </svg>
+          </div>
+        </div>
+
+        <h4 ng-show="flagPanel == 'divisions' && division != 'full'" class="form-group">Second color</h4>
+        <div class="row form-group" ng-repeat="color in colors track by $index" ng-if="$index % 4 == 0" ng-show="flagPanel == 'divisions' && division != 'full'">
+          <div class="col-xs-3"
+               ng-repeat="i in [$index, $index + 1, $index + 2, $index + 3]"
+               ng-if="colors[i] != null">
+             <svg width="100%" height="50">
+               <rect x="0" y="0" width="100%" height="100%" ng-style="getStyle(colors[i])"/>
+               <rect x="0" y="0" width="100%" height="100%" ng-click="setSecondDivisionColor(colors[i])"
+               style="stroke-width:3;stroke:rgb(0,0,0);fill-opacity:0.0" />
+             </svg>
+          </div>
+        </div>
+
+        <h4 ng-show="flagPanel == 'divisions' && (division == 'twoOneVertical' || division == 'twoOneHorizontal')" class="form-group">Third color</h4>
+        <div class="row form-group" ng-repeat="color in colors track by $index" ng-if="$index % 4 == 0" ng-show="flagPanel == 'divisions' && (division == 'twoOneVertical' || division == 'twoOneHorizontal')">
+          <div class="col-xs-3"
+               ng-repeat="i in [$index, $index + 1, $index + 2, $index + 3]"
+               ng-if="colors[i] != null">
+             <svg width="100%" height="50">
+               <rect x="0" y="0" width="100%" height="100%" ng-style="getStyle(colors[i])"/>
+               <rect x="0" y="0" width="100%" height="100%" ng-click="setThirdDivisionColor(colors[i])"
+               style="stroke-width:3;stroke:rgb(0,0,0);fill-opacity:0.0" />
+             </svg>
+           </div>
+        </div>
+
+        <div class="form-group">
+          <button type="button" class="btn btn btn-defaultbtn btn-primary btn-block" ng-click="flagPanel = 'rabattement'">
+            <h4 class="text-uppercase text-center">
+              Rabattement
+            </h4>
+          </button>
+        </div>
+
+        <div class="row form-group" ng-repeat="rabattement in rabattements track by $index" ng-if="$index % 4 == 0"  ng-show="flagPanel == 'rabattement'">
+          <div class="col-xs-3"
+              ng-repeat="i in [$index, $index + 1, $index + 2, $index + 3]"
+              ng-if="rabattements[i] != null">
+            <button type="button" class="btn btn-default"
+              ng-click="setRabattement(rabattements[i])">
+              {{rabattements[i]}}
+            </button>
+          </div>
+        </div>
+
+        <h4 ng-show="flagPanel == 'rabattement'" class="form-group">Color</h4>
+        <div class="row form-group" ng-repeat="color in colors track by $index" ng-if="$index % 4 == 0" ng-show="flagPanel == 'rabattement'">
+          <div class="col-xs-3"
+               ng-repeat="i in [$index, $index + 1, $index + 2, $index + 3]"
+               ng-if="colors[i] != null">
+             <svg width="100%" height="50">
+               <rect x="0" y="0" width="100%" height="100%" ng-style="getStyle(colors[i])"/>
+               <rect x="0" y="0" width="100%" height="100%" ng-click="setRabattementColor(colors[i])"
+               style="stroke-width:3;stroke:rgb(0,0,0);fill-opacity:0.0" />
+             </svg>
+          </div>
+        </div>
+
+      <!-- symbol -->
+      <!-- <div class="form-group">
+        <button type="button" class="btn btn btn-defaultbtn btn-primary btn-block" ng-click="flagPanel = 'symbol'">
+          <h4 class="text-uppercase text-center">
+            Symbole
+          </h4>
+        </button>
+      </div>
+
+      <div class="row" ng-repeat="symbol in symbols track by $index" ng-if="$index % 4 == 0" ng-show="flagPanel == 'symbol'">
+        <div class="col-xs-3"
+            ng-repeat="i in [$index, $index + 1, $index + 2, $index + 3]"
+            ng-if="symbols[i] != null">
+            <button type="button" class="btn btn-default"
+            ng-click="setSymbol(symbols[i])">
+            {{symbols[i]}}
+          </button>
+        </div>
+      </div> -->
+
+      <!-- texte -->
+      <div class="form-group">
+        <button type="button" class="btn btn btn-defaultbtn btn-primary btn-block" ng-click="flagPanel = 'text'">
+          <h4 class="text-uppercase text-center">
+            Texte
+          </h4>
+        </button>
+      </div>
+
+      <div class="form-group" ng-show="flagPanel == 'text'">
+          <input type="text" ng-model="flagText" name="flagText" class="form-control text-uppercase text-center" id="flagText" placeholder="écris ton nom ici"/><br />
+      </div>
+
+      <!-- <h4 ng-show="flagPanel == 'text'" class="form-group">Font families</h4> -->
+      <div class="form-group" ng-show="flagPanel == 'text'">
+        <select ng-model="flagFontFamily" ng-options="fontFamily.name for fontFamily in fontFamilies" class="form-control text-uppercase text-center">
+          <option value=""> Typographie </option>
+        </select>
+      </div>
+
+      <!-- <div ng-repeat="font in fontFamilies">
+        <div ng-style="{'font-family': font.value}">
+          {{font.name}}
+        </div>
+      </div> -->
+
+      <h4 ng-show="flagPanel == 'text'" class="form-group">Text size</h4>
+      <div class="form-group" ng-show="flagPanel == 'text'">
+        <input ng-model="flagTextSize" type="range" min="0" max="50" value="25" />
+      </div>
+
+      <h4 ng-show="flagPanel == 'text'" class="form-group">Color</h4>
+      <div class="row form-group" ng-repeat="color in colors track by $index" ng-if="$index % 4 == 0" ng-show="flagPanel == 'text'">
+        <div class="col-xs-3"
+             ng-repeat="i in [$index, $index + 1, $index + 2, $index + 3]"
+             ng-if="colors[i] != null">
+           <svg width="100%" height="50">
+             <rect x="0" y="0" width="100%" height="100%" ng-style="getStyle(colors[i])"/>
+             <rect x="0" y="0" width="100%" height="100%" ng-click="setTextColor(colors[i])"
+             style="stroke-width:3;stroke:rgb(0,0,0);fill-opacity:0.0" />
+           </svg>
+        </div>
+      </div>
 
       <div class="form-group">
         <div class="input-group col-sm-offset-3 col-sm-9 col-xs-12">
