@@ -41,7 +41,7 @@ module.exports = (config) ->
     captureTimeout: 60000
 
     colors: true
-
+    
     browsers: [
      "PhantomJS"
     ]

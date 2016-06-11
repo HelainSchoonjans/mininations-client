@@ -10,15 +10,6 @@
     </p>
   </div>
 
-  <!--
-  Division
-  Rabattement
-  Symbole
-  texte
-    typo
-    taille
-  -->
-
   <div class="col-md-6 form-group">
 
     <form name="foundationFlag" class="css-form">
@@ -39,10 +30,9 @@
           <div class="col-xs-3"
                ng-repeat="i in [$index, $index + 1, $index + 2, $index + 3]"
                ng-if="divisions[i] != null">
-             <button type="button" class="btn btn-default"
-               ng-click="setDivision(divisions[i])">
-               {{divisions[i]}}
-             </button>
+             <img ng-src="/images/divisions/{{divisions[i].src}}"
+              alt="{{divisions[i].alt}}"
+              ng-click="setDivision(divisions[i].name)" width="100%">
           </div>
         </div>
 
@@ -97,10 +87,9 @@
           <div class="col-xs-3"
               ng-repeat="i in [$index, $index + 1, $index + 2, $index + 3]"
               ng-if="rabattements[i] != null">
-            <button type="button" class="btn btn-default"
-              ng-click="setRabattement(rabattements[i])">
-              {{rabattements[i]}}
-            </button>
+            <img ng-src="/images/rabattements/{{rabattements[i].src}}"
+             alt="{{rabattements[i].alt}}"
+             ng-click="setRabattement(rabattements[i].name)" width="100%">
           </div>
         </div>
 

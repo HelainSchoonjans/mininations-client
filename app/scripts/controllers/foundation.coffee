@@ -8,20 +8,30 @@
  # Controller of the mininationsApp
 ###
 angular.module 'mininationsApp'
-  .controller 'FoundationCtrl', ($scope, foundationHelperService) ->
+  .controller 'FoundationCtrl', (
+    $scope
+    foundationHelperService
+    images
+    colors
+    fonts
+    steps
+    cadavresExquis
+    reasons
+    genders
+  ) ->
 
     $scope.titles = foundationHelperService.titles
     $scope.territoryFilters = foundationHelperService.territoryFilters
     $scope.words = foundationHelperService.words
-    $scope.reasons = foundationHelperService.reasons
+    $scope.reasons = reasons
     $scope.territories = foundationHelperService.territoriesDetailed
-    $scope.genders = foundationHelperService.genders
-    $scope.cadavreExquis = foundationHelperService.cadavreExquis
-    $scope.colors = foundationHelperService.colors
-    $scope.divisions = foundationHelperService.divisions
-    $scope.rabattements = foundationHelperService.rabattements
+    $scope.genders = genders
+    $scope.cadavreExquis = cadavresExquis
+    $scope.colors = colors
+    $scope.divisions = images.divisions
+    $scope.rabattements = images.rabattements
     $scope.symbols = foundationHelperService.symbols
-    $scope.fontFamilies = foundationHelperService.fontFamilies
+    $scope.fontFamilies = fonts
 
     $scope.resetNationNames = () ->
       nationNames = []
@@ -43,7 +53,6 @@ angular.module 'mininationsApp'
       $scope.system.type = qualifier
       $scope.method = ''
       $scope.resetNationNames()
-
 
     $scope.setDivision = (division) ->
       $scope.division = division
@@ -95,8 +104,6 @@ angular.module 'mininationsApp'
 
     @currentStepName = "introduction"
 
-    @steps = foundationHelperService.steps
-
     @isStep = (step) ->
       step == @currentStepName
 
@@ -134,7 +141,7 @@ angular.module 'mininationsApp'
           " #{adjective2.latin[cod.plural][cod.gender]}"
 
     @getCurrentStep = ->
-      @steps[@currentStepName]
+      steps[@currentStepName]
 
     @getNextStepName = ->
       @getCurrentStep().next
