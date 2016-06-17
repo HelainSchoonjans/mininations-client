@@ -26,14 +26,14 @@ build:
       - bower install --config.interactive=false --allow-root
       - npm install
       # it runs the tests
-      - npm run-script test-single-run
+      #- npm run-script test-single-run
     post_ci:
       - docker build -t heschoon/mininations-client:$BRANCH.$BUILD_NUMBER -f docker/grunt/Dockerfile .
       - docker push heschoon/mininations-client:$BRANCH.$BUILD_NUMBER
       - docker tag -f heschoon/mininations-client:$BRANCH.$BUILD_NUMBER heschoon/mininations-client:$BRANCH.latest
       - docker push heschoon/mininations-client:$BRANCH.latest
     on_success:
-      - cp -r reports/. ./shippable
+      #- cp -r reports/. ./shippable
 #    on_failure:
 #    push:
 #    cache:
