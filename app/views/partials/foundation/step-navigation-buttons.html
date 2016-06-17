@@ -2,8 +2,7 @@
   <button type="button"
     ng-click="controller.previous()"
     class="form-control btn btn-default btn-block"
-    ng-disabled="controller.isFirstStep()"
-  >
+    ng-disabled="controller.isFirstStep()">
     <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
   </button>
 </span>
@@ -12,8 +11,7 @@
   <button type="submit"
     ng-click="controller.next(form.$valid)"
     class="form-control btn btn-default btn-block"
-    ng-disabled="controller.isLastStep()"
-  >
+    ng-disabled="controller.isLastStep()">
     <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
   </button>
 </span>

@@ -45,10 +45,9 @@ module.exports = (config) ->
     exclude: [
     ]
 
-    # level of logging
-    # possible values: LOG_DISABLE ||
-    # LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-    # logLevel: config.LOG_DEBUG
+    # possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN
+    #|| LOG_INFO || LOG_DEBUG
+    logLevel: config.LOG_WARN
 
     captureTimeout: 60000
 
@@ -92,7 +91,9 @@ module.exports = (config) ->
     #   "karma-coffee-preprocessor",
     #   'karma-coverage'
     # ]
-
+    #
+    # preprocessors:
+    #   '**/*.coffee': ['coffee']
 
     # Uncomment the following lines if you
     #are using grunt's server to run the tests

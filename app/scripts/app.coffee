@@ -1,13 +1,5 @@
 'use strict'
 
-###
- # @ngdoc overview
- # @name mininationsApp
- # @description
- # # mininationsApp
- #
- # Main module of the application.
-###
 angular
   .module('mininationsApp', [
     'ngAnimate'

@@ -14,9 +14,9 @@ angular.module 'mininationsApp'
         id: 1
         nation:
           names: [
-            "monimaker"
-            "illionar"
-            "billy"
+            "Monimaker"
+            "Blingos"
+            "Billing"
             "Jacque Potte"
           ]
       ,
@@ -24,30 +24,29 @@ angular.module 'mininationsApp'
         id: 2
         nation:
           names: [
-            "hiden"
-            "unseecity"
-            "cashcash"
-            "pixou"
+            "Hiden"
+            "Pananamas"
+            "Cashcash"
+            "PiXou"
           ]
       ,
         name: "Pour garder des sous"
         id: 3
         nation:
           names: [
-            "kipmoney"
-            "goldkiper"
-            "keptoland"
-            "Mont pressieux"
+            "Kipmoney"
+            "Goldkiper"
+            "Keptoland"
+            "Mont Pressieux"
           ]
       ,
         name: "Pour partager des sous"
         id: 4
         nation:
           names: [
-            "cher"
-            "nocapito"
-            "novum"
-            "sossiokool"
+            "Ckdo"
+            "Nocapito"
+            "Novum"
           ]
     ]
     political: [
@@ -56,10 +55,10 @@ angular.module 'mininationsApp'
         id: 5
         nation:
           names: [
-            "powerland"
-            "mailland"
-            "baratin"
-            "magna"
+            "Trumpette"
+            "Mailland"
+            "Baratin"
+            "Magna"
           ]
       }
       {
@@ -67,9 +66,9 @@ angular.module 'mininationsApp'
         id: 6
         nation:
           names: [
-            "veritas"
-            "wakywaky"
-            "cimer"
+            "Veritas"
+            "Wakywaky"
+            "Yogyak"
           ]
       }
       {
@@ -77,9 +76,9 @@ angular.module 'mininationsApp'
         id: 7
         nation:
           names: [
-            "rebeland"
-            "kaos"
-            "bellior"
+            "Rebeland"
+            "Kaos"
+            "Vnr"
           ]
       }
       {
@@ -87,9 +86,9 @@ angular.module 'mininationsApp'
         id: 8
         nation:
           names: [
-            "veritass"
-            "novum"
-            "bizounours"
+            "Veritass"
+            "Novum"
+            "Bizounours"
           ]
       }
     ]
@@ -99,9 +98,10 @@ angular.module 'mininationsApp'
         id: 9
         nation:
           names: [
-            "libertas"
-            "fridhome"
-            "unchained"
+            "Libertas"
+            "Fridhome"
+            "Unchained"
+            "Lilber"
           ]
       }
       {
@@ -109,8 +109,9 @@ angular.module 'mininationsApp'
         id: 10
         nation:
           names: [
-            "ekla"
-            "famousse"
+            "Ekla"
+            "Famousse"
+            "Bling"
           ]
       }
       {
@@ -119,6 +120,7 @@ angular.module 'mininationsApp'
         nation:
           names: [
             "Siri"
+            "Smarteau"
           ]
       }
       {
@@ -127,6 +129,7 @@ angular.module 'mininationsApp'
         nation:
           names: [
             "Desireland"
+            "Grodel"
           ]
       }
       {
@@ -134,10 +137,10 @@ angular.module 'mininationsApp'
         id: 13
         nation:
           names: [
-            "newland"
-            "lovaland"
-            "utopia"
-            "brutopie"
+            "Newland"
+            "Lovaland"
+            "Utopia"
+            "Brutopie"
           ]
       }
       {
@@ -145,10 +148,10 @@ angular.module 'mininationsApp'
         id: 14
         nation:
           names:  [
-            "wainot"
-            "wiktori"
-            "chance"
-            "fortunam"
+            "Wainot"
+            "Wiktori"
+            "Chance"
+            "Fortunam"
           ]
       }
       {
@@ -156,8 +159,9 @@ angular.module 'mininationsApp'
         id: 15
         nation:
           names:  [
-            "kaos"
-            "nihil"
+            "Kaos"
+            "Nihil"
+            "Vnr"
           ]
       }
       {
@@ -165,8 +169,9 @@ angular.module 'mininationsApp'
         id: 16
         nation:
           names:  [
-            "sololand"
-            "beatasolitu"
+            "Sololand"
+            "Beatasolitu"
+            "Tchatchao"
           ]
       }
     ]

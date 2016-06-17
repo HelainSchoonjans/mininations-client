@@ -9,29 +9,9 @@
 ###
 angular.module 'mininationsApp'
   .constant 'colors', [
-      name: "jaune"
-      red: "255"
-      green: "255"
-      blue: "0"
-    ,
-      name: "cyan"
+      name: "noir"
       red: "0"
-      green: "255"
-      blue: "255"
-    ,
-      name: "rouge"
-      red: "255"
       green: "0"
-      blue: "0"
-    ,
-      name: "magenta"
-      red: "255"
-      green: "0"
-      blue: "255"
-    ,
-      name: "orange"
-      red: "255"
-      green: "140"
       blue: "0"
     ,
       name: "blanc"
@@ -39,13 +19,53 @@ angular.module 'mininationsApp'
       green: "255"
       blue: "255"
     ,
-      name: "noir"
-      red: "0"
+      name: "jaune"
+      red: "255"
+      green: "255"
+      blue: "102"
+    ,
+      name: "rouge"
+      red: "255"
       green: "0"
       blue: "0"
+    ,
+      name: "pale blue"
+      red: "153"
+      green: "204"
+      blue: "255"
+    ,
+      name: "cyan"
+      red: "36"
+      green: "246"
+      blue: "225"
+    ,
+      name: "orange"
+      red: "255"
+      green: "153"
+      blue: "51"
+    ,
+      name: "rose"
+      red: "255"
+      green: "153"
+      blue: "204"
+    ,
+      name: "bleu électrique"
+      red: "0"
+      green: "0"
+      blue: "255"
     ,
       name: "bleu"
       red: "0"
       green: "0"
-      blue: "255"
+      blue: "102"
+    ,
+      name: "bordeaux"
+      red: "153"
+      green: "0"
+      blue: "0"
+    ,
+      name: "vert"
+      red: "0"
+      green: "111"
+      blue: "7"
     ]

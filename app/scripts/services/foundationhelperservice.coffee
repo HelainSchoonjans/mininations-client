@@ -123,7 +123,7 @@ angular.module 'mininationsApp'
         {
           id: 1
           image: "01-antarctique1.jpg"
-          name: "Antartique 1"
+          name: "Mary byrd 1"
           continent: "Antartique"
           ocean: "n/a"
           superficie: "<500 km^2"
@@ -156,7 +156,7 @@ l’Antarctique du 1er décembre 1959). Il reste une partie de l’Antarctique q
         {
           id: 2
           image: "02-antarctique2.jpg"
-          name: "Antartique 2"
+          name: "Mary byrd 2"
           continent: "Antartique"
           ocean: "n/a"
           superficie: "<1500 km^2"
@@ -189,7 +189,7 @@ l’Antarctique du 1er décembre 1959). Il reste une partie de l’Antarctique q
         {
           id: 3
           image: "03-antarctique3.jpg"
-          name: "Antartique 3"
+          name: "Mary byrd 3"
           continent: "Antartique"
           ocean: "n/a"
           superficie: "<100 km^2"
@@ -1457,7 +1457,7 @@ l’Antarctique du 1er décembre 1959). Il reste une partie de l’Antarctique q
           "sociocrate"
         ]
         names: [
-          "respublika"
+          "Respublika"
         ]
         gender: "F"
       }
@@ -1468,9 +1468,10 @@ l’Antarctique du 1er décembre 1959). Il reste une partie de l’Antarctique q
           "parlementaire"
           "absolue"
           "constitutionnelle"
+          "de droit divin surnaturel"
         ]
         names: [
-          "harmonic"
+          "Harmonic"
           "Rex paulo"
           "Rex wooden"
         ]
@@ -1483,11 +1484,13 @@ l’Antarctique du 1er décembre 1959). Il reste une partie de l’Antarctique q
           "dictatoriale"
           "totalitaire"
           "éco-anarchique"
+          "capricieux"
         ]
         names: [
+          "Vnr"
           "Little ductor"
           "t.o.r."
-          "taar"
+          "Taar"
         ]
         gender: "M"
       }
@@ -1498,11 +1501,13 @@ l’Antarctique du 1er décembre 1959). Il reste une partie de l’Antarctique q
           "califat"
           "sultanat"
           "fanatisme"
+          "surnaturel"
         ]
         names: [
           "Kredo"
-          "deuz"
-          "abrahkadabra"
+          "Deuz"
+          "Abrahkadabra"
+          "Dogma"
         ]
         gender: "M"
       }

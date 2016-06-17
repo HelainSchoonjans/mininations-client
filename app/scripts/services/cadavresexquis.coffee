@@ -545,13 +545,6 @@ angular.module 'mininationsApp'
           plural: "tangit"
       ,
         french:
-          singular: "vient"
-          plural: "viennent"
-        latin:
-          singular: "iustus"
-          plural: "iustus"
-      ,
-        french:
           singular: "apporte"
           plural: "apportent"
         latin:
