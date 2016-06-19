@@ -122,9 +122,9 @@ angular.module 'mininationsApp'
       !@getPreviousStepName()
 
     @setRandomAnthem = ->
-      nouns = foundationHelperService.cadavreExquis.nouns
-      adjectives = foundationHelperService.cadavreExquis.adjectives
-      verbs = foundationHelperService.cadavreExquis.verbs
+      nouns = cadavresExquis.nouns
+      adjectives = cadavresExquis.adjectives
+      verbs = cadavresExquis.verbs
 
       noun = nouns[Math.floor(Math.random() * nouns.length)]
       adjective = adjectives[Math.floor(Math.random() * adjectives.length)]

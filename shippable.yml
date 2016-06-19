@@ -22,7 +22,7 @@ build:
       #- apt-get install --yes rubygems
       - gem install compass
       # it installs the dependencies
-      - npm install -g coffee-script grunt-cli
+      - npm install -g coffee-script@1.10.0 grunt-cli@1.2.0
       - bower install --config.interactive=false --allow-root
       - npm install
       # it runs the tests
