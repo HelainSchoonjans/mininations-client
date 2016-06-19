@@ -64,7 +64,7 @@ angular.module 'mininationsApp'
       alt: "Centered cross"
     ,
       name: "croisé"
-      src: "croisé.png"
+      src: "crossed.png"
       alt: "Diagonal"
     ,
       name: "quart"
@@ -76,7 +76,7 @@ angular.module 'mininationsApp'
       alt: "Corner"
     ,
       name: "carré"
-      src: "carré.png"
+      src: "square.png"
       alt: "Square"
     ,
       name: "triangle"
@@ -96,6 +96,6 @@ angular.module 'mininationsApp'
       alt: "Circle"
     ,
       name: "diagonale inversée"
-      src: "diagonaleInversée.png"
+      src: "inversedDiagonal.png"
       alt: "Inversed diagonal"
     ]
