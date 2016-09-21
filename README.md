@@ -1,5 +1,7 @@
 ![](https://api.shippable.com/projects/56ec47679d043da07be77af1/badge?branch=master)
 ![](https://api.shippable.com/projects/56ec47679d043da07be77af1/coverageBadge?branch=master)
+[![](https://images.microbadger.com/badges/image/heschoon/mininations-client.svg)](https://microbadger.com/images/heschoon/mininations-client)
+[![](https://images.microbadger.com/badges/version/heschoon/mininations-client.svg)](https://microbadger.com/images/heschoon/mininations-client)
 # Mininations
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
