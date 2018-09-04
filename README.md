@@ -17,8 +17,8 @@ Running `grunt test` will run the unit tests with karma.
 
 ## Running the docker
 
-    docker run -p 9000:9000 heschoon/mininations-client:master.62
+    docker run -p 9000:9000 heschoon/mininations-client:latest
     
 or
 
-    docker run -p 9000:9000 heschoon/mininations-client:latest
+    docker run -p 9000:9000 heschoon/mininations-client:master.62
